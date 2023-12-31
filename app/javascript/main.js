@@ -1,7 +1,7 @@
 /*
     WebPlotDigitizer - https://automeris.io/WebPlotDigitizer
 
-    Copyright 2010-2023 Ankit Rohatgi <ankitrohatgi@hotmail.com>
+    Copyright 2010-2022 Ankit Rohatgi <ankitrohatgi@hotmail.com>
 
     This file is part of WebPlotDigitizer.
 
@@ -27,7 +27,6 @@ wpd.initApp = function() { // This is run when the page loads.
     wpd.handleLaunchArgs();
     wpd.log();
     document.getElementById('loadingCurtain').style.display = 'none';
-
 };
 
 wpd.loadDefaultImage = function() {

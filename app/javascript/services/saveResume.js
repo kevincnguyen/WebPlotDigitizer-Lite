@@ -1,7 +1,7 @@
 /*
     WebPlotDigitizer - https://automeris.io/WebPlotDigitizer
 
-    Copyright 2010-2023 Ankit Rohatgi <ankitrohatgi@hotmail.com>
+    Copyright 2010-2022 Ankit Rohatgi <ankitrohatgi@hotmail.com>
 
     This file is part of WebPlotDigitizer.
 
@@ -186,8 +186,10 @@ wpd.saveResume = (function() {
             }
             if (fileType == "application/json") {
                 readJSONFileOnly(file);
+                wpd.navigateToApp();
             } else if (fileType == "application/x-tar") {
                 readProjectFile(file);
+                wpd.navigateToApp();
             } else {
                 wpd.messagePopup.show(wpd.gettext("invalid-project"),
                     wpd.gettext("invalid-project-msg"));
