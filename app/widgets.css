@@ -90,6 +90,7 @@ button {
     border: thin #bbbbbb solid;
     height: 22px;
     margin: 0px;
+    cursor: pointer;
 }
 
 input[type="button"]:hover,
@@ -106,6 +107,38 @@ button:active {
 input[type="button"].pressed-button,
 button.pressed-button {
     background-color: #FF9466;
+}
+
+input[type="button"].popup-cancel,
+button.popup-cancel {
+    padding: 8px 10px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 10px;
+    height: auto;
+}
+
+input[type="button"].popup-action,
+button.popup-action {
+    padding: 8px 12px;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    margin-right: 10px;
+    height: auto;
+}
+
+input[type="button"].popup-cancel:hover,
+button.popup-cancel:hover {
+    border: 1px black solid;
+    background-color: var(--light-gray);
+}
+
+input[type="button"].popup-action:hover,
+button.popup-action:hover {
+    border: 1px black solid;
+    background-color: var(--secondary-color);
 }
 
 input[type="button"]:focus,
