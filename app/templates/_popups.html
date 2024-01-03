@@ -4,15 +4,21 @@
 
 <!-- Load Image -->
 <div id="loadNewImage" class="popup" style="width: 400px;">
-    <div class="popupheading">{{ _("Load Image File(s)") }}</div>
-    <p>{{ _("Upload graph image files in the following formats: JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc.") }}</p>
-    <p>&nbsp;</p>
-    <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load();" /></p>
-    <p>&nbsp;</p>
-    <p align="center">
-        <input type="button" value="{{ _("Load") }}" onclick="wpd.imageManager.load();" />
-        <input type="button" value="{{ _("Cancel") }}" onclick="wpd.popup.close('loadNewImage');" />
-    </p>
+    <div class="popupheading">
+        <p class="popup-title">{{ _("New Project") }}</p>
+        <p class="popup-subtitle">{{ _("Upload graph image file(s)") }}</p>
+    </div>
+    <div class="popup-content">
+        <p>{{ _("Supported file formats:") }}</p>
+        <p>{{ _("JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc.") }}</p>
+        <p>&nbsp;</p>
+        <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load();" /></p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popupfooter">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('loadNewImage');" />
+        <input type="button" value='{{ _("Load") }}' class="popup-action" onclick="wpd.imageManager.load();" />
+    </div>
 </div>
 
 <!-- Zoom Settings -->
@@ -467,16 +473,20 @@
 
 <!-- Import JSON -->
 <div id="import-json-window" class="popup" style="width:500px;">
-    <div class="popupheading">{{ _("Import JSON/Project") }}</div>
-    <p>{{ _("Load a previously exported JSON or project file (.tar)") }} </p>
-    <p>{{ _("(Note: This will clear any unsaved data in the current plot.)") }}</p>
-    <p>&nbsp;</p>
-    <p align="center">{{ _("JSON/Project File") }}: <input type="file" id="import-json-file" onchange="wpd.saveResume.read();" /></p>
-    <p>&nbsp;</p>
-    <p align="center">
-        <input type="button" value="{{ _("Import") }}" onclick="wpd.saveResume.read();" />
-        <input type="button" value="{{ _("Cancel") }}" onclick="wpd.popup.close('import-json-window');" />
-    </p>
+    <div class="popupheading">
+       <p class="popup-title">{{ _("Import Project") }}</p> 
+       <p class="popup-subtitle">{{ _("Load a previously exported JSON or project file (.tar)") }}</p>
+    </div>
+    <div class="popup-content">
+        <p>{{ _("This will clear any unsaved data in the current plot.") }}</p>
+        <p>&nbsp;</p>
+        <p align="center">{{ _("JSON/Project File") }}: <input type="file" id="import-json-file" onchange="wpd.saveResume.read();" /></p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popupfooter">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('import-json-window');" />
+        <input type="button" value='{{ _("Import") }}' class="popup-action" onclick="wpd.saveResume.read();" />
+    </div>
 </div>
 
 <!-- Adjust Data Points Keyboard Shortcuts -->
