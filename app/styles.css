@@ -316,7 +316,7 @@ select {
     padding-top: 3px;
 }
 
-.popup-content {
+.popup-body {
     padding: 15px;
 }
 
@@ -487,4 +487,14 @@ select {
 
 label {
     vertical-align: top;
+}
+
+/* Icon Styles */
+
+.fa-circle-info {
+    margin-right: 3px;
+}
+
+.fa-chart-line {
+    margin-right: 2px;
 }
