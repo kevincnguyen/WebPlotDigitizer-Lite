@@ -30,7 +30,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>WebPlotDigitizer Lite - Based from WebPlotDigitizer by Ankit Rohatgi</title>
+    <title>WebPlotDigitizer Lite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -61,10 +61,9 @@
 
     <div id="allContainer">
         <!-- toolbar + graphics -->
-        <div id="mainContainer">
+        <div id="mainContainer" style="border-right: thin lightgrey solid;">
             <div id="topContainer">
                 <div id="menuButtonsContainer">{% include "_menubar.html" %}</div>
-
 
                 <div id="topToolbarContainer">
                     <!-- controls that show on top -->
@@ -83,11 +82,10 @@
                     <button type="button" title="Fit to graphics area" onclick="wpd.graphicsWidget.zoomFit();" style="border:none;">{{ _("Fit") }}</button>
                     <button title="Toggle extended crosshair" onclick="wpd.graphicsWidget.toggleExtendedCrosshairBtn();" style="border:none; width:20px; background-image: url('images/crosshair.png'); background-repeat: no-repeat; background-position: center;" id="extended-crosshair-btn">&nbsp;</button>
                 </div>
-
             </div>
 
             <div style="display: flex;">
-                <div id="left-side-container" style="width:200px; flex: 0 0 169px;">
+                <div id="left-side-container" style="width:200px; padding-right: 5px; flex: 0 0 169px; border-right: thin lightgrey solid;">
                     <!-- tree control -->
                     {% include "_tree.html" %}
                 </div>
@@ -121,7 +119,7 @@
             </div>
 
             <div id="zoom-settings-container"><input type="button" id="zoom-settings-button" title="Change zoom settings" value="&#9881;" onclick="wpd.zoomView.showSettingsWindow();" /></div>
-
+            
             <div style="position:relative;" id="sidebarControlsContainer">
                 <!-- side bars go here -->
                 {% include "_sidebars.html" %}

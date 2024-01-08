@@ -2,6 +2,19 @@
 <div id="shadow" style="width:100%; height:100%; background-color: rgba(0,0,0,0.3); position:absolute; top:0px; left:0px; z-index:50; visibility:hidden;">
 </div>
 
+<!-- Welcome -->
+<div id="welcome" class="popup" style="width: 400px;">
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Welcome to WebPlotDigitizer Lite") }}</p>
+    </div>
+    <div class="popup-body">
+        <p>{{ _("Click <em>Axes > Add Calibration</em> to get started extracting data.") }}</p>
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('welcome');" />
+    </div>
+</div>
+
 <!-- Load Image -->
 <div id="loadNewImage" class="popup" style="width: 400px;">
     <div class="popup-heading">
@@ -157,15 +170,13 @@
 </div>
 
 <!-- XY Alignment -->
-<div id="xyAlignment" class="popup" style="width: 600px;">
+<div id="xyAlignment" class="popup" style="width: 550px;">
     <div class="popup-heading">
         <p class="popup-title">{{ _("X and Y Axes Calibration") }}</p>
     </div>
     <div class="popup-body">
         <p>&nbsp;</p>
-        <p style="text-align: center;">{{ _("Enter the <b>X-values</b> of the two <b>points clicked on X-axis</b> and") }}</p>
-        <p style="text-align: center;">{{ _("the <b>Y-values</b> of the two <b>points clicked on the Y-axis</b>") }}</p>
-        <p>&nbsp;</p>
+        <p style="text-align: center;">{{ _("Enter the <b>X-values</b> of the two <b>points clicked on X-axis</b>:") }}</p>
         <center>
             <table padding="10">
                 <tr>
@@ -175,12 +186,17 @@
                     <td align="center" valign="bottom" width="82">{{ _("Log Scale") }}</td>
                 </tr>
                 <tr>
-                    <td align="center">{{ _("X-Value") }}:</td>
+                    <td align="center">{{ _("X-Value: ") }}</td>
                     <td align="center"><input type="text" size="8" id="xmin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(0);" /></td>
                     <td align="center"><input type="text" size="8" id="xmax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(1);" /></td>
                     <td align="center"><input type="checkbox" id="xlog"></td>
                 </tr>
-                <tr><td><br></td></tr>
+            </table>
+        </center>
+        <br />
+        <p style="text-align: center;">{{ _("Enter the <b>Y-values</b> of the two <b>points clicked on the Y-axis</b>:") }}</p>
+        <center>
+            <table padding="10">
                 <tr>
                     <td></td>
                     <td align="center" valign="bottom">{{ _("Y1") }}</td>
@@ -188,23 +204,24 @@
                     <td align="center" valign="bottom" width="82">{{ _("Log Scale") }}</td>
                 </tr>
                 <tr>
-                    <td align="center">{{ _("Y-Value") }}:</td>
+                    <td align="center">{{ _("Y-Value: ") }}</td>
                     <td align="center"><input type="text" size="8" id="ymin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(2);" /></td>
                     <td align="center"><input type="text" size="8" id="ymax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(3);" /></td>
                     <td align="center"><input type="checkbox" id="ylog" /></td>
                 </tr>
             </table>
-            <br />
-            <label class="centered">
-                <input type="checkbox" id="xy-axes-no-rotation" />
-                <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                    <p style="text-align: start;">Assume axes are perfectly aligned with image coordinates <br /> (skip rotation correction)</p>
-                </div>
-            </label>
-            <br />
-            <p align="center" class="footnote">{{ _("*For <em>dates</em>, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes (e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15). For <em>exponents</em>, enter values as 1e-3 for 10^-3.") }}</p>
-            <p>&nbsp;</p>
         </center>
+        <br />
+        <br />
+        <label class="centered">
+            <input type="checkbox" id="xy-axes-no-rotation" />
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                <p style="text-align: start; margin-left: 5px;">Assume axes are perfectly aligned with image coordinates <br /> (skip rotation correction)</p>
+            </div>
+        </label>
+        <br />
+        <p align="center" class="footnote">{{ _("*For <em>dates</em>, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes (e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15). For <em>exponents</em>, enter values as 1e-3 for 10^-3.") }}</p>
+        <p>&nbsp;</p>
     </div>
     <div class="popup-footer-center">
         <input type="button" id="xybtn" class="popup-action" value='{{ _("Finish") }}' onclick="wpd.alignAxes.align();" />
@@ -572,7 +589,7 @@
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('export-json-window');" />
         <input type="button" value='{{ _("Download JSON (.json)") }}' class="popup-action" onclick="wpd.saveResume.downloadJSON();" style="margin-right: 10px;"/>
         <input type="button" value='{{ _("Download Project File (.tar)") }}' class="popup-action" onclick="wpd.saveResume.downloadProject();" />
-    </p>
+    </div>
 </div>
 
 <!-- Import JSON -->
