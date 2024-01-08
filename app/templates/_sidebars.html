@@ -180,16 +180,21 @@
 
 <!-- image editing sidebar -->
 <div id="image-editing-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Image Editing") }}</p>
-    <br />
+    <p class="sidebar-title"><i class="fa-solid fa-pen-to-square"></i>{{ _(" Image Editing") }}</p>
     <center>
         <p align="center">
-            <input type="button" value="{{ _("Undo") }}" style="width: 120px;" onclick="wpd.imageEditing.undo()" id="image-editing-undo" />
-            <input type="button" value="{{ _("Redo") }}" style="width: 120px;" onclick="wpd.imageEditing.redo()" id="image-editing-redo" />
+            <button type="button" style="width: 120px;" onclick="wpd.imageEditing.undo()" id="image-editing-undo">
+                <i class="fa-solid fa-rotate-left"></i>
+                {{ _(" Undo") }}
+            </button>
+            <button type="button" style="width: 120px;" onclick="wpd.imageEditing.redo()" id="image-editing-redo">
+                {{ _("Redo ") }}
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
         </p>
         <br />
         <p align="center">
-            <input type="button" value="{{ _("Crop") }}" style="width: 120px;" onclick="wpd.imageEditing.startImageCrop()" id="image-editing-crop" />
+            <input type="button" value='{{ _("Crop") }}' style="width: 120px;" onclick="wpd.imageEditing.startImageCrop()" id="image-editing-crop" />
             <!-- <input type="button" value="{{ _("Fix Perspective") }}" style="width: 120px;" onclick="wpd.imageEditing.startPerspective()" id="image-editing-perspective" /> -->
         </p>
         <!--
@@ -198,6 +203,10 @@
             <input type="button" value="{{ _("?") }}" style="width: 120px;" onclick="" id="image-editing-misc" />
         </p>
         -->
-        <p><span id="image-editing-crop-info">Click and drag to mark the crop region. Press Enter to complete cropping, Esc to cancel</span></p>
+        <p>
+            <div id="image-editing-crop-info">Click and drag to mark the crop region.</div>
+            <div id="image-editing-crop-info">Press <em>Enter</em> to complete cropping.</div>
+            <div id="image-editing-crop-info">Press <em>Esc</em> to cancel.</div>
+        </p>
     </center>
 </div>

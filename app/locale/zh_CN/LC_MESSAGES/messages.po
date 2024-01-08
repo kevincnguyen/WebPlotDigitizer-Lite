@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  WebPlotDigitizer\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-07 22:56-0800\n"
+"POT-Creation-Date: 2024-01-08 00:42-0800\n"
 "PO-Revision-Date: 2018-02-21 00:47-0600\n"
 "Last-Translator: RGXGR <rgxgr@outlook.com>\n"
 "Language: zh_Hans_CN\n"
@@ -248,7 +248,7 @@ msgid "Map With Scale Bar"
 msgstr ""
 
 #: templates/_popups.html:157 templates/_strings.html:58
-#: templates/_strings.html:72 templates/_tree.html:8
+#: templates/_strings.html:72
 msgid "Image"
 msgstr ""
 
@@ -1087,30 +1087,30 @@ msgid "Visit GitHub"
 msgstr ""
 
 #: templates/_sidebars.html:183
-msgid "Image Editing"
-msgstr ""
-
-#: templates/_sidebars.html:187
-msgid "Undo"
+msgid " Image Editing"
 msgstr ""
 
 #: templates/_sidebars.html:188
-msgid "Redo"
+msgid " Undo"
 msgstr ""
 
-#: templates/_sidebars.html:192
-msgid "Crop"
-msgstr ""
-
-#: templates/_sidebars.html:193
-msgid "Fix Perspective"
+#: templates/_sidebars.html:191
+msgid "Redo "
 msgstr ""
 
 #: templates/_sidebars.html:197
-msgid "Rotate"
+msgid "Crop"
 msgstr ""
 
 #: templates/_sidebars.html:198
+msgid "Fix Perspective"
+msgstr ""
+
+#: templates/_sidebars.html:202
+msgid "Rotate"
+msgstr ""
+
+#: templates/_sidebars.html:203
 msgid "?"
 msgstr ""
 
@@ -1308,16 +1308,16 @@ msgstr ""
 msgid "Specify a valid number of datasets to add!"
 msgstr ""
 
-#: templates/_strings.html:51 templates/_tree.html:34
+#: templates/_strings.html:51
 msgid "Datasets"
 msgstr ""
 
-#: templates/_strings.html:52 templates/_tree.html:42
+#: templates/_strings.html:52
 msgid "Measurements"
 msgstr ""
 
-#: templates/_strings.html:53 templates/_tree.html:15 templates/_tree.html:25
-#: templates/_tree.html:53 templates/_tree.html:67 templates/_tree.html:84
+#: templates/_strings.html:53 templates/_tree.html:53 templates/_tree.html:67
+#: templates/_tree.html:84
 msgid "Axes"
 msgstr ""
 
@@ -1425,6 +1425,14 @@ msgstr ""
 msgid "View Keyboard Shortcuts"
 msgstr ""
 
+#: templates/_tree.html:8
+msgid " Image"
+msgstr ""
+
+#: templates/_tree.html:15 templates/_tree.html:25
+msgid " Axes"
+msgstr ""
+
 #: templates/_tree.html:17
 msgid "Add Calibration"
 msgstr ""
@@ -1449,8 +1457,16 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
+#: templates/_tree.html:34
+msgid " Datasets"
+msgstr ""
+
 #: templates/_tree.html:37
 msgid "Export All Data"
+msgstr ""
+
+#: templates/_tree.html:42
+msgid " Measurements"
 msgstr ""
 
 #: templates/_tree.html:54
@@ -2939,5 +2955,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Enter the <b>X-values</b> of the two <b>points clicked on X-axis</b>"
+#~ msgstr ""
+
+#~ msgid " Redo"
 #~ msgstr ""
 

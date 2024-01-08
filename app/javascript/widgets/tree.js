@@ -52,17 +52,26 @@ wpd.TreeWidget = class {
                 let itemPath = basePath + "/" + item;
                 htmlStr += "<li title=\"" + item + "\">";
                 let itemColor = this.itemColors[itemPath];
+                htmlStr += "<span class=\"tree-item\" id=\"tree-item-id-" + this.itemCount + "\">";
                 if (typeof(itemColor) !== 'undefined') {
                     htmlStr += "<div class=\"tree-item-icon\" style=\"background-color: " + itemColor.toRGBString() + ";\"></div>";
+                } else if (item === "Image") {
+                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-regular fa-image\"></i></div>";
                 }
-                htmlStr += "<span class=\"tree-item\" id=\"tree-item-id-" + this.itemCount + "\">" +
-                    item + "</span>";
+                htmlStr += item + "</span>";
                 this.idmap[this.itemCount] = itemPath;
             } else if (typeof(item) === "object") {
                 htmlStr += "<li>";
                 let labelKey = Object.keys(item)[0];
-                htmlStr += "<span class=\"tree-folder\" id=\"tree-item-id-" + this.itemCount +
-                    "\">" + labelKey + "</span>";
+                htmlStr += "<span class=\"tree-folder\" id=\"tree-item-id-" + this.itemCount + "\">";
+                if (labelKey === "Axes") {
+                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-chart-column\"></i></div>";
+                } else if (labelKey === "Datasets") {
+                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-table\"></i></div>";
+                } else if (labelKey === "Measurements") {
+                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-ruler\"></i></div>";
+                }
+                htmlStr += labelKey + "</span>";
                 this.idmap[this.itemCount] = basePath + "/" + labelKey;
                 htmlStr += this._renderFolder(item[labelKey], basePath + "/" + labelKey, true);
             }

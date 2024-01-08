@@ -205,15 +205,24 @@ select {
     border: none;
 }
 
+/* Left Sidebar Styles */
+
 .tree-item {
     cursor: pointer;
-    padding: 2px;
-    margin-bottom: 20px;
+    padding: 10px;
+    display: inline-block;
+    min-width: 145px;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .tree-folder {
     cursor: pointer;
-    padding: 2px;
+    padding: 10px;
+    display: inline-block;
+    min-width: 145px;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .tree-list {
@@ -221,6 +230,10 @@ select {
     padding-left: 15px;
     font-family: sans-serif;
     font-size: 11pt;
+}
+
+.tree-list .tree-item {
+    min-width: 130px;
 }
 
 .tree-list-root {
@@ -265,4 +278,11 @@ select {
     background-color: red;
     display: inline-block;
     margin-right: 3px;
+}
+
+.tree-menu-icon {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 8px;
 }
