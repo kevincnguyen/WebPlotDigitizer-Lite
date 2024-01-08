@@ -52,7 +52,7 @@ td {
 
 /* Landing Page Styles*/
 
-.landing-page {
+#landing-page {
     position: absolute; 
     display: flex;
     flex-direction: row;

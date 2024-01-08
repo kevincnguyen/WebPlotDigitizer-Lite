@@ -1,5 +1,5 @@
 var wpd = wpd || {};
 
 wpd.navigateToApp = function() {
-    document.getElementById('landingPage').style.display = 'none';
+    document.getElementById('landing-page').style.display = 'none';
 }
