@@ -26,10 +26,11 @@ wpd.popup = (function() {
     let $activeWindow = null;
 
     function show(popupid) {
-
-        // Dim lights to make it obvious that these are modal dialog boxes.
-        let shadowDiv = document.getElementById('shadow');
-        shadowDiv.style.visibility = "visible";
+        if (popupid !== "x1PointInfo" && popupid !== "x2PointInfo" && popupid !== "y1PointInfo" && popupid !== "y2PointInfo") {
+            // Dim lights to make it obvious that these are modal dialog boxes.
+            let shadowDiv = document.getElementById('shadow');
+            shadowDiv.style.visibility = "visible";
+        }
 
         // Display the popup
         let pWindow = document.getElementById(popupid);
