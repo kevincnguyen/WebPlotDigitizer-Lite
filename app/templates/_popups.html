@@ -2,13 +2,26 @@
 <div id="shadow" style="width:100%; height:100%; background-color: rgba(0,0,0,0.3); position:absolute; top:0px; left:0px; z-index:50; visibility:hidden;">
 </div>
 
+<!-- Welcome -->
+<div id="welcome" class="popup" style="width: 400px;">
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Welcome to WebPlotDigitizer Lite") }}</p>
+    </div>
+    <div class="popup-body">
+        <p>{{ _("Click <em>Axes > Add Calibration</em> to get started extracting data.") }}</p>
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('welcome');" />
+    </div>
+</div>
+
 <!-- Load Image -->
 <div id="loadNewImage" class="popup" style="width: 400px;">
     <div class="popup-heading">
         <p class="popup-title">{{ _("New Project") }}</p>
         <p class="popup-subtitle">{{ _("Upload graph image file(s)") }}</p>
     </div>
-    <div class="popup-content">
+    <div class="popup-body">
         <p>{{ _("Supported file formats:") }}</p>
         <p>{{ _("JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc.") }}</p>
         <p>&nbsp;</p>
@@ -23,46 +36,60 @@
 
 <!-- Zoom Settings -->
 <div id="zoom-settings-popup" class="popup" style="width: 300px;">
-    <div class="popup-heading">{{ _("Magnified View Settings") }}</div>
-    <p>&nbsp;</p>
-    <center>
-        <table>
-            <tr>
-                <td>
-                    <p>{{ _("Magnification") }}: </p>
-                </td>
-                <td>
-                    <p><input type="text" id="zoom-magnification-value" size="3" />{{ _("Times") }}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>{{ _("Crosshair Color") }}: </p>
-                </td>
-                <td>
-                    <p>
-                        <select id="zoom-crosshair-color-value">
-                            <option value="black">{{ _("Black") }}</option>
-                            <option value="red">{{ _("Red") }}</option>
-                            <option value="yellow">{{ _("Yellow") }}</option>
-                        </select>
-                </td>
-            </tr>
-        </table>
-    </center>
-    <p>&nbsp;</p>
-    <p align="center"><input type="button" value="Apply" onclick="wpd.zoomView.applySettings();" /> <input type="button" value="{{ _("Cancel") }}" onclick="wpd.popup.close('zoom-settings-popup');" /></p>
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Magnified View Settings") }}</p>
+    </div>
+    <div class="popup-body">
+        <p>&nbsp;</p>
+        <center>
+            <table>
+                <tr>
+                    <td>
+                        <p>{{ _("Magnification") }}: </p>
+                    </td>
+                    <td>
+                        <p><input type="text" id="zoom-magnification-value" size="3" />{{ _(" Times") }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>{{ _("Crosshair Color") }}: </p>
+                    </td>
+                    <td>
+                        <p>
+                            <select id="zoom-crosshair-color-value">
+                                <option value="black">{{ _("Black") }}</option>
+                                <option value="red">{{ _("Red") }}</option>
+                                <option value="yellow">{{ _("Yellow") }}</option>
+                            </select>
+                    </td>
+                </tr>
+            </table>
+        </center>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popup-footer">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('zoom-settings-popup');" />
+        <input type="button" value="Apply" class="popup-action" onclick="wpd.zoomView.applySettings();" /> 
+    </div>
 </div>
 
 <!-- Run Script -->
 <div id="runScriptPopup" class="popup" style="width: 500px;">
-    <div class="popup-heading">{{ _("Run Script") }}</div>
-    <p align="left">{{ _("Load a Javascript file to further extend the capabilities of WebPlotDigitizer.") }}</p>
-    <p align="left">{{ _("For examples, visit the") }} <a href="https://github.com/ankitrohatgi/WebPlotDigitizer/tree/master/script_examples" target="_blank">{{ _("WebPlotDigitizer repository") }}</a>.</p>
-    <p>&nbsp;</p>
-    <p align="center"><input type="file" id="runScriptFileInput" /></p>
-    <p>&nbsp;</p>
-    <p align="center"><input type="button" value="{{ _("Run") }}" onclick="wpd.scriptInjector.load();" /> <input type="button" value="{{ _("Cancel") }}" onclick="wpd.scriptInjector.cancel();" /></p>
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Run Script") }}</p>
+    </div>
+    <div class="popup-body">
+        <p align="left">{{ _("Load a Javascript file to further extend the capabilities of WebPlotDigitizer.") }}</p>
+        <p align="left">{{ _("For examples, visit the") }} <a href="https://github.com/ankitrohatgi/WebPlotDigitizer/tree/master/script_examples" target="_blank">{{ _("WebPlotDigitizer repository") }}</a>.</p>
+        <p>&nbsp;</p>
+        <p align="center"><input type="file" id="runScriptFileInput" /></p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.scriptInjector.cancel();" />
+        <input type="button" value='{{ _("Run") }}' class="popup-action" onclick="wpd.scriptInjector.load();" /> 
+    </div>
 </div>
 
 <!-- Webcam Capture -->
@@ -78,24 +105,28 @@
     <div class="popup-heading">
         <p id="message-popup-heading" class="popup-title"></p>
     </div>
-    <div class="popup-content">
+    <div class="popup-body">
         <p>&nbsp;</p>
         <p align="center" id="message-popup-text"></p>
         <p>&nbsp;</p>
     </div>
-    <div class="popup-footer-center"><input type="button" value='{{ _("OK") }}' class="popup-action" onclick="wpd.messagePopup.close()" /></div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("OK") }}' class="popup-action" onclick="wpd.messagePopup.close()" />
+    </div>
 </div>
 
 <!-- Generic Ok/Cancel Popup -->
 <div id="okCancelPopup" class="popup" style="width: 400px; z-index: 110;">
     <div id="ok-cancel-popup-heading" class="popup-heading"></div>
-    <p>&nbsp;</p>
-    <p align="center" id="ok-cancel-popup-text"></p>
-    <p>&nbsp;</p>
-    <p align="center">
-        <input id="ok-cancel-popup-ok-button" type="button" onclick="wpd.okCancelPopup.ok()" />
-        <input id="ok-cancel-popup-cancel-button" type="button" onclick="wpd.okCancelPopup.cancel()" />
-    </p>
+    <div class="popup-body">
+        <p>&nbsp;</p>
+        <p align="center" id="ok-cancel-popup-text"></p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popup-footer-center">
+        <input id="ok-cancel-popup-cancel-button" type="button" class="popup-cancel" onclick="wpd.okCancelPopup.cancel()" />
+        <input id="ok-cancel-popup-ok-button" type="button" class="popup-action" onclick="wpd.okCancelPopup.ok()" />
+    </div>
 </div>
 
 <!-- Choose axes type -->
@@ -103,7 +134,7 @@
     <div class="popup-heading">
         <p class="popup-title">{{ _("Choose Plot Type") }}</p>
     </div>
-    <div class="popup-content">
+    <div class="popup-body">
         <p>&nbsp;</p>
         <center>
             <table>
@@ -139,15 +170,13 @@
 </div>
 
 <!-- XY Alignment -->
-<div id="xyAlignment" class="popup" style="width: 600px;">
+<div id="xyAlignment" class="popup" style="width: 550px;">
     <div class="popup-heading">
         <p class="popup-title">{{ _("X and Y Axes Calibration") }}</p>
     </div>
-    <div class="popup-content">
+    <div class="popup-body">
         <p>&nbsp;</p>
-        <p style="text-align: center;">{{ _("Enter the <b>X-values</b> of the two <b>points clicked on X-axis</b> and") }}</p>
-        <p style="text-align: center;">{{ _("the <b>Y-values</b> of the two <b>points clicked on the Y-axis</b>") }}</p>
-        <p>&nbsp;</p>
+        <p style="text-align: center;">{{ _("Enter the <b>X-values</b> of the two <b>points clicked on X-axis</b>:") }}</p>
         <center>
             <table padding="10">
                 <tr>
@@ -157,12 +186,17 @@
                     <td align="center" valign="bottom" width="82">{{ _("Log Scale") }}</td>
                 </tr>
                 <tr>
-                    <td align="center">{{ _("X-Value") }}:</td>
+                    <td align="center">{{ _("X-Value: ") }}</td>
                     <td align="center"><input type="text" size="8" id="xmin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(0);" /></td>
                     <td align="center"><input type="text" size="8" id="xmax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(1);" /></td>
                     <td align="center"><input type="checkbox" id="xlog"></td>
                 </tr>
-                <tr><td><br></td></tr>
+            </table>
+        </center>
+        <br />
+        <p style="text-align: center;">{{ _("Enter the <b>Y-values</b> of the two <b>points clicked on the Y-axis</b>:") }}</p>
+        <center>
+            <table padding="10">
                 <tr>
                     <td></td>
                     <td align="center" valign="bottom">{{ _("Y1") }}</td>
@@ -170,23 +204,24 @@
                     <td align="center" valign="bottom" width="82">{{ _("Log Scale") }}</td>
                 </tr>
                 <tr>
-                    <td align="center">{{ _("Y-Value") }}:</td>
+                    <td align="center">{{ _("Y-Value: ") }}</td>
                     <td align="center"><input type="text" size="8" id="ymin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(2);" /></td>
                     <td align="center"><input type="text" size="8" id="ymax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(3);" /></td>
                     <td align="center"><input type="checkbox" id="ylog" /></td>
                 </tr>
             </table>
-            <br />
-            <label class="centered">
-                <input type="checkbox" id="xy-axes-no-rotation" />
-                <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                    <p style="text-align: start;">Assume axes are perfectly aligned with image coordinates <br /> (skip rotation correction)</p>
-                </div>
-            </label>
-            <br />
-            <p align="center" class="footnote">{{ _("*For <em>dates</em>, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes (e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15). For <em>exponents</em>, enter values as 1e-3 for 10^-3.") }}</p>
-            <p>&nbsp;</p>
         </center>
+        <br />
+        <br />
+        <label class="centered">
+            <input type="checkbox" id="xy-axes-no-rotation" />
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                <p style="text-align: start; margin-left: 5px;">Assume axes are perfectly aligned with image coordinates <br /> (skip rotation correction)</p>
+            </div>
+        </label>
+        <br />
+        <p align="center" class="footnote">{{ _("*For <em>dates</em>, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes (e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15). For <em>exponents</em>, enter values as 1e-3 for 10^-3.") }}</p>
+        <p>&nbsp;</p>
     </div>
     <div class="popup-footer-center">
         <input type="button" id="xybtn" class="popup-action" value='{{ _("Finish") }}' onclick="wpd.alignAxes.align();" />
@@ -385,7 +420,7 @@
     <div class="popup-heading">
         <p class="popup-title">{{ _("Align X-Y Axes") }}</p>
     </div>
-    <div class="popup-content">
+    <div class="popup-body">
         <p>&nbsp;</p>
         <p align="center"><img src="images/xyaxes.png" /></p>
         <br />
@@ -400,23 +435,35 @@
 </div>
 
 <!-- XY Axes Select X1 Instruction -->
-<div id="x1PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>x-axis</b> (X1)</p>
+<div id="x1PointInfo" class="popup" style="border: 1px solid black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Select a point on the <b>x-axis</b> (X1)
+    </p>
 </div>
 
 <!-- XY Axes Select X2 Instruction -->
-<div id="x2PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>x-axis</b> (X2)</p>
+<div id="x2PointInfo" class="popup" style="border: 1px solid black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Select a second point on the <b>x-axis</b> (X2)
+    </p>
 </div>
 
 <!-- XY Axes Select Y1 Instruction -->
-<div id="y1PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>y-axis</b> (Y1)</p>
+<div id="y1PointInfo" class="popup" style="border: 1px solid black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Select a point on the <b>y-axis</b> (Y1)
+    </p>
 </div>
 
 <!-- XY Axes Select Y2 Instruction -->
-<div id="y2PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>y-axis</b> (Y2)</p>
+<div id="y2PointInfo" class="popup" style="border: 1px solid black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Select a second point on the <b>y-axis</b> (Y2)
+    </p>
 </div>
 
 <!-- Bar Chart Axes Calibration Intructions -->
@@ -477,16 +524,25 @@
 
 <!-- About WPD -->
 <div id="helpWindow" class="popup" style="width: 600px;">
-    <div class="popup-heading">{{ _("WebPlotDigitizer - Web Based Plot Digitizer") }}</div>
-    <p>&nbsp;</p>
-    <p align="center">{{ _("Version") }} {{ wpdVersion }}</p>
-    <p align="center">{{ _("This program is distributed under the <a href=\"https://www.gnu.org/licenses/agpl-3.0-standalone.html\" target=\"_blank\">GNU Affero General Public License Version 3</a>.") }}</p>
-    <p align="center">{{ _("Copyright") }} 2010-2022 Ankit Rohatgi &lt;ankitrohatgi@hotmail.com&gt;</p>
-    <p align="center"><a href="https://github.com/ankitrohatgi/WebPlotDigitizer/graphs/contributors" target="_blank">{{ _("List of Contributors") }}</a></p>
-    <p>&nbsp;</p>
-    <p align="center"><a href="https://automeris.io/WebPlotDigitizer" target="website">https://automeris.io/WebPlotDigitizer</a></p>
-    <p>&nbsp;</p>
-    <p align="center"><input type="button" value="{{ _("Close") }}" onclick="wpd.popup.close('helpWindow');"></p>
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("WebPlotDigitizer Lite") }}</p>
+        <p class="popup-subtitle">{{ _("A web-based plot digitizer based off the original WebPlotDigitizer") }}</p>
+    </div>
+    <div class="popup-body">
+        <p>&nbsp;</p>
+        <p align="center">{{ _("WebPlotDigitizer Lite uses the following version of WebPlotDigitizer:") }}</p>
+        <br />
+        <p align="center">{{ _("Version") }} {{ wpdVersion }}</p>
+        <p align="center">{{ _("This program is distributed under the <a href='https://www.gnu.org/licenses/agpl-3.0-standalone.html' target='_blank'>GNU Affero General Public License Version 3</a>.") }}</p>
+        <p align="center">{{ _("Copyright") }} 2010-2022 Ankit Rohatgi &lt;ankitrohatgi@hotmail.com&gt;</p>
+        <p align="center"><a href="https://github.com/ankitrohatgi/WebPlotDigitizer/graphs/contributors" target="_blank">{{ _("List of Contributors") }}</a></p>
+        <p>&nbsp;</p>
+        <p align="center"><a href="https://automeris.io/WebPlotDigitizer" target="website">https://automeris.io/WebPlotDigitizer</a></p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popup-footer-center"> 
+        <input type="button" value='{{ _("Close") }}' class="popup-action" onclick="wpd.popup.close('helpWindow');" />
+    </div>
 </div>
 
 <!-- Color Selection -->
@@ -518,17 +574,22 @@
 </div>
 
 <!-- Export JSON -->
-<div id="export-json-window" class="popup" style="width:500px;">
-    <div class="popup-heading">{{ _("Export JSON or Project File") }}</div>
-    <p>{{ _("Export a JSON file containing the axes calibrations, digitized data and measurements. This JSON file can be loaded to resume work at a later time. You can also download a combined 'project file' which includes this JSON and also the image in a single TAR file.") }}</p>
-    <br />
-    <p align="center">Project name: <input type="text" value="wpd_project" id="project-name-input" />.json/.tar</p>
-    <br />
-    <p align="center">
-        <input type="button" value="{{ _("Download JSON") }}" onclick="wpd.saveResume.downloadJSON();" />
-        <input type="button" value="{{ _("Download Project File (.tar)") }}" onclick="wpd.saveResume.downloadProject();" />
-        <input type="button" value="{{ _("Cancel") }}" onclick="wpd.popup.close('export-json-window');" />
-    </p>
+<div id="export-json-window" class="popup" style="width:550px;">
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Export JSON or Project File") }}</p>
+    </div>
+    <div class="popup-body">
+        <p>{{ _("Export a JSON file containing the axes calibrations, digitized data and measurements. This JSON file can be loaded to resume work at a later time.") }}</p>
+        <p>{{ _("You can also download a combined 'project file' which includes this JSON and also the image in a single TAR file.") }}</p>
+        <br />
+        <p align="center">Project Name: <input type="text" value="wpd_project" id="project-name-input" />.json/.tar</p>
+        <br />
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('export-json-window');" />
+        <input type="button" value='{{ _("Download JSON (.json)") }}' class="popup-action" onclick="wpd.saveResume.downloadJSON();" style="margin-right: 10px;"/>
+        <input type="button" value='{{ _("Download Project File (.tar)") }}' class="popup-action" onclick="wpd.saveResume.downloadProject();" />
+    </div>
 </div>
 
 <!-- Import JSON -->
@@ -537,7 +598,7 @@
        <p class="popup-title">{{ _("Import Project") }}</p> 
        <p class="popup-subtitle">{{ _("Load a previously exported JSON or project file (.tar)") }}</p>
     </div>
-    <div class="popup-content">
+    <div class="popup-body">
         <p>{{ _("This will clear any unsaved data in the current plot.") }}</p>
         <p>&nbsp;</p>
         <p align="center">{{ _("JSON/Project File") }}: <input type="file" id="import-json-file" /></p>
@@ -696,7 +757,7 @@
     <div class="popup-heading">
         <p class="popup-title">{{ _("Image Info") }}</p>
     </div>
-    <div class="popup-content">
+    <div class="popup-body">
         <br />
         <p>Dimensions: <span id="image-info-dimensions"></span> pixels</p>
         <p class="paged" hidden>Pages: <span id="image-info-pages"></span> pages</p>
