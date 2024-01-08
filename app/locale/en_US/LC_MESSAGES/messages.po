@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-07 16:23-0800\n"
+"POT-Creation-Date: 2024-01-07 17:35-0800\n"
 "PO-Revision-Date: 2016-12-12 23:09-0600\n"
 "Last-Translator: \n"
 "Language: en_US\n"
@@ -42,19 +42,19 @@ msgstr ""
 msgid "Convert images of graphs into data points"
 msgstr ""
 
-#: templates/_base.html:64 templates/_menubar.html:5
+#: templates/_base.html:63 templates/_menubar.html:5
 msgid "Load Image(s)"
 msgstr ""
 
-#: templates/_base.html:68 templates/_menubar.html:6
+#: templates/_base.html:67 templates/_menubar.html:6
 msgid "Load Project"
 msgstr ""
 
-#: templates/_base.html:72
+#: templates/_base.html:71
 msgid "Explore Demo"
 msgstr ""
 
-#: templates/_base.html:99
+#: templates/_base.html:102
 msgid "Fit"
 msgstr ""
 
