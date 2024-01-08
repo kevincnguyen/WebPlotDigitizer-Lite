@@ -280,7 +280,7 @@ select {
 
 .popup-title {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .popup-subtitle {
@@ -294,7 +294,17 @@ select {
 
 .popupfooter {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+    margin: 0px -5px;
+    padding: 10px;
+    background-color: var(--light-gray);
+}
+
+.popupfooter-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0px -5px;
     padding: 10px;
     background-color: var(--light-gray);
@@ -330,10 +340,22 @@ select {
     display: none;
 }
 
+.centered {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .sidebar-title {
+    text-align: center;
     background: #ddd;
     color: black;
     padding: 2px;
+}
+
+.sidebar-body {
+    text-align: center;
 }
 
 .sidebar {

@@ -22,6 +22,7 @@ var wpd = wpd || {};
 
 wpd.AxesCornersTool = (function() {
     var Tool = function(calibration, reloadTool) {
+        const xyLabels = ['X1', 'X2', 'Y1', 'Y2'];
         var pointCount = 0,
             _calibration = calibration,
             isCapturingCorners = true;
@@ -33,10 +34,27 @@ wpd.AxesCornersTool = (function() {
             pointCount = 0;
             isCapturingCorners = true;
             wpd.graphicsWidget.resetData();
+            if (_calibration.labels.every(label => xyLabels.includes(label))) {
+                wpd.popup.show('x1PointInfo');
+            }
         }
 
         this.onMouseClick = function(ev, pos, imagePos) {
             if (isCapturingCorners) {
+                if (_calibration.labels.every(label => xyLabels.includes(label))) {
+                    if (pointCount == 0) {
+                        wpd.popup.close('x1PointInfo');
+                        wpd.popup.show('x2PointInfo');
+                    } else if (pointCount == 1) {
+                        wpd.popup.close('x2PointInfo');
+                        wpd.popup.show('y1PointInfo');
+                    } else if (pointCount == 2) {
+                        wpd.popup.close('y1PointInfo');
+                        wpd.popup.show('y2PointInfo');
+                    } else if (pointCount == 3) {
+                        wpd.popup.close('y2PointInfo');
+                    }
+                }
                 pointCount = pointCount + 1;
 
                 _calibration.addPoint(imagePos.x, imagePos.y, 0, 0);

@@ -12,7 +12,7 @@
         <p>{{ _("Supported file formats:") }}</p>
         <p>{{ _("JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc.") }}</p>
         <p>&nbsp;</p>
-        <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load();" /></p>
+        <p align="center"><input type="file" id="fileLoadBox" multiple /></p>
         <p>&nbsp;</p>
     </div>
     <div class="popupfooter">
@@ -75,11 +75,15 @@
 
 <!-- Generic Message Popup -->
 <div id="messagePopup" class="popup" style="width: 400px;">
-    <div id="message-popup-heading" class="popupheading"></div>
-    <p>&nbsp;</p>
-    <p align="center" id="message-popup-text"></p>
-    <p>&nbsp;</p>
-    <p align="center"><input type="button" value="{{ _("OK") }}" onclick="wpd.messagePopup.close()" /></p>
+    <div class="popupheading">
+        <p id="message-popup-heading" class="popup-title"></p>
+    </div>
+    <div class="popup-content">
+        <p>&nbsp;</p>
+        <p align="center" id="message-popup-text"></p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popupfooter-center"><input type="button" value='{{ _("OK") }}' class="popup-action" onclick="wpd.messagePopup.close()" /></div>
 </div>
 
 <!-- Generic Ok/Cancel Popup -->
@@ -96,70 +100,97 @@
 
 <!-- Choose axes type -->
 <div id="axesList" class="popup" style="width: 400px;">
-    <div class="popupheading">{{ _("Choose Plot Type") }}</div>
-    <p>&nbsp;</p>
-    <center>
-        <table>
-            <tr>
-                <td align="left"><label><input type="radio" name="plotlisting" id="r_xy" checked> {{ _("2D (X-Y) Plot") }}</label></td>
-            </tr>
-            <tr>
-                <td align="left"><label><input type="radio" name="plotlisting" id="r_bar"> {{ _("2D Bar Plot") }}</label></td>
-            </tr>
-            <tr>
-                <td align="left"><label><input type="radio" name="plotlisting" id="r_polar"> {{ _("Polar Diagram") }}</label></td>
-            </tr>
-            <tr>
-                <td align="left"><label><input type="radio" name="plotlisting" id="r_ternary"> {{ _("Ternary Diagram") }}</label></td>
-            </tr>
-            <tr>
-                <td align="left"><label><input type="radio" name="plotlisting" id="r_map"> {{ _("Map With Scale Bar") }}</label></td>
-            </tr>
-            <tr>
-                <td align="left"><label><input type="radio" name="plotlisting" id="r_image"> {{ _("Image") }}</label></td>
-            </tr>
-            <tr>
-                <td align="left"><label><input type="radio" name="plotlisting" id="r_circular_chart_recorder"> {{ _("Circular Chart Recorder") }}</label></td>
-            </tr>
-        </table>
-    </center>
-    <p>&nbsp;</p>
-    <p align="center"><input type="button" value="{{ _("Align Axes") }}" onclick="wpd.alignAxes.start();">&nbsp;<input type="button" value="{{ _("Cancel") }}" onClick="wpd.popup.close('axesList');"></p>
+    <div class="popupheading">
+        <p class="popup-title">{{ _("Choose Plot Type") }}</p>
+    </div>
+    <div class="popup-content">
+        <p>&nbsp;</p>
+        <center>
+            <table>
+                <tr>
+                    <td align="left"><label><input type="radio" name="plotlisting" id="r_xy" checked> {{ _("2D (X-Y) Plot") }}</label></td>
+                </tr>
+                <tr>
+                    <td align="left"><label><input type="radio" name="plotlisting" id="r_bar"> {{ _("2D Bar Plot") }}</label></td>
+                </tr>
+                <tr>
+                    <td align="left"><label><input type="radio" name="plotlisting" id="r_polar"> {{ _("Polar Diagram") }}</label></td>
+                </tr>
+                <tr>
+                    <td align="left"><label><input type="radio" name="plotlisting" id="r_ternary"> {{ _("Ternary Diagram") }}</label></td>
+                </tr>
+                <tr>
+                    <td align="left"><label><input type="radio" name="plotlisting" id="r_map"> {{ _("Map With Scale Bar") }}</label></td>
+                </tr>
+                <tr>
+                    <td align="left"><label><input type="radio" name="plotlisting" id="r_image"> {{ _("Image") }}</label></td>
+                </tr>
+                <tr>
+                    <td align="left"><label><input type="radio" name="plotlisting" id="r_circular_chart_recorder"> {{ _("Circular Chart Recorder") }}</label></td>
+                </tr>
+            </table>
+        </center>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popupfooter-center">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onClick="wpd.popup.close('axesList');" />
+        <input type="button" value='{{ _("Align Axes") }}' class="popup-action" onclick="wpd.alignAxes.start();" />
+    </div>
 </div>
 
 <!-- XY Alignment -->
 <div id="xyAlignment" class="popup" style="width: 600px;">
-    <div class="popupheading">{{ _("X and Y Axes Calibration") }}</div>
-    <p>&nbsp;</p>
-    <p align="center">{{ _("Enter X-values of the two points clicked on X-axis and Y-values of the two points clicked on Y-axes") }}</p>
-    <center>
-        <table padding="10">
-            <tr>
-                <td></td>
-                <td align="center" valign="bottom">{{ _("Point 1") }}</td>
-                <td align="center" valign="bottom" width="80">{{ _("Point 2") }}</td>
-                <td align="center" valign="bottom" width="82">{{ _("Log Scale") }}</td>
-            </tr>
-            <tr>
-                <td align="center">{{ _("X-Axis") }}:</td>
-                <td align="center"><input type="text" size="8" id="xmin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(0);" /></td>
-                <td align="center"><input type="text" size="8" id="xmax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(1);" /></td>
-                <td align="center"><input type="checkbox" id="xlog"></td>
-            </tr>
-            <tr>
-                <td align="center">{{ _("Y-Axis") }}:</td>
-                <td align="center"><input type="text" size="8" id="ymin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(2);" /></td>
-                <td align="center"><input type="text" size="8" id="ymax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(3);" /></td>
-                <td align="center"><input type="checkbox" id="ylog" /></td>
-            </tr>
-        </table>
-        <br />
-        <p align="center"><label><input type="checkbox" id="xy-axes-no-rotation" />{{ _("Assume axes are perfectly aligned with image coordinates (skip rotation correction)") }}</label></p>
-        <br />
-        <p align="center" class="footnote">{{ _("*For dates, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes (e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15). For exponents, enter values as 1e-3 for 10^-3.") }}</p>
+    <div class="popupheading">
+        <p class="popup-title">{{ _("X and Y Axes Calibration") }}</p>
+    </div>
+    <div class="popup-content">
         <p>&nbsp;</p>
-        <p align="center"><input type="button" id="xybtn" value="{{ _("OK") }}" onclick="wpd.alignAxes.align();" /></p>
-    </center>
+        <p style="text-align: center;">{{ _("Enter the <b>X-values</b> of the two <b>points clicked on X-axis</b> and") }}</p>
+        <p style="text-align: center;">{{ _("the <b>Y-values</b> of the two <b>points clicked on the Y-axis</b>") }}</p>
+        <p>&nbsp;</p>
+        <center>
+            <table padding="10">
+                <tr>
+                    <td></td>
+                    <td align="center" valign="bottom">{{ _("X1") }}</td>
+                    <td align="center" valign="bottom" width="80">{{ _("X2") }}</td>
+                    <td align="center" valign="bottom" width="82">{{ _("Log Scale") }}</td>
+                </tr>
+                <tr>
+                    <td align="center">{{ _("X-Value") }}:</td>
+                    <td align="center"><input type="text" size="8" id="xmin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(0);" /></td>
+                    <td align="center"><input type="text" size="8" id="xmax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(1);" /></td>
+                    <td align="center"><input type="checkbox" id="xlog"></td>
+                </tr>
+                <tr><td><br></td></tr>
+                <tr>
+                    <td></td>
+                    <td align="center" valign="bottom">{{ _("Y1") }}</td>
+                    <td align="center" valign="bottom" width="80">{{ _("Y2") }}</td>
+                    <td align="center" valign="bottom" width="82">{{ _("Log Scale") }}</td>
+                </tr>
+                <tr>
+                    <td align="center">{{ _("Y-Value") }}:</td>
+                    <td align="center"><input type="text" size="8" id="ymin" value="0" onfocus="wpd.alignAxes.zoomCalPoint(2);" /></td>
+                    <td align="center"><input type="text" size="8" id="ymax" value="1" onfocus="wpd.alignAxes.zoomCalPoint(3);" /></td>
+                    <td align="center"><input type="checkbox" id="ylog" /></td>
+                </tr>
+            </table>
+            <br />
+            <label class="centered">
+                <input type="checkbox" id="xy-axes-no-rotation" />
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <p style="text-align: start;">Assume axes are perfectly aligned with image coordinates <br /> (skip rotation correction)</p>
+                </div>
+            </label>
+            <br />
+            <p align="center" class="footnote">{{ _("*For <em>dates</em>, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes (e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15). For <em>exponents</em>, enter values as 1e-3 for 10^-3.") }}</p>
+            <p>&nbsp;</p>
+        </center>
+    </div>
+    <div class="popupfooter-center">
+        <input type="button" id="xybtn" class="popup-action" value='{{ _("Finish") }}' onclick="wpd.alignAxes.align();" />
+    </div>
 </div>
 
 <!-- Bar Alignment -->
@@ -350,13 +381,41 @@
 </div>
 
 <!-- XY Axes Calibration Instructions -->
-<div id="xyAxesInfo" class="popup" style="width:400px;">
-    <div class="popupheading">{{ _("Align X-Y Axes") }}</div>
-    <p>&nbsp;</p>
-    <p align="center"><img src="images/xyaxes.png" /></p>
-    <p align="center">{{ _("Click four known points on the axes in the <font color=\"red\">order shown in red</font>. Two on the X axis (X1, X2) and two on the Y axis (Y1, Y2)") }}.</p>
-    <p>&nbsp;</p>
-    <p align="center"><input type="button" value="{{ _("Proceed") }}" onclick="wpd.alignAxes.pickCorners();" /></p>
+<div id="xyAxesInfo" class="popup" style="width:500px;">
+    <div class="popupheading">
+        <p class="popup-title">{{ _("Align X-Y Axes") }}</p>
+    </div>
+    <div class="popup-content">
+        <p>&nbsp;</p>
+        <p align="center"><img src="images/xyaxes.png" /></p>
+        <p align="center">{{ _("Click four known points on the axes in the <font color=\"red\">order shown in red</font>.") }}</p>
+        <p align="center">{{ _("First, select two points on the X axis (X1, X2).") }}</p>
+        <p align="center">{{ _("Second, select two points on the Y axis (Y1, Y2).") }}</p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popupfooter-center">
+        <input type="button" value='{{ _("Proceed") }}' class="popup-action" onclick="wpd.alignAxes.pickCorners();" />
+    </div>
+</div>
+
+<!-- XY Axes Select X1 Instruction -->
+<div id="x1PointInfo" class="popup" style="border: 1px solid black">
+    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>x-axis</b> (X1)</p>
+</div>
+
+<!-- XY Axes Select X2 Instruction -->
+<div id="x2PointInfo" class="popup" style="border: 1px solid black">
+    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>x-axis</b> (X2)</p>
+</div>
+
+<!-- XY Axes Select Y1 Instruction -->
+<div id="y1PointInfo" class="popup" style="border: 1px solid black">
+    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>y-axis</b> (Y1)</p>
+</div>
+
+<!-- XY Axes Select Y2 Instruction -->
+<div id="y2PointInfo" class="popup" style="border: 1px solid black">
+    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>y-axis</b> (Y2)</p>
 </div>
 
 <!-- Bar Chart Axes Calibration Intructions -->
@@ -480,7 +539,7 @@
     <div class="popup-content">
         <p>{{ _("This will clear any unsaved data in the current plot.") }}</p>
         <p>&nbsp;</p>
-        <p align="center">{{ _("JSON/Project File") }}: <input type="file" id="import-json-file" onchange="wpd.saveResume.read();" /></p>
+        <p align="center">{{ _("JSON/Project File") }}: <input type="file" id="import-json-file" /></p>
         <p>&nbsp;</p>
     </div>
     <div class="popupfooter">
@@ -633,14 +692,18 @@
 
 <!-- Image info -->
 <div id="image-info-popup" class="popup" style="width:400px;">
-    <div class="popupheading">{{ _("Image Info") }}</div>
-    <center>
+    <div class="popupheading">
+        <p class="popup-title">{{ _("Image Info") }}</p>
+    </div>
+    <div class="popup-content">
         <br />
         <p>Dimensions: <span id="image-info-dimensions"></span> pixels</p>
         <p class="paged" hidden>Pages: <span id="image-info-pages"></span> pages</p>
         <br />
-        <p><input type="button" value="{{ _("OK") }}" onclick="wpd.popup.close('image-info-popup');" /></p>
-    </center>
+    </div>
+    <div class="popupfooter-center">
+        <input type="button" value='{{ _("OK") }}' class="popup-action" onclick="wpd.popup.close('image-info-popup');" />
+    </div>
 </div>
 
 <!-- Page relabelling -->
