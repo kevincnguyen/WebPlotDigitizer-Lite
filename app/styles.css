@@ -50,7 +50,7 @@ td {
     padding: 0;
 }
 
-/* Landing Page Styles*/
+/* Landing Page Styles */
 
 #landing-page {
     position: absolute; 
@@ -162,7 +162,7 @@ td {
     border: 0;
 }
 
-/* Main App Styles*/
+/* Main App Styles */
 
 #allContainer {
     width: 100%;
@@ -287,7 +287,9 @@ select {
     margin: 0;
 }
 
-.popupheading {
+/* Popup Styles */
+
+.popup-heading {
     font-size: 14px;
     text-align: left;
     cursor: move;
@@ -311,7 +313,7 @@ select {
     padding: 0px 5px;
 }
 
-.popupfooter {
+.popup-footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -320,7 +322,7 @@ select {
     background-color: var(--light-gray);
 }
 
-.popupfooter-center {
+.popup-footer-center {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -358,6 +360,8 @@ select {
     z-index: 5000;
     display: none;
 }
+
+/* Sidebar Styles */
 
 .centered {
     display: flex;
