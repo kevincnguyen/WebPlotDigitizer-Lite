@@ -1,0 +1,23 @@
+<div id="landing-page">
+    <div class="landing-left">
+        <p class="landing-title">{{ _("WebPlotDigitizer Lite") }}</p>
+        <p class="landing-subtitle">{{ _("Convert images of graphs into data points") }}</p>
+        <div class="landing-buttons">
+            <button type="button" class="arrow-button" onclick="wpd.popup.show('loadNewImage');">
+                {{ _("Load Image(s)") }}
+                <span class="arrow"></span>
+            </button>
+            <button type="button" class="arrow-button" onclick="wpd.saveResume.load();">
+                {{ _("Load Project") }}
+                <span class="arrow"></span>
+            </button>
+            <button type="button" class="arrow-button" onclick="wpd.navigateToApp();">
+                {{ _("Explore Demo") }}
+                <span class="arrow"></span>
+            </button>
+        </div>
+    </div>
+    <div class="landing-right">
+        <img src="images/wpd.png" width="800" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)">
+    </div>
+</div>

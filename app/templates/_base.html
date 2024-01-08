@@ -30,8 +30,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>WebPlotDigitizer Lite - Based from WebPlotDigitizer by Ankit Rohatgi Copyright 2010-2023</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>WebPlotDigitizer Lite - Based from WebPlotDigitizer by Ankit Rohatgi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="widgets.css" type="text/css" media="screen" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -54,29 +56,7 @@
     </div>
 
     <!-- landing page -->
-    <div id="landing-page">
-        <div class="landing-left">
-            <p class="landing-title">{{ _("WebPlotDigitizer Lite") }}</p>
-            <p class="landing-subtitle">{{ _("Convert images of graphs into data points") }}</p>
-            <div class="landing-buttons">
-                <button type="button" class="arrow-button" onclick="wpd.popup.show('loadNewImage');">
-                    {{ _("Load Image(s)") }}
-                    <span class="arrow"></span>
-                </button>
-                <button type="button" class="arrow-button" onclick="wpd.saveResume.load();">
-                    {{ _("Load Project") }}
-                    <span class="arrow"></span>
-                </button>
-                <button type="button" class="arrow-button" onclick="wpd.navigateToApp();">
-                    {{ _("Explore Demo") }}
-                    <span class="arrow"></span>
-                </button>
-            </div>
-        </div>
-        <div class="landing-right">
-            <img src="images/wpd.png" width="800" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)">
-        </div>
-    </div>
+    {% include "_landing.html" %}
 
     <div id="allContainer">
         <!-- toolbar + graphics -->

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-07 17:45-0800\n"
+"POT-Creation-Date: 2024-01-07 18:21-0800\n"
 "PO-Revision-Date: 2017-11-01 23:56-0500\n"
 "Last-Translator: \n"
 "Language: fr_FR\n"
@@ -24,38 +24,38 @@ msgid ""
 " more user-friendly UI enhancements."
 msgstr ""
 
-#: templates/_base.html:50
+#: templates/_base.html:52
 msgid "Loading application, please wait..."
 msgstr ""
 
-#: templates/_base.html:53
+#: templates/_base.html:55
 msgid ""
 "Problems loading? Make sure you have a recent version of Google Chrome, "
 "Firefox, Safari or Microsoft Edge installed."
 msgstr ""
 
-#: templates/_base.html:59
+#: templates/_base.html:82
+msgid "Fit"
+msgstr ""
+
+#: templates/_landing.html:3
 msgid "WebPlotDigitizer Lite"
 msgstr ""
 
-#: templates/_base.html:60
+#: templates/_landing.html:4
 msgid "Convert images of graphs into data points"
 msgstr ""
 
-#: templates/_base.html:63 templates/_menubar.html:5
+#: templates/_landing.html:7 templates/_menubar.html:5
 msgid "Load Image(s)"
 msgstr ""
 
-#: templates/_base.html:67 templates/_menubar.html:6
+#: templates/_landing.html:11 templates/_menubar.html:6
 msgid "Load Project"
 msgstr ""
 
-#: templates/_base.html:71
+#: templates/_landing.html:15
 msgid "Explore Demo"
-msgstr ""
-
-#: templates/_base.html:102
-msgid "Fit"
 msgstr ""
 
 #: templates/_menubar.html:2
