@@ -47,7 +47,7 @@ wpd.popup = (function() {
 
         // Attach drag events to the header
         for (let i = 0; i < pWindow.childNodes.length; i++) {
-            if (pWindow.childNodes[i].className === 'popupheading') {
+            if (pWindow.childNodes[i].className === 'popup-heading') {
                 pWindow.childNodes[i].addEventListener("mousedown", startDragging, false);
                 break;
             }

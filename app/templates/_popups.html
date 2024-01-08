@@ -4,7 +4,7 @@
 
 <!-- Load Image -->
 <div id="loadNewImage" class="popup" style="width: 400px;">
-    <div class="popupheading">
+    <div class="popup-heading">
         <p class="popup-title">{{ _("New Project") }}</p>
         <p class="popup-subtitle">{{ _("Upload graph image file(s)") }}</p>
     </div>
@@ -15,7 +15,7 @@
         <p align="center"><input type="file" id="fileLoadBox" multiple /></p>
         <p>&nbsp;</p>
     </div>
-    <div class="popupfooter">
+    <div class="popup-footer">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('loadNewImage');" />
         <input type="button" value='{{ _("Load") }}' class="popup-action" onclick="wpd.imageManager.load();" />
     </div>
@@ -23,7 +23,7 @@
 
 <!-- Zoom Settings -->
 <div id="zoom-settings-popup" class="popup" style="width: 300px;">
-    <div class="popupheading">{{ _("Magnified View Settings") }}</div>
+    <div class="popup-heading">{{ _("Magnified View Settings") }}</div>
     <p>&nbsp;</p>
     <center>
         <table>
@@ -56,7 +56,7 @@
 
 <!-- Run Script -->
 <div id="runScriptPopup" class="popup" style="width: 500px;">
-    <div class="popupheading">{{ _("Run Script") }}</div>
+    <div class="popup-heading">{{ _("Run Script") }}</div>
     <p align="left">{{ _("Load a Javascript file to further extend the capabilities of WebPlotDigitizer.") }}</p>
     <p align="left">{{ _("For examples, visit the") }} <a href="https://github.com/ankitrohatgi/WebPlotDigitizer/tree/master/script_examples" target="_blank">{{ _("WebPlotDigitizer repository") }}</a>.</p>
     <p>&nbsp;</p>
@@ -67,7 +67,7 @@
 
 <!-- Webcam Capture -->
 <div id="webcamCapture" class="popup" style="width: 650px;">
-    <div class="popupheading">{{ _("Webcam Capture") }}</div>
+    <div class="popup-heading">{{ _("Webcam Capture") }}</div>
     <p>&nbsp;</p>
     <p align="center"><video id="webcamVideo" autoplay="true" height="350"></video></p>
     <p align="center"><input type="button" value="{{ _("Capture") }}" onclick="wpd.webcamCapture.capture();" /> <input type="button" value="{{ _("Cancel") }}" onclick="wpd.webcamCapture.cancel();" /></p>
@@ -75,7 +75,7 @@
 
 <!-- Generic Message Popup -->
 <div id="messagePopup" class="popup" style="width: 400px;">
-    <div class="popupheading">
+    <div class="popup-heading">
         <p id="message-popup-heading" class="popup-title"></p>
     </div>
     <div class="popup-content">
@@ -83,12 +83,12 @@
         <p align="center" id="message-popup-text"></p>
         <p>&nbsp;</p>
     </div>
-    <div class="popupfooter-center"><input type="button" value='{{ _("OK") }}' class="popup-action" onclick="wpd.messagePopup.close()" /></div>
+    <div class="popup-footer-center"><input type="button" value='{{ _("OK") }}' class="popup-action" onclick="wpd.messagePopup.close()" /></div>
 </div>
 
 <!-- Generic Ok/Cancel Popup -->
 <div id="okCancelPopup" class="popup" style="width: 400px; z-index: 110;">
-    <div id="ok-cancel-popup-heading" class="popupheading"></div>
+    <div id="ok-cancel-popup-heading" class="popup-heading"></div>
     <p>&nbsp;</p>
     <p align="center" id="ok-cancel-popup-text"></p>
     <p>&nbsp;</p>
@@ -100,7 +100,7 @@
 
 <!-- Choose axes type -->
 <div id="axesList" class="popup" style="width: 400px;">
-    <div class="popupheading">
+    <div class="popup-heading">
         <p class="popup-title">{{ _("Choose Plot Type") }}</p>
     </div>
     <div class="popup-content">
@@ -132,7 +132,7 @@
         </center>
         <p>&nbsp;</p>
     </div>
-    <div class="popupfooter-center">
+    <div class="popup-footer-center">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onClick="wpd.popup.close('axesList');" />
         <input type="button" value='{{ _("Align Axes") }}' class="popup-action" onclick="wpd.alignAxes.start();" />
     </div>
@@ -140,7 +140,7 @@
 
 <!-- XY Alignment -->
 <div id="xyAlignment" class="popup" style="width: 600px;">
-    <div class="popupheading">
+    <div class="popup-heading">
         <p class="popup-title">{{ _("X and Y Axes Calibration") }}</p>
     </div>
     <div class="popup-content">
@@ -188,14 +188,14 @@
             <p>&nbsp;</p>
         </center>
     </div>
-    <div class="popupfooter-center">
+    <div class="popup-footer-center">
         <input type="button" id="xybtn" class="popup-action" value='{{ _("Finish") }}' onclick="wpd.alignAxes.align();" />
     </div>
 </div>
 
 <!-- Bar Alignment -->
 <div id="barAlignment" class="popup" style="width: 420px;">
-    <div class="popupheading">{{ _("Bar Chart Calibration") }}</div>
+    <div class="popup-heading">{{ _("Bar Chart Calibration") }}</div>
     <p align="center">{{ _("Enter the values at the two points selected on the continuous axes along the bars") }}</p>
     <center>
         <table padding="10">
@@ -218,7 +218,7 @@
 
 <!-- Map Alignment -->
 <div id="mapAlignment" class="popup" style="width: 350px;">
-    <div class="popupheading">{{ _("Map Axes Calibration") }}</div>
+    <div class="popup-heading">{{ _("Map Axes Calibration") }}</div>
     <p align="left">Map Scale Size:</p>
     <p align="center"><input type="text" size="6" id="scaleLength" value="1"> <input type="text" size="6" id="scaleUnits" value="{{ _("Units") }}" /></p>
     <p>&nbsp;</p>
@@ -231,7 +231,7 @@
 
 <!-- Polar Alignment -->
 <div id="polarAlignment" class="popup" style="width: 400px;">
-    <div class="popupheading">{{ _("Align Polar Axes") }}</div>
+    <div class="popup-heading">{{ _("Align Polar Axes") }}</div>
     <center>
         <table padding="15">
             <tr>
@@ -262,7 +262,7 @@
 
 <!-- Ternary Alignment -->
 <div id="ternaryAlignment" class="popup">
-    <div class="popupheading">{{ _("Select Range of Variables") }}</div>
+    <div class="popup-heading">{{ _("Select Range of Variables") }}</div>
     <p>&nbsp;</p>
     <p align="center">{{ _("Axes Orientation") }}</p>
     <center>
@@ -300,7 +300,7 @@
 
 <!-- Circular Chart Recorder Alignment -->
 <div id="circularChartRecorderAlignment" class="popup" style="width: 400px;">
-    <div class="popupheading">{{ _("Align Circular Chart Recorder Axes") }}</div>
+    <div class="popup-heading">{{ _("Align Circular Chart Recorder Axes") }}</div>
     <center>
         <table padding="15">
             <tr>
@@ -327,7 +327,7 @@
 
 <!-- View Data -->
 <div id="csvWindow" class="popup" style="width: 800px; height: 480px;">
-    <div class="popupheading">{{ _("Acquired Data") }}</div>
+    <div class="popup-heading">{{ _("Acquired Data") }}</div>
     <table style="width:780px;">
         <tr>
             <td>
@@ -382,45 +382,46 @@
 
 <!-- XY Axes Calibration Instructions -->
 <div id="xyAxesInfo" class="popup" style="width:500px;">
-    <div class="popupheading">
+    <div class="popup-heading">
         <p class="popup-title">{{ _("Align X-Y Axes") }}</p>
     </div>
     <div class="popup-content">
         <p>&nbsp;</p>
         <p align="center"><img src="images/xyaxes.png" /></p>
+        <br />
         <p align="center">{{ _("Click four known points on the axes in the <font color=\"red\">order shown in red</font>.") }}</p>
-        <p align="center">{{ _("First, select two points on the X axis (X1, X2).") }}</p>
-        <p align="center">{{ _("Second, select two points on the Y axis (Y1, Y2).") }}</p>
+        <p align="center">{{ _("1. Select two points on the X axis (X1, X2)") }}</p>
+        <p align="center">{{ _("2. Select two points on the Y axis (Y1, Y2)") }}</p>
         <p>&nbsp;</p>
     </div>
-    <div class="popupfooter-center">
+    <div class="popup-footer-center">
         <input type="button" value='{{ _("Proceed") }}' class="popup-action" onclick="wpd.alignAxes.pickCorners();" />
     </div>
 </div>
 
 <!-- XY Axes Select X1 Instruction -->
 <div id="x1PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>x-axis</b> (X1)</p>
+    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>x-axis</b> (X1)</p>
 </div>
 
 <!-- XY Axes Select X2 Instruction -->
 <div id="x2PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>x-axis</b> (X2)</p>
+    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>x-axis</b> (X2)</p>
 </div>
 
 <!-- XY Axes Select Y1 Instruction -->
 <div id="y1PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>y-axis</b> (Y1)</p>
+    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a point on the <b>y-axis</b> (Y1)</p>
 </div>
 
 <!-- XY Axes Select Y2 Instruction -->
 <div id="y2PointInfo" class="popup" style="border: 1px solid black">
-    <p class="popupheading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>y-axis</b> (Y2)</p>
+    <p class="popup-heading" style="color: black; background-color: white;">&#x1F6C8; Select a second point on the <b>y-axis</b> (Y2)</p>
 </div>
 
 <!-- Bar Chart Axes Calibration Intructions -->
 <div id="barAxesInfo" class="popup" style="width:650px;">
-    <div class="popupheading">{{ _("Align Bar Chart Axes") }}</div>
+    <div class="popup-heading">{{ _("Align Bar Chart Axes") }}</div>
     <p>&nbsp;</p>
     <p align="center"><img src="images/barchart.png" /></p>
     <p align="center">{{ _("Click on two known points (P1, P2) on the continuous axes along the bars") }}</p>
@@ -430,7 +431,7 @@
 
 <!-- Map Axes Calibration Instructions -->
 <div id="mapAxesInfo" class="popup" style="width: 350px;">
-    <div class="popupheading">{{ _("Align Map To Scale Bar") }}</div>
+    <div class="popup-heading">{{ _("Align Map To Scale Bar") }}</div>
     <p>&nbsp;</p>
     <p align="center"><img src="images/map.png" /></p>
     <p align="center">{{ _("Click on the two ends of the scale bar on the map.") }}</p>
@@ -440,7 +441,7 @@
 
 <!-- Polar Axes Calibration Instructions -->
 <div id="polarAxesInfo" class="popup" style="width: 350px;">
-    <div class="popupheading">{{ _("Align Polar Axes") }}</div>
+    <div class="popup-heading">{{ _("Align Polar Axes") }}</div>
     <p>&nbsp;</p>
     <p align="center"><img src="images/polaraxes.png" /></p>
     <p align="center">{{ _("Click on the center, followed by two known points.") }}</p>
@@ -450,7 +451,7 @@
 
 <!-- Ternary Axes Calibration Instructions -->
 <div id="ternaryAxesInfo" class="popup" style="width: 350px;">
-    <div class="popupheading">{{ _("Align Ternary Axes") }}</div>
+    <div class="popup-heading">{{ _("Align Ternary Axes") }}</div>
     <p>&nbsp;</p>
     <p align="center"><img src="images/ternaryaxes.png" /></p>
     <p align="center">{{ _("Click on the three corners in the order shown above.") }}</p>
@@ -460,7 +461,7 @@
 
 <!-- Circular Chart Recorder Axes Calibration Instructions -->
 <div id="circularChartRecorderAxesInfo" class="popup" style="width: 620px;">
-    <div class="popupheading">{{ _("Align Circular Chart Recorder Axes") }}</div>
+    <div class="popup-heading">{{ _("Align Circular Chart Recorder Axes") }}</div>
     <p>&nbsp;</p>
     <p align="center"><img src="images/circular_chart_recorder_axes.png" /></p>
     <p align="left">{{ _("Click on five (5) points on the chart axes as shown:") }}</p>
@@ -476,7 +477,7 @@
 
 <!-- About WPD -->
 <div id="helpWindow" class="popup" style="width: 600px;">
-    <div class="popupheading">{{ _("WebPlotDigitizer - Web Based Plot Digitizer") }}</div>
+    <div class="popup-heading">{{ _("WebPlotDigitizer - Web Based Plot Digitizer") }}</div>
     <p>&nbsp;</p>
     <p align="center">{{ _("Version") }} {{ wpdVersion }}</p>
     <p align="center">{{ _("This program is distributed under the <a href=\"https://www.gnu.org/licenses/agpl-3.0-standalone.html\" target=\"_blank\">GNU Affero General Public License Version 3</a>.") }}</p>
@@ -490,7 +491,7 @@
 
 <!-- Color Selection -->
 <div id="color-selection-widget" class="popup" style="width:400px;">
-    <div id="color-selection-title" class="popupheading">{{ _("Specify Color") }}</div>
+    <div id="color-selection-title" class="popup-heading">{{ _("Specify Color") }}</div>
     <p align="center">&nbsp;</p>
     <div style="text-align:center;">
         <div id="color-selection-selected-color-box" class="largeColorBox"></div>
@@ -509,7 +510,7 @@
 
 <!-- Axes Transformation Equations -->
 <div id="axes-transformation-equations-window" class="popup" style="width:600px;">
-    <div class="popupheading">{{ _("Transformation Equations") }}</div>
+    <div class="popup-heading">{{ _("Transformation Equations") }}</div>
     <p>{{ _("The following relationships are being used to convert image pixels to data") }}:</p>
     <div id="axes-transformation-equation-list"></div>
     <p>&nbsp;</p>
@@ -518,7 +519,7 @@
 
 <!-- Export JSON -->
 <div id="export-json-window" class="popup" style="width:500px;">
-    <div class="popupheading">{{ _("Export JSON or Project File") }}</div>
+    <div class="popup-heading">{{ _("Export JSON or Project File") }}</div>
     <p>{{ _("Export a JSON file containing the axes calibrations, digitized data and measurements. This JSON file can be loaded to resume work at a later time. You can also download a combined 'project file' which includes this JSON and also the image in a single TAR file.") }}</p>
     <br />
     <p align="center">Project name: <input type="text" value="wpd_project" id="project-name-input" />.json/.tar</p>
@@ -532,7 +533,7 @@
 
 <!-- Import JSON -->
 <div id="import-json-window" class="popup" style="width:500px;">
-    <div class="popupheading">
+    <div class="popup-heading">
        <p class="popup-title">{{ _("Import Project") }}</p> 
        <p class="popup-subtitle">{{ _("Load a previously exported JSON or project file (.tar)") }}</p>
     </div>
@@ -542,7 +543,7 @@
         <p align="center">{{ _("JSON/Project File") }}: <input type="file" id="import-json-file" /></p>
         <p>&nbsp;</p>
     </div>
-    <div class="popupfooter">
+    <div class="popup-footer">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('import-json-window');" />
         <input type="button" value='{{ _("Import") }}' class="popup-action" onclick="wpd.saveResume.read();" />
     </div>
@@ -550,7 +551,7 @@
 
 <!-- Adjust Data Points Keyboard Shortcuts -->
 <div id="adjust-data-points-keyboard-shortcuts-window" class="popup" style="width:500px;">
-    <div class="popupheading">{{ _("Keyboard Shortcuts") }}</div>
+    <div class="popup-heading">{{ _("Keyboard Shortcuts") }}</div>
     <p>{{ _("Click to select a data point. The following keys can then be used to adjust the position") }}:</p>
     <center>
         <table cellspacing="5" border="0">
@@ -594,7 +595,7 @@
 
 <!-- Data point label editor -->
 <div id="data-point-label-editor" class="popup" style="width:280px;">
-    <div class="popupheading">{{ _("Edit Label") }}</div>
+    <div class="popup-heading">{{ _("Edit Label") }}</div>
     <p>&nbsp;</p>
     <p align="center">{{ _("Label") }}: <input type="text" value="{{ _("Data Point") }}" id="data-point-label-field" onkeydown="wpd.dataPointLabelEditor.keydown(event);" /></p>
     <p>&nbsp;</p>
@@ -606,7 +607,7 @@
 
 <!-- Data point value editor -->
 <div id="data-point-value-override-editor" class="popup" style="width:280px;">
-    <div class="popupheading">{{ _("Override Point Values") }}</div>
+    <div class="popup-heading">{{ _("Override Point Values") }}</div>
     <p>&nbsp;</p>
     <table style="margin-left: 35px;" id="data-point-value-override-editor-table"></table>
     <p>&nbsp;</p>
@@ -620,7 +621,7 @@
 
 <!-- Perspective Transform Instructions -->
 <div id="perspective-info" class="popup" style="width:500px;">
-    <div class="popupheading">{{ _("Perspective Transformation") }}</div>
+    <div class="popup-heading">{{ _("Perspective Transformation") }}</div>
     <p align="center"><img src="images/perspective.png" width="350"></p>
     <br />
     <p align="center">{{ _("Click on four corners of the region to be transformed as shown.") }}</p>
@@ -633,7 +634,7 @@
 
 <!-- Edit or Reset Calibration Dialog -->
 <div id="edit-or-reset-calibration-popup" class="popup" style="width:500px;">
-    <div class="popupheading">{{ _("Edit Existing Calibration?") }}</div>
+    <div class="popup-heading">{{ _("Edit Existing Calibration?") }}</div>
     <br />
     <p align="center">{{ _("Do you wish to tweak existing axes calibration or select a new axes type?") }}</p>
     <br />
@@ -648,7 +649,7 @@
 
 <!-- Export all data dialog -->
 <div id="export-all-data-popup" class="popup" style="width:400px;">
-    <div class="popupheading">{{ _("Export All Datasets") }}</div>
+    <div class="popup-heading">{{ _("Export All Datasets") }}</div>
     <p>{{ _("Export data from all datasets") }}</p>
     <br />
     <p align="center">
@@ -660,7 +661,7 @@
 
 <!-- Add dataset -->
 <div id="add-dataset-popup" class="popup" style="width:450px;">
-    <div class="popupheading">{{ _("Add Dataset") }}</div>
+    <div class="popup-heading">{{ _("Add Dataset") }}</div>
     <p>{{ _("Name") }}: <input type="text" id="add-single-dataset-name-input" value="New Dataset" /> <input type="button" value="{{ _("Add Single Dataset") }}" onclick="wpd.dataSeriesManagement.addSingleDataset();" /></p>
     <br />
     <p>{{ _("Count") }}: <input type="text" id="add-multiple-datasets-count-input" value="1" /> <input type="button" value="{{ _("Add Multiple Datasets") }}" onclick="wpd.dataSeriesManagement.addMultipleDatasets();" /></p>
@@ -670,7 +671,7 @@
 
 <!-- Rename dataset -->
 <div id="rename-dataset-popup" class="popup" style="width:400px;">
-    <div class="popupheading">{{ _("Rename Dataset") }}</div>
+    <div class="popup-heading">{{ _("Rename Dataset") }}</div>
     <center>
         <br />
         <p>{{ _("Name") }}: <input type="text" id="rename-dataset-name-input" value="Dataset" onkeypress="wpd.dataSeriesManagement.renameKeypress(event);" /></p>
@@ -681,7 +682,7 @@
 
 <!-- Rename axes -->
 <div id="rename-axes-popup" class="popup" style="width:400px;">
-    <div class="popupheading">{{ _("Rename Axes") }}</div>
+    <div class="popup-heading">{{ _("Rename Axes") }}</div>
     <center>
         <br />
         <p>{{ _("Name") }}: <input type="text" id="rename-axes-name-input" value="Axes" onkeypress="wpd.alignAxes.renameKeypress(event);" /></p>
@@ -692,7 +693,7 @@
 
 <!-- Image info -->
 <div id="image-info-popup" class="popup" style="width:400px;">
-    <div class="popupheading">
+    <div class="popup-heading">
         <p class="popup-title">{{ _("Image Info") }}</p>
     </div>
     <div class="popup-content">
@@ -701,14 +702,14 @@
         <p class="paged" hidden>Pages: <span id="image-info-pages"></span> pages</p>
         <br />
     </div>
-    <div class="popupfooter-center">
+    <div class="popup-footer-center">
         <input type="button" value='{{ _("OK") }}' class="popup-action" onclick="wpd.popup.close('image-info-popup');" />
     </div>
 </div>
 
 <!-- Page relabelling -->
 <div id="image-page-relabel-popup" class="popup" style="width:400px;">
-    <div class="popupheading">{{ _("Page Labels") }}</div>
+    <div class="popup-heading">{{ _("Page Labels") }}</div>
     <p>{{ _("Relabel the current page number with an alphanumeric string. Optionally, relabel all page numbers in the image based on the current page (only supports integer values).") }}</p>
     <br />
     <p>New page label: <input id="image-page-relabel-input" type="text" onkeyup="wpd.appData.getPageManager().validateLabel(this.value)" /></p>
@@ -729,7 +730,7 @@
 
 <!-- Data point group settings -->
 <div id="point-group-settings-popup" class="popup" style="width: 600px;">
-    <div class="popupheading">{{ _("Point Groups") }}</div>
+    <div class="popup-heading">{{ _("Point Groups") }}</div>
     <table style="margin: 0 auto;">
         <tr>
             <td style="vertical-align: top;">
@@ -779,7 +780,7 @@
 <!-- Unit testing -->
 {% if enableTesting == True %}
 <div id="tests-popup" class="popup" style="width:1000px;">
-    <div class="popupheading">Unit Tests</div>
+    <div class="popup-heading">Unit Tests</div>
     <p align="center"><button onclick="wpd.popup.close('tests-popup');">Close</button></p>
     <br />
     <div style="width:1000px; height: 800px; overflow-y: auto;">
