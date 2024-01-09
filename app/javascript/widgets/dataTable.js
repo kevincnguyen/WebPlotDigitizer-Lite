@@ -76,7 +76,7 @@ wpd.dataTable = (function() {
     function refresh() {
         dataCache = dataProvider.getData();
         setupControls();
-        sortRawData();
+        sortAndFilterRawData();
         makeTable();
     }
 
@@ -84,11 +84,13 @@ wpd.dataTable = (function() {
 
         let $datasetList = document.getElementById('data-table-dataset-list');
         let $sortingVariables = document.getElementById('data-sort-variables');
+        let $filteringVariables = document.getElementById('data-filter-variables');
         let $variableNames = document.getElementById('dataVariables');
         let $dateFormattingContainer = document.getElementById('data-date-formatting-container');
         let $dateFormatting = document.getElementById('data-date-formatting');
         let datasetHTML = '';
         let sortingHTML = '';
+        let filteringHTML = '';
         let dateFormattingHTML = '';
         let isAnyVariableDate = false;
         let showDatasets = selectedDataset != null;
@@ -154,6 +156,12 @@ wpd.dataTable = (function() {
         $sortingVariables.innerHTML = sortingHTML;
         updateSortingControls();
 
+        filteringHTML += '<option value="All">' + wpd.gettext('all') + '</option>';
+        for (let field of dataCache.fields) {
+            filteringHTML += '<option value="' + field + '">' + field + '</option>';
+        }
+        $filteringVariables.innerHTML = filteringHTML;
+
         if (isAnyVariableDate) {
             $dateFormattingContainer.style.display = 'inline-block';
             $dateFormatting.innerHTML = dateFormattingHTML;
@@ -196,13 +204,13 @@ wpd.dataTable = (function() {
         }
     }
 
-    function reSort() {
+    function reSortAndFilter() {
         updateSortingControls();
-        sortRawData();
+        sortAndFilterRawData();
         makeTable();
     }
 
-    function sortRawData() {
+    function sortAndFilterRawData() {
 
         if (dataCache == null || dataCache.rawData == null) {
             return;
@@ -214,60 +222,134 @@ wpd.dataTable = (function() {
             isAscending = sortingOrder === 'ascending',
             isRaw = sortingKey === 'raw',
             isConnectivity = sortingKey === 'NearestNeighbor',
-            dataIndex,
-            fieldCount = dataCache.fields.length;
-
-        if (isRaw) {
+            sortIndex,
+            filteringKey = document.getElementById('data-filter-variables').value,
+            isAll = filteringKey === 'All',
+            filterIndex;
+        
+        // No sort or filter
+        if (isAll && isRaw) {
             return;
         }
-
-        if (!isConnectivity) {
-            dataIndex = dataCache.fields.indexOf(sortingKey);
-            if (dataIndex < 0) {
+        
+        // No sort, has filter
+        if (isRaw && !isAll) {
+            filterIndex = dataCache.fields.indexOf(filteringKey);
+            if (filterIndex < 0) {
                 return;
             }
-            sortedData.sort(function(a, b) {
-                if (a[dataIndex] > b[dataIndex]) {
-                    return isAscending ? 1 : -1;
-                } else if (a[dataIndex] < b[dataIndex]) {
-                    return isAscending ? -1 : 1;
-                }
-                return 0;
-            });
+            sortedData = sortedData.map(dataPoint => [dataPoint[filterIndex]]);
             return;
         }
 
-        if (isConnectivity) {
-            var mindist, compdist, minindex, rowi, rowcompi,
-                rowCount = sortedData.length,
-                connFieldIndices = dataCache.connectivityFieldIndices,
-                fi, cfi, swp;
-
-            for (rowi = 0; rowi < rowCount - 1; rowi++) {
-                minindex = -1;
-
-                // loop through all other points and find the nearest next neighbor
-                for (rowcompi = rowi + 1; rowcompi < rowCount; rowcompi++) {
-                    compdist = 0;
-                    for (fi = 0; fi < connFieldIndices.length; fi++) {
-                        cfi = connFieldIndices[fi];
-                        compdist += (sortedData[rowi][cfi] - sortedData[rowcompi][cfi]) *
-                            (sortedData[rowi][cfi] - sortedData[rowcompi][cfi]);
-                    }
-
-                    if ((compdist < mindist) || (minindex === -1)) {
-                        mindist = compdist;
-                        minindex = rowcompi;
-                    }
+        // Has sort, no filter
+        if (!isRaw && isAll) {
+            if (!isConnectivity) {
+                sortIndex = dataCache.fields.indexOf(sortingKey);
+                if (sortIndex < 0) {
+                    return;
                 }
+                sortedData.sort(function(a, b) {
+                    if (a[sortIndex] > b[sortIndex]) {
+                        return isAscending ? 1 : -1;
+                    } else if (a[sortIndex] < b[sortIndex]) {
+                        return isAscending ? -1 : 1;
+                    }
+                    return 0;
+                });
+                return;
+            }
 
-                // swap (minindex) and (rowi+1) rows
-                for (fi = 0; fi < dataCache.fields.length; fi++) {
-                    swp = sortedData[minindex][fi];
-                    sortedData[minindex][fi] = sortedData[rowi + 1][fi];
-                    sortedData[rowi + 1][fi] = swp;
+            if (isConnectivity) {
+                var mindist, compdist, minindex, rowi, rowcompi,
+                    rowCount = sortedData.length,
+                    connFieldIndices = dataCache.connectivityFieldIndices,
+                    fi, cfi, swp;
+
+                for (rowi = 0; rowi < rowCount - 1; rowi++) {
+                    minindex = -1;
+
+                    // loop through all other points and find the nearest next neighbor
+                    for (rowcompi = rowi + 1; rowcompi < rowCount; rowcompi++) {
+                        compdist = 0;
+                        for (fi = 0; fi < connFieldIndices.length; fi++) {
+                            cfi = connFieldIndices[fi];
+                            compdist += (sortedData[rowi][cfi] - sortedData[rowcompi][cfi]) *
+                                (sortedData[rowi][cfi] - sortedData[rowcompi][cfi]);
+                        }
+
+                        if ((compdist < mindist) || (minindex === -1)) {
+                            mindist = compdist;
+                            minindex = rowcompi;
+                        }
+                    }
+
+                    // swap (minindex) and (rowi+1) rows
+                    for (fi = 0; fi < dataCache.fields.length; fi++) {
+                        swp = sortedData[minindex][fi];
+                        sortedData[minindex][fi] = sortedData[rowi + 1][fi];
+                        sortedData[rowi + 1][fi] = swp;
+                    }
                 }
             }
+        }
+
+        // Has sort, has filter
+        if (!isRaw && !isAll) {
+            if (!isConnectivity) {
+                sortIndex = dataCache.fields.indexOf(sortingKey);
+                if (sortIndex < 0) {
+                    return;
+                }
+                sortedData.sort(function(a, b) {
+                    if (a[sortIndex] > b[sortIndex]) {
+                        return isAscending ? 1 : -1;
+                    } else if (a[sortIndex] < b[sortIndex]) {
+                        return isAscending ? -1 : 1;
+                    }
+                    return 0;
+                });
+            }
+
+            if (isConnectivity) {
+                var mindist, compdist, minindex, rowi, rowcompi,
+                    rowCount = sortedData.length,
+                    connFieldIndices = dataCache.connectivityFieldIndices,
+                    fi, cfi, swp;
+
+                for (rowi = 0; rowi < rowCount - 1; rowi++) {
+                    minindex = -1;
+
+                    // loop through all other points and find the nearest next neighbor
+                    for (rowcompi = rowi + 1; rowcompi < rowCount; rowcompi++) {
+                        compdist = 0;
+                        for (fi = 0; fi < connFieldIndices.length; fi++) {
+                            cfi = connFieldIndices[fi];
+                            compdist += (sortedData[rowi][cfi] - sortedData[rowcompi][cfi]) *
+                                (sortedData[rowi][cfi] - sortedData[rowcompi][cfi]);
+                        }
+
+                        if ((compdist < mindist) || (minindex === -1)) {
+                            mindist = compdist;
+                            minindex = rowcompi;
+                        }
+                    }
+
+                    // swap (minindex) and (rowi+1) rows
+                    for (fi = 0; fi < dataCache.fields.length; fi++) {
+                        swp = sortedData[minindex][fi];
+                        sortedData[minindex][fi] = sortedData[rowi + 1][fi];
+                        sortedData[rowi + 1][fi] = swp;
+                    }
+                }
+            }
+
+            filterIndex = dataCache.fields.indexOf(filteringKey);
+            if (filterIndex < 0) {
+                return;
+            }
+            sortedData = sortedData.map(dataPoint => [dataPoint[filterIndex]]);
+            return;
         }
     }
 
@@ -325,7 +407,11 @@ wpd.dataTable = (function() {
                     }
                 }
             }
-            tableText += rowValues.join(colSeparator);
+            if (sortedData[0].length > 1) {
+                tableText += rowValues.join(colSeparator);
+            } else {
+                tableText += rowValues.join('');
+            }
             tableText += '\n';
         }
         $digitizedDataTable.value = tableText;
@@ -394,7 +480,7 @@ wpd.dataTable = (function() {
         showAreaData: showAreaData,
         showDistanceData: showDistanceData,
         updateSortingControls: updateSortingControls,
-        reSort: reSort,
+        reSortAndFilter: reSortAndFilter,
         copyToClipboard: copyToClipboard,
         generateCSV: generateCSV,
         exportToPlotly: exportToPlotly,

@@ -478,11 +478,11 @@ wpd.graphicsWidget = (function() {
             iymax = originalHeight;
             zymax = zymax - zratio * (originalHeight - (iy0 + ih));
         }
-        idata = oriImageCtx.getImageData(parseInt(ixmin, 10), parseInt(iymin, 10),
-            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10));
+        idata = oriImageCtx.getImageData(parseInt(ixmin, 10), parseInt(iymin, 10,),
+            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10), { willReadFrequently: true });
 
         ddata = oriDataCtx.getImageData(parseInt(ixmin, 10), parseInt(iymin, 10),
-            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10));
+            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10), { willReadFrequently: true });
 
         for (var index = 0; index < ddata.data.length; index += 4) {
             if (ddata.data[index] != 0 || ddata.data[index + 1] != 0 ||
@@ -632,7 +632,7 @@ wpd.graphicsWidget = (function() {
         $oriDataCanvas.width = originalWidth;
         $oriDataCanvas.height = originalHeight;
         oriImageCtx.drawImage(originalImage, 0, 0, originalWidth, originalHeight);
-        originalImageData = oriImageCtx.getImageData(0, 0, originalWidth, originalHeight);
+        originalImageData = oriImageCtx.getImageData(0, 0, originalWidth, originalHeight, { willReadFrequently: true });
         setRotation(savedRotation);
         resetAllLayers();
         zoomFit();
@@ -667,8 +667,8 @@ wpd.graphicsWidget = (function() {
         exportCanvas.width = originalWidth;
         exportCanvas.height = originalHeight;
         exportCtx.drawImage($oriImageCanvas, 0, 0, originalWidth, originalHeight);
-        exportData = exportCtx.getImageData(0, 0, originalWidth, originalHeight);
-        dLayer = oriDataCtx.getImageData(0, 0, originalWidth, originalHeight);
+        exportData = exportCtx.getImageData(0, 0, originalWidth, originalHeight, { willReadFrequently: true });
+        dLayer = oriDataCtx.getImageData(0, 0, originalWidth, originalHeight, { willReadFrequently: true });
         for (di = 0; di < exportData.data.length; di += 4) {
             if (dLayer.data[di] != 0 || dLayer.data[di + 1] != 0 || dLayer.data[di + 2] != 0) {
                 alpha = dLayer.data[di + 3] / 255;

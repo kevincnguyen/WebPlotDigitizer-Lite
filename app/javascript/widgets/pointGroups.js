@@ -112,7 +112,7 @@ wpd.pointGroups = (function() {
         // html templates
         const labelHTML = `${groupText} <span>${index}</span>: `;
         const inputHTML = `<input id="point-group-${index}" type="text" value="${value}" />`;
-        const actionsHTML = `<input type="button" value="${deleteGroupText}" onclick="wpd.pointGroups.deleteSettingsRow(this)" />`;
+        const actionsHTML = `<input type="button" value="${deleteGroupText}" class="popup-action" onclick="wpd.pointGroups.deleteSettingsRow(this)" />`;
 
         return `<tr><td>${labelHTML}</td><td>${inputHTML}</td><td>${actionsHTML}</td></tr>`;
     }
