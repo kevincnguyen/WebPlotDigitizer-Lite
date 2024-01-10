@@ -5,10 +5,18 @@
     <div class="sidebar-body">
         <p>{{ _("Click to select points.") }}</p>
         <p>{{ _("Use arrow keys to adjust positions.") }}</p>
-        <p>{{ _("Tip: Use <em>Shift+Arrow</em> to move faster.") }}</p>
     </div>
     <br />
     <p align="center"><input type="button" value='{{ _("Done") }}' class="popup-action" style="width: 120px;" onclick="wpd.alignAxes.getCornerValues();" /></p>
+    <div class="sidebar-tip">
+        <p>
+            <i class="fa-solid fa-circle-info"></i> 
+            <b>Tip</b>
+        </p>
+        <p class="sidebar-tip-body">
+            {{ _("Use <em>Shift+Arrow</em> to move faster") }}
+        </p>
+    </div>
 </div>
 
 <!-- acquire data -->

@@ -14,8 +14,8 @@
     <div id="axes-group-tree-widget" class="tree-widget" style="flex: 0 0 100px;">
         <p class="sidebar-title"><i class="fa-solid fa-chart-column"></i>{{ _(" Axes") }}</p>
         <center>
-            <p><input type="button" value="{{ _("Add Calibration") }}" style="width:150px;" onclick="wpd.alignAxes.addCalibration();" /></p>
-            <p><input type="button" value="{{ _("Remove Grid") }}" style="width:150px;" onclick="wpd.gridDetection.start();" /></p>
+            <p><input type="button" value='{{ _("Add Calibration") }}' style="width:150px;" class="sidebar-button" onclick="wpd.alignAxes.addCalibration();" /></p>
+            <p><input type="button" value='{{ _("Remove Grid") }}' style="width:150px;" class="sidebar-button" onclick="wpd.gridDetection.start();" /></p>
             <!-- <p><input type="button" value="{{ _("Import Calibration") }}" style="width:150px;"/></p> -->
             <!-- <p><input type="button" value="{{ _("Export Calibration") }}" style="width:150px;"/></p> -->
         </center>
@@ -24,17 +24,17 @@
     <div id="axes-item-tree-widget" class="tree-widget" style="flex: 0 0 100px;">
         <p class="sidebar-title"><i class="fa-solid fa-chart-column"></i>{{ _(" Axes") }}</p>
         <center>
-            <p><input type="button" value="{{ _("Rename") }}" style="width:150px;" onclick="wpd.alignAxes.showRenameAxes();" /></p>
-            <p><input type="button" value="{{ _("Tweak Calibration") }}" style="width:150px;" onclick="wpd.alignAxes.reloadCalibrationForEditing();" id="tweak-axes-calibration-button" /></p>
-            <p><input type="button" value="{{ _("Delete") }}" style="width:150px;" onclick="wpd.alignAxes.deleteCalibration();" /></p>
+            <p><input type="button" value='{{ _("Rename") }}' style="width:150px;" class="sidebar-button" onclick="wpd.alignAxes.showRenameAxes();" /></p>
+            <p><input type="button" value='{{ _("Tweak Calibration") }}' style="width:150px;" class="sidebar-button" onclick="wpd.alignAxes.reloadCalibrationForEditing();" id="tweak-axes-calibration-button" /></p>
+            <p><input type="button" value='{{ _("Delete") }}' style="width:150px;" class="sidebar-button" onclick="wpd.alignAxes.deleteCalibration();" /></p>
         </center>
     </div>
 
     <div id="dataset-group-tree-widget" class="tree-widget" style="flex: 0 0 100px;">
         <p class="sidebar-title"><i class="fa-solid fa-table"></i>{{ _(" Datasets") }}</p>
         <center>
-            <p><input type="button" value="{{ _("Add Dataset") }}" style="width:150px;" onclick="wpd.dataSeriesManagement.showAddDataset();" /></p>
-            <p><input type="button" value="{{ _("Export All Data") }}" style="width:150px;" onclick="wpd.popup.show('export-all-data-popup');" /></p>
+            <p><input type="button" value='{{ _("Add Dataset") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showAddDataset();" /></p>
+            <p><input type="button" value='{{ _("Export All Data") }}' style="width:150px;" class="sidebar-button" onclick="wpd.popup.show('export-all-data-popup');" /></p>
         </center>
     </div>
 
@@ -51,13 +51,13 @@
         <p class="sidebar-title">{{ _("Dataset") }}</p>
         <center>
             <p>{{ _("Axes") }}: <select id="dataset-item-axes-select" style="min-width:100px; max-width:150px;" onchange="wpd.dataSeriesManagement.changeAxes(this.value);"></select></p>
-            <p><input type="button" value="{{ _("Display Color") }}" style="width: 150px;" id="dataset-display-color-picker-button" onclick="wpd.dataSeriesManagement.startColorPicker();" /></p>
-            <p><input type="button" value="{{ _("Rename Dataset") }}" style="width:150px;" onclick="wpd.dataSeriesManagement.showRenameDataset();" /></p>
-            <p><input type="button" value="{{ _("Delete Dataset") }}" style="width:150px;" onclick="wpd.dataSeriesManagement.deleteDataset();" /></p>
-            <p><input type="button" value="{{ _("Edit Point Groups") }}" id="dataset-edit-point-groups-button" style="width: 150px;" onclick="wpd.pointGroups.showSettingsPopup();" /></p>
-            <p><input type="button" value="{{ _("View Data") }}" style="width:150px;" onclick="wpd.dataTable.showTable();" /></p>
-            <p><input type="button" value="{{ _("Clear Data") }}" style="width:150px;" onclick="wpd.acquireData.clearAll();" /></p>
-            <p>{{ _("Data Points") }}: <span class="data-point-counter">0</span></p>
+            <p><input type="button" value='{{ _("Display Color") }}' style="width: 150px;" id="dataset-display-color-picker-button" onclick="wpd.dataSeriesManagement.startColorPicker();" /></p>
+            <p><input type="button" value='{{ _("Rename Dataset") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showRenameDataset();" /></p>
+            <p><input type="button" value='{{ _("Delete Dataset") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.deleteDataset();" /></p>
+            <p><input type="button" value='{{ _("Edit Point Groups") }}' id="dataset-edit-point-groups-button" style="width: 150px;" class="sidebar-button" onclick="wpd.pointGroups.showSettingsPopup();" /></p>
+            <p><input type="button" value='{{ _("Clear Data") }}' style="width:150px;" class="sidebar-button" onclick="wpd.acquireData.clearAll();" /></p>
+            <p><input type="button" value='{{ _("Export Data") }}' style="width:150px; color: red;" class="sidebar-button" onclick="wpd.dataTable.showTable();" /></p>
+            <p><b>{{ _("Data Points") }}:</b> <span class="data-point-counter">0</span></p>
         </center>
     </div>
 
@@ -69,7 +69,7 @@
                 <select id="distance-item-axes-select" style="min-width:100px; max-width:150px;" onchange="wpd.measurement.changeAxes(this.value);"></select>
             </p>
             <p><input type="button" value='{{ _("Clear All") }}' style="width:150px;" class="sidebar-button" onclick="wpd.measurement.clearAll();" /></p>
-            <p><input type="button" value='{{ _("View Data") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataTable.showDistanceData();" /></p>
+            <p><input type="button" value='{{ _("Export Data") }}' style="width:150px; color: red;" class="sidebar-button" onclick="wpd.dataTable.showDistanceData();" /></p>
         </center>
     </div>
 
@@ -77,7 +77,7 @@
         <p class="sidebar-title">{{ _("Angle") }}</p>
         <center style="margin-top: 10px;">
             <p><input type="button" value='{{ _("Clear All") }}' style="width:150px;" class="sidebar-button" onclick="wpd.measurement.clearAll();" /></p>
-            <p><input type="button" value='{{ _("View Data") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataTable.showAngleData();" /></p>
+            <p><input type="button" value='{{ _("Export Data") }}' style="width:150px; color: red;" class="sidebar-button" onclick="wpd.dataTable.showAngleData();" /></p>
         </center>
     </div>
 
@@ -86,7 +86,7 @@
         <center>
             <p>{{ _("Axes") }}: <select id="area-item-axes-select" style="min-width:100px; max-width:150px;" onchange="wpd.measurement.changeAxes(this.value);"></select></p>
             <p><input type="button" value='{{ _("Clear All") }}' style="width:150px;" class="sidebar-button" onclick="wpd.measurement.clearAll();" /></p>
-            <p><input type="button" value='{{ _("View Data") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataTable.showAreaData();" /></p>
+            <p><input type="button" value='{{ _("Export Data") }}' style="width:150px; color: red;" class="sidebar-button" onclick="wpd.dataTable.showAreaData();" /></p>
         </center>
     </div>
 
