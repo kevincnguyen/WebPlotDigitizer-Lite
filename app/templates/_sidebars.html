@@ -1,19 +1,27 @@
 <!-- axes calibration -->
 <div id="axes-calibration-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Adjust Axes Calibration") }}</p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Adjust Axes Calibration") }}</p>
     <br />
     <div class="sidebar-body">
         <p>{{ _("Click to select points.") }}</p>
         <p>{{ _("Use arrow keys to adjust positions.") }}</p>
-        <p>{{ _("Tip: Use <em>Shift+Arrow</em> to move faster.") }}</p>
     </div>
     <br />
     <p align="center"><input type="button" value='{{ _("Done") }}' class="popup-action" style="width: 120px;" onclick="wpd.alignAxes.getCornerValues();" /></p>
+    <div class="sidebar-tip">
+        <p>
+            <i class="fa-solid fa-circle-info"></i> 
+            <b>Tip</b>
+        </p>
+        <p class="sidebar-tip-body">
+            {{ _("Use <em>Shift+Arrow</em> to move faster") }}
+        </p>
+    </div>
 </div>
 
 <!-- acquire data -->
 <div id="acquireDataSidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Manual Extraction") }}</p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Manual Extraction") }}</p>
     <p>
         <input type="button" value="{{ _("Add Point") }} (A)" onclick="wpd.acquireData.manualSelection();" style="width:115px;" id="manual-select-button">
         <input type="button" value="{{ _("Adjust Point") }} (S)" onClick="wpd.acquireData.adjustPoints();" style="width: 115px;" id="manual-adjust-button">
@@ -23,7 +31,7 @@
         <input type="button" value="{{ _("Edit Labels") }} (E)" id="edit-data-labels" onclick="wpd.acquireData.editLabels();" style="display: none; width: 115px;">
     </p>
     <br />
-    <p class="sidebar-title">{{ _("Automatic Extraction") }}</p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Automatic Extraction") }}</p>
     <p>{{ _("Mask") }} <input type="button" value="{{ _("Box") }}" style="width:50px;" onclick="wpd.dataMask.markBox();" id="box-mask"><input type="button" value="{{ _("Pen") }}" style="width:45px;" onClick="wpd.dataMask.markPen();" id="pen-mask"><input type="button" value="{{ _("Erase") }}" style="width:50px;" onClick="wpd.dataMask.eraseMarks();" id="erase-mask"><input type="button" value="{{ _("View") }}" style="width:40px;" onclick="wpd.dataMask.viewMask();" id="view-mask" /></p>
     <div id="mask-erase-container" class="sidebar-extras">
         <p align="center">{{ _("Width") }} <input type="range" id="eraseThickness" min="1" max="150" value="20" style="width:80px;"> <input type="button" id="clearMaskBtn" value="{{ _("Erase All") }}" style="width:80px;" onclick="wpd.dataMask.clearMask();" /></p>
@@ -49,7 +57,7 @@
     </p>
     <div id="point-groups-controls" hidden>
         <br />
-        <p class="sidebar-title">{{ _("Point Groups") }}</p>
+        <p class="sidebar-title" style="padding: 4px;">{{ _("Point Groups") }}</p>
         <p>Current Tuple: <span id="current-point-tuple-index" style="font-weight: bold;"></span></p>
         <p>Current Group: <span id="current-point-group-name" style="font-weight: bold;"></span></p>
         <p>
@@ -59,7 +67,7 @@
     </div>
     <div id="value-overrides-controls" hidden>
         <br />
-        <p class="sidebar-title">{{ _("Overrides") }}</p>
+        <p class="sidebar-title" style="padding: 4px;">{{ _("Overrides") }}</p>
         <p>
             <input type="button" value="{{ _("Override Values") }} (R)" id="override-data-values" style="width: 140px;">
             <span id="overridden-data-indicator" hidden>&#8682;</span>
@@ -78,35 +86,56 @@
 
 <!-- distance measurement -->
 <div id="measure-distances-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Measure Distances") }}</p>
-    <p>
-        <input type="button" value="{{ _("Add Pair") }} (A)" style="width: 115px;" id="add-pair-button" onclick="wpd.measurement.addItem();" />
-        <input type="button" value="{{ _("Delete Pair") }} (D)" style="width: 115px;" id="delete-pair-button" onclick="wpd.measurement.deleteItem();" />
-    </p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Measure Distances") }}</p>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 10px;">
+        <p align="center">
+            <input type="button" value='{{ _("Add Pair") }} (A)' style="width: 115px;" id="add-pair-button" class="sidebar-button" onclick="wpd.measurement.addItem();" />
+        </p>
+        <p align="center">
+            <input type="button" value='{{ _("Delete Pair") }} (D)' style="width: 115px;" id="delete-pair-button" class="sidebar-button" onclick="wpd.measurement.deleteItem();" />
+        </p>
+    </div>
 </div>
 
 <!-- angle measurement -->
 <div id="measure-angles-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Measure Angles") }}</p>
-    <p>
-        <input type="button" value="{{ _("Add Angle") }} (A)" style="width: 115px;" id="add-angle-button" onclick="wpd.measurement.addItem();" />
-        <input type="button" value="{{ _("Delete Angle") }} (D)" style="width: 115px;" id="delete-angle-button" onclick="wpd.measurement.deleteItem();" />
-    </p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Measure Angles") }}</p>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 10px;">
+        <p align="center">
+            <input type="button" value='{{ _("Add Angle") }} (A)' style="width: 115px;" id="add-angle-button"  class="sidebar-button" onclick="wpd.measurement.addItem();" />
+        </p>
+        <p align="center">
+            <input type="button" value='{{ _("Delete Angle") }} (D)' style="width: 115px;" id="delete-angle-button" class="sidebar-button" onclick="wpd.measurement.deleteItem();" />
+        </p>
+    </div>
 </div>
 
 <!-- distance measurement -->
 <div id="measure-area-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Measure Area/Perimeter") }}</p>
-    <p align="center"><input type="button" value="{{ _("Add Polygon") }} (A)" style="width: 145px;" id="add-polygon-button" onclick="wpd.measurement.addItem();" /></p>
-    <p align="center"><input type="button" value="{{ _("Delete Polygon") }} (D)" style="width: 145px;" id="delete-polygon-button" onclick="wpd.measurement.deleteItem();" /></p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Measure Area/Perimeter") }}</p>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 10px;">
+        <p align="center">
+            <input type="button" value='{{ _("Add Polygon") }} (A)' style="width: 145px;" id="add-polygon-button" class="sidebar-button" onclick="wpd.measurement.addItem();" />
+        </p>
+        <p align="center">
+            <input type="button" value='{{ _("Delete Polygon") }} (D)' style="width: 145px;" id="delete-polygon-button" class="sidebar-button" onclick="wpd.measurement.deleteItem();" />
+        </p>
+    </div>
     <br />
-    <p><span id="add-polygon-info">{{ _("Press Enter or Esc key to complete the polygon") }}</span></p>
+    <span id="add-polygon-info" class="sidebar-tip">
+        <p>
+            <i class="fa-solid fa-circle-info"></i> 
+            <b>Instructions</b>
+        </p>
+        <p class="sidebar-tip-body">
+            {{ _("Press <em>Enter or Esc</em> to complete the polygon") }}
+        </p>
+    </span>
 </div>
-
 
 <!-- open path measurement -->
 <div id="measure-open-path-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Measure Path") }}</p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Measure Path") }}</p>
     <p>
         <input type="button" value="{{ _("Add Path") }} (A)" style="width: 115px;" id="add-open-path-button" onclick="wpd.measurement.addItem();" />
         <input type="button" value="{{ _("Delete Path") }} (D)" style="width: 115px;" id="delete-open-path-button" onclick="wpd.measurement.deleteItem();" />
@@ -115,7 +144,7 @@
 
 <!-- closed path measurement -->
 <div id="measure-closed-path-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Measure Closed Path") }}</p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Measure Closed Path") }}</p>
     <p>
         <input type="button" value="{{ _("Add Path") }} (A)" style="width: 115px;" id="add-closed-path-button" onclick="wpd.measurement.addItem();" />
         <input type="button" value="{{ _("Delete Path") }} (D)" style="width: 115px;" id="delete-closed-path-button" onclick="wpd.measurement.deleteItem();" />
@@ -124,7 +153,7 @@
 
 <!-- grid detection -->
 <div id="grid-detection-sidebar" class="sidebar">
-    <p class="sidebar-title">{{ _("Detect Grid") }}</p>
+    <p class="sidebar-title" style="padding: 4px;">{{ _("Detect Grid") }}</p>
     <p>
         {{ _("Mask") }}
         <input type="button" value="{{ _("Box") }}" style="width: 60px;" id="grid-mask-box" onclick="wpd.gridDetection.markBox();" />
@@ -168,33 +197,41 @@
 
 <!-- startup sidebar -->
 <div id="start-sidebar" class="sidebar">
-    <p class="sidebar-title">Based on WebPlotDigitizer {{ wpdVersion }}</p>
+    <p class="sidebar-title" style="padding: 4px;">WebPlotDigitizer Lite</p>
     <br />
     <center>
-        <p><input type="button" value="{{ _("Load Image") }}" style="width: 180px;" onclick="wpd.popup.show('loadNewImage');" /></p>
-        <p><input type="button" value="{{ _("Tutorial Video") }}" style="width: 180px;" onclick="window.open('https://youtu.be/P7GbGdMvopU','_blank');" /></p>
-        <p><input type="button" value="{{ _("Visit Website") }}" style="width: 180px;" onclick="window.open('https://automeris.io/WebPlotDigitizer','_blank');" /></p>
-        <p><input type="button" value="{{ _("Visit GitHub") }}" style="width: 180px;" onclick="window.open('https://github.com/kevincnguyen/WebPlotDigitizer-Lite','_blank');" /></p>
+        <p><input type="button" value='{{ _("Load Image") }}' style="width: 180px;" class="sidebar-button" onclick="wpd.popup.show('loadNewImage');" /></p>
+        <p><input type="button" value='{{ _("Tutorial Video") }}' style="width: 180px;" class="sidebar-button" onclick="window.open('https://youtu.be/P7GbGdMvopU','_blank');" /></p>
+        <p><input type="button" value='{{ _("Visit GitHub") }}' style="width: 180px;" class="sidebar-button" onclick="window.open('https://github.com/kevincnguyen/WebPlotDigitizer-Lite','_blank');" /></p>
     </center>
+    <div class="sidebar-tip">
+        <p>
+            <i class="fa-solid fa-circle-info"></i> 
+            <b>Tip</b>
+        </p>
+        <p>
+            Navigate to <em>Axes > Add Calibration</em> to get started extracting data
+        </p>
+    </div>
 </div>
 
 <!-- image editing sidebar -->
 <div id="image-editing-sidebar" class="sidebar">
-    <p class="sidebar-title"><i class="fa-solid fa-pen-to-square"></i>{{ _(" Image Editing") }}</p>
+    <p class="sidebar-title" style="padding: 4px;"><i class="fa-solid fa-pen-to-square"></i>{{ _(" Image Editing") }}</p>
     <center>
-        <p align="center">
-            <button type="button" style="width: 120px;" onclick="wpd.imageEditing.undo()" id="image-editing-undo">
+        <div style="margin-top: 10px; display: flex; flex-direction: row; align-items: center; justify-content: center;"> 
+            <button type="button" style="width: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center;" onclick="wpd.imageEditing.undo()" class="sidebar-button" id="image-editing-undo">
                 <i class="fa-solid fa-rotate-left"></i>
-                {{ _(" Undo") }}
+                {{ _("Undo") }}
             </button>
-            <button type="button" style="width: 120px;" onclick="wpd.imageEditing.redo()" id="image-editing-redo">
-                {{ _("Redo ") }}
+            <button type="button" style="width: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center;" onclick="wpd.imageEditing.redo()" class="sidebar-button" id="image-editing-redo">
                 <i class="fa-solid fa-rotate-right"></i>
+                {{ _("Redo") }}
             </button>
-        </p>
+        </div>
         <br />
         <p align="center">
-            <input type="button" value='{{ _("Crop") }}' style="width: 120px;" onclick="wpd.imageEditing.startImageCrop()" id="image-editing-crop" />
+            <input type="button" value='{{ _("Crop") }}' style="width: 120px;" onclick="wpd.imageEditing.startImageCrop()" class="popup-action" id="image-editing-crop" />
             <!-- <input type="button" value="{{ _("Fix Perspective") }}" style="width: 120px;" onclick="wpd.imageEditing.startPerspective()" id="image-editing-perspective" /> -->
         </p>
         <!--

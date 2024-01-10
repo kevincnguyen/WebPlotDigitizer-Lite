@@ -370,13 +370,6 @@ select {
     justify-content: center;
 }
 
-.sidebar-title {
-    text-align: center;
-    background: #ddd;
-    color: black;
-    padding: 2px 2px 4px 2px;
-}
-
 .sidebar-body {
     text-align: center;
 }
@@ -395,6 +388,26 @@ select {
     padding: 1px 0px 1px 1px;
     margin: 2px 1px 2px 1px;
     font-size: 13px;
+}
+
+.sidebar-title {
+    text-align: center;
+    color: black;
+    background: var(--highlight-hover);
+    font-weight: 500;
+    padding: 4px;
+}
+
+.sidebar-tip {
+    text-align: left;
+    color: black;
+    background: var(--highlight-hover);
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.sidebar-tip-body {
+    padding: 5px;
 }
 
 .footnote {

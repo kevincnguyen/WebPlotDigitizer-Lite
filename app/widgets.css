@@ -142,6 +142,26 @@ button.popup-action:hover {
     background-color: var(--secondary-color);
 }
 
+input[type="button"].sidebar-button,
+button.sidebar-button {
+    color: black;
+    background-color: white;
+    border: thin black solid;
+    height: auto;
+    min-width: 75px;
+    padding: 10px;
+}
+
+input[type="button"].sidebar-button:hover,
+button.sidebar-button:hover {
+    background-color: var(--highlight-hover);
+}
+
+input[type="button"].sidebar-button:active,
+button.sidebar-button:active {
+    background-color: var(--highlight);
+}
+
 input[type="button"]:focus,
 button:focus {
     outline-width: 0;
