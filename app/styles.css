@@ -21,6 +21,8 @@
 :root { 
   --primary-color: #7D63A9; 
   --secondary-color: #45375C;
+  --highlight: #B38EFF;
+  --highlight-hover: #E2CCFF;
   --off-white: #F2F2F2;
   --light-gray: #F9F9F9;
   --gray: #ccc7c7;

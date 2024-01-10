@@ -36,11 +36,11 @@
 
 .wpd-menu:hover>.wpd-menu-header,
 .wpd-menu-dropdown>ul>li:hover {
-    background: #FFD8C7;
+    background: var(--highlight-hover);
 }
 
 .wpd-menu-dropdown>ul>li:active {
-    background-color: #FF9466;
+    background-color: var(--highlight);
 }
 
 .wpd-menu-header {
@@ -95,18 +95,18 @@ button {
 
 input[type="button"]:hover,
 button:hover {
-    background-color: #FFD8C7;
+    background-color: var(--highlight-hover);
     border: thin black solid;
 }
 
 input[type="button"]:active,
 button:active {
-    background-color: #FF9466;
+    background-color: var(--highlight);
 }
 
 input[type="button"].pressed-button,
 button.pressed-button {
-    background-color: #FF9466;
+    background-color: var(--highlight);
 }
 
 input[type="button"].popup-cancel,
@@ -246,21 +246,21 @@ select {
 
 .tree-item:hover,
 .tree-folder:hover {
-    background: #FFD8C7;
+    background: var(--highlight-hover);
 }
 
 .tree-selected {
-    background: #FF9466;
+    background: var(--highlight);
 }
 
 .tree-selected:hover {
-    background: #FF9466;
+    background: var(--highlight);
 }
 
 .tree-item:active,
 .tree-folder:active,
 .tree-item::selection {
-    background: #FF9466;
+    background: var(--highlight);;
 }
 
 .tree-widget {

@@ -5,7 +5,7 @@
     <div class="sidebar-body">
         <p>{{ _("Click to select points.") }}</p>
         <p>{{ _("Use arrow keys to adjust positions.") }}</p>
-        <em>{{ _("Tip: Use Shift+Arrow to move faster.") }}</em>
+        <p>{{ _("Tip: Use <em>Shift+Arrow</em> to move faster.") }}</p>
     </div>
     <br />
     <p align="center"><input type="button" value='{{ _("Done") }}' class="popup-action" style="width: 120px;" onclick="wpd.alignAxes.getCornerValues();" /></p>
@@ -160,9 +160,9 @@
     </table>
     <hr />
     <p align="center">
-        <input type="button" value="{{ _("Detect") }}" style="width: 100px;" onclick="wpd.gridDetection.run();" />
+        <input type="button" value='{{ _("Reset") }}' style="width: 100px;" onclick="wpd.gridDetection.reset();" />
         &nbsp;
-        <input type="button" value="{{ _("Reset") }}" style="width: 100px;" onclick="wpd.gridDetection.reset();" />
+        <input type="button" value='{{ _("Detect") }}' style="width: 100px;" onclick="wpd.gridDetection.run();" />
     </p>
 </div>
 

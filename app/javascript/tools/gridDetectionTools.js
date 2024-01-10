@@ -151,7 +151,7 @@ wpd.GridMaskPainter = (function() {
                 }
 
                 let imageSize = wpd.graphicsWidget.getImageSize();
-                let imgData = ctx.oriDataCtx.getImageData(0, 0, imageSize.width, imageSize.height);
+                let imgData = ctx.oriDataCtx.getImageData(0, 0, imageSize.width, imageSize.height, { willReadFrequently: true });
 
                 for (let img_index of autoDetector.gridMask.pixels) {
                     imgData.data[img_index * 4] = 255;
