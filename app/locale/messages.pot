@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-09 15:46-0800\n"
+"POT-Creation-Date: 2024-01-10 02:59-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -741,7 +741,7 @@ msgstr ""
 msgid "Override Point Values"
 msgstr ""
 
-#: templates/_popups.html:721 templates/_sidebars.html:131
+#: templates/_popups.html:721 templates/_sidebars.html:152
 msgid "Clear"
 msgstr ""
 
@@ -833,7 +833,7 @@ msgstr ""
 msgid "Relabel"
 msgstr ""
 
-#: templates/_popups.html:855 templates/_sidebars.html:163
+#: templates/_popups.html:855 templates/_sidebars.html:184
 msgid "Reset"
 msgstr ""
 
@@ -922,11 +922,11 @@ msgstr ""
 msgid "Automatic Extraction"
 msgstr ""
 
-#: templates/_sidebars.html:27 templates/_sidebars.html:129
+#: templates/_sidebars.html:27 templates/_sidebars.html:150
 msgid "Mask"
 msgstr ""
 
-#: templates/_sidebars.html:27 templates/_sidebars.html:130
+#: templates/_sidebars.html:27 templates/_sidebars.html:151
 msgid "Box"
 msgstr ""
 
@@ -938,7 +938,7 @@ msgstr ""
 msgid "Erase"
 msgstr ""
 
-#: templates/_sidebars.html:27 templates/_sidebars.html:132
+#: templates/_sidebars.html:27 templates/_sidebars.html:153
 msgid "View"
 msgstr ""
 
@@ -950,7 +950,7 @@ msgstr ""
 msgid "Erase All"
 msgstr ""
 
-#: templates/_sidebars.html:35 templates/_sidebars.html:136
+#: templates/_sidebars.html:35 templates/_sidebars.html:157
 msgid "Color"
 msgstr ""
 
@@ -1003,135 +1003,131 @@ msgstr ""
 msgid "Measure Distances"
 msgstr ""
 
-#: templates/_sidebars.html:83
+#: templates/_sidebars.html:84
 msgid "Add Pair"
 msgstr ""
 
-#: templates/_sidebars.html:84
+#: templates/_sidebars.html:87
 msgid "Delete Pair"
 msgstr ""
 
-#: templates/_sidebars.html:90
+#: templates/_sidebars.html:94
 msgid "Measure Angles"
 msgstr ""
 
-#: templates/_sidebars.html:92
+#: templates/_sidebars.html:97
 msgid "Add Angle"
 msgstr ""
 
-#: templates/_sidebars.html:93
+#: templates/_sidebars.html:100
 msgid "Delete Angle"
 msgstr ""
 
-#: templates/_sidebars.html:99
+#: templates/_sidebars.html:107
 msgid "Measure Area/Perimeter"
 msgstr ""
 
-#: templates/_sidebars.html:100
+#: templates/_sidebars.html:110
 msgid "Add Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:101
+#: templates/_sidebars.html:113
 msgid "Delete Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:103
-msgid "Press Enter or Esc key to complete the polygon"
+#: templates/_sidebars.html:123
+msgid "Press <em>Enter or Esc</em> to complete the polygon"
 msgstr ""
 
-#: templates/_sidebars.html:109
+#: templates/_sidebars.html:130
 msgid "Measure Path"
 msgstr ""
 
-#: templates/_sidebars.html:111 templates/_sidebars.html:120
+#: templates/_sidebars.html:132 templates/_sidebars.html:141
 msgid "Add Path"
 msgstr ""
 
-#: templates/_sidebars.html:112 templates/_sidebars.html:121
+#: templates/_sidebars.html:133 templates/_sidebars.html:142
 msgid "Delete Path"
 msgstr ""
 
-#: templates/_sidebars.html:118
+#: templates/_sidebars.html:139
 msgid "Measure Closed Path"
 msgstr ""
 
-#: templates/_sidebars.html:127
+#: templates/_sidebars.html:148
 msgid "Detect Grid"
 msgstr ""
 
-#: templates/_sidebars.html:137
+#: templates/_sidebars.html:158
 msgid "Pick"
 msgstr ""
 
-#: templates/_sidebars.html:139
+#: templates/_sidebars.html:160
 msgid "Test"
 msgstr ""
 
-#: templates/_sidebars.html:141
+#: templates/_sidebars.html:162
 msgid "Background Mode"
 msgstr ""
 
-#: templates/_sidebars.html:145
+#: templates/_sidebars.html:166
 msgid "Horizontal"
 msgstr ""
 
-#: templates/_sidebars.html:149
+#: templates/_sidebars.html:170
 msgid "X%"
 msgstr ""
 
-#: templates/_sidebars.html:153
+#: templates/_sidebars.html:174
 msgid "Vertical"
 msgstr ""
 
-#: templates/_sidebars.html:157
+#: templates/_sidebars.html:178
 msgid "Y%"
 msgstr ""
 
-#: templates/_sidebars.html:165
+#: templates/_sidebars.html:186
 msgid "Detect"
 msgstr ""
 
-#: templates/_sidebars.html:174
+#: templates/_sidebars.html:195
 msgid "Load Image"
 msgstr ""
 
-#: templates/_sidebars.html:175
+#: templates/_sidebars.html:196
 msgid "Tutorial Video"
 msgstr ""
 
-#: templates/_sidebars.html:176
-msgid "Visit Website"
-msgstr ""
-
-#: templates/_sidebars.html:177
+#: templates/_sidebars.html:197
 msgid "Visit GitHub"
 msgstr ""
 
-#: templates/_sidebars.html:183
+#: templates/_sidebars.html:212
 msgid " Image Editing"
 msgstr ""
 
-#: templates/_sidebars.html:188
-msgid " Undo"
+#: templates/_sidebars.html:217
+msgid "Undo"
 msgstr ""
 
-#: templates/_sidebars.html:191
-msgid "Redo "
+#: templates/_sidebars.html:221
+msgid "Redo"
 msgstr ""
 
-#: templates/_sidebars.html:197
+#: templates/_sidebars.html:226
 msgid "Crop"
 msgstr ""
 
-#: templates/_sidebars.html:198
+#: templates/_sidebars.html:227
 msgid "Fix Perspective"
 msgstr ""
 
-#: templates/_sidebars.html:202
+#: templates/_sidebars.html:231
 msgid "Rotate"
 msgstr ""
 
-#: templates/_sidebars.html:203
+#: templates/_sidebars.html:232
 msgid "?"
 msgstr ""
 
@@ -1345,16 +1341,16 @@ msgstr ""
 msgid "Measurements"
 msgstr ""
 
-#: templates/_strings.html:54 templates/_tree.html:53 templates/_tree.html:67
-#: templates/_tree.html:84
+#: templates/_strings.html:54 templates/_tree.html:53 templates/_tree.html:68
+#: templates/_tree.html:87
 msgid "Axes"
 msgstr ""
 
-#: templates/_strings.html:56 templates/_tree.html:45 templates/_tree.html:74
+#: templates/_strings.html:56 templates/_tree.html:45 templates/_tree.html:77
 msgid "Angle"
 msgstr ""
 
-#: templates/_strings.html:57 templates/_tree.html:46 templates/_tree.html:82
+#: templates/_strings.html:57 templates/_tree.html:46 templates/_tree.html:85
 msgid "Area/Perimeter"
 msgstr ""
 
@@ -1506,8 +1502,8 @@ msgstr ""
 msgid "Edit Point Groups"
 msgstr ""
 
-#: templates/_tree.html:58 templates/_tree.html:69 templates/_tree.html:77
-#: templates/_tree.html:86
+#: templates/_tree.html:58 templates/_tree.html:72 templates/_tree.html:80
+#: templates/_tree.html:89
 msgid "View Data"
 msgstr ""
 
@@ -1519,7 +1515,7 @@ msgstr ""
 msgid "Data Points"
 msgstr ""
 
-#: templates/_tree.html:68 templates/_tree.html:76 templates/_tree.html:85
+#: templates/_tree.html:71 templates/_tree.html:79 templates/_tree.html:88
 msgid "Clear All"
 msgstr ""
 
