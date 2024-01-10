@@ -280,7 +280,8 @@ select {
 .tree-item:active,
 .tree-folder:active,
 .tree-item::selection {
-    background: var(--highlight);;
+    background: var(--highlight);
+    ;
 }
 
 .tree-widget {

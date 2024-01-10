@@ -226,12 +226,12 @@ wpd.dataTable = (function() {
             filteringKey = document.getElementById('data-filter-variables').value,
             isAll = filteringKey === 'All',
             filterIndex;
-        
+
         // No sort or filter
         if (isAll && isRaw) {
             return;
         }
-        
+
         // No sort, has filter
         if (isRaw && !isAll) {
             filterIndex = dataCache.fields.indexOf(filteringKey);

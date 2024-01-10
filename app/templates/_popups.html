@@ -70,7 +70,7 @@
     </div>
     <div class="popup-footer">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('zoom-settings-popup');" />
-        <input type="button" value="Apply" class="popup-action" onclick="wpd.zoomView.applySettings();" /> 
+        <input type="button" value="Apply" class="popup-action" onclick="wpd.zoomView.applySettings();" />
     </div>
 </div>
 
@@ -88,7 +88,7 @@
     </div>
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.scriptInjector.cancel();" />
-        <input type="button" value='{{ _("Run") }}' class="popup-action" onclick="wpd.scriptInjector.load();" /> 
+        <input type="button" value='{{ _("Run") }}' class="popup-action" onclick="wpd.scriptInjector.load();" />
     </div>
 </div>
 
@@ -377,7 +377,7 @@
                         </p>
                     </span>
                     <br />
-                    
+
                     <p align="center">
                         <b>{{ _("Variables: ") }}</b>
                         <span id="dataVariables"></span>
@@ -407,7 +407,7 @@
 
                     <p><b>{{ _("Filter") }}</b></p>
                     <p class="leftIndent">
-                        {{ _("Variable Selector") }}: 
+                        {{ _("Variable Selector") }}:
                         <select id="data-filter-variables" onchange="wpd.dataTable.reSortAndFilter();"></select>
                     </p>
                     <hr />
@@ -423,7 +423,7 @@
                         {{ _("Number Formatting") }}:
                     </p>
                     <p>
-                        {{ _("Digits") }}: 
+                        {{ _("Digits") }}:
                         <input type="text" value="5" size="2" id="data-number-format-digits" />
                         <select id="data-number-format-style">
                             <option value="ignore">{{ _("Ignore") }}</option>
@@ -433,7 +433,7 @@
                         </select>
                     </p>
                     <p>
-                        {{ _("Column Separator") }}: 
+                        {{ _("Column Separator") }}:
                         <input type="text" value=", " size="2" id="data-number-format-separator" />
                     </p>
                     <div class="centered" style="margin-top: 20px;">
@@ -570,7 +570,7 @@
         <p align="center"><a href="https://automeris.io/WebPlotDigitizer" target="website">https://automeris.io/WebPlotDigitizer</a></p>
         <p>&nbsp;</p>
     </div>
-    <div class="popup-footer-center"> 
+    <div class="popup-footer-center">
         <input type="button" value='{{ _("Close") }}' class="popup-action" onclick="wpd.popup.close('helpWindow');" />
     </div>
 </div>
@@ -589,7 +589,7 @@
 
         <p align="center">
             {{ _("R: ")}}<input type="text" value="255" id="color-selection-red" size="3" />&nbsp;
-            {{ _("G: ")}}<input type="text" id="color-selection-green" value="255" size="3" />&nbsp; 
+            {{ _("G: ")}}<input type="text" id="color-selection-green" value="255" size="3" />&nbsp;
             {{ _("B: ")}}<input type="text" id="color-selection-blue" value="255" size="3" />
             <input type="button" value='{{ _("Color Picker") }}' class="popup-action" onclick="wpd.colorSelectionWidget.pickColor();" />
         </p>
@@ -629,7 +629,7 @@
     </div>
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('export-json-window');" />
-        <input type="button" value='{{ _("Download JSON (.json)") }}' class="popup-action" onclick="wpd.saveResume.downloadJSON();" style="margin-right: 10px;"/>
+        <input type="button" value='{{ _("Download JSON (.json)") }}' class="popup-action" onclick="wpd.saveResume.downloadJSON();" style="margin-right: 10px;" />
         <input type="button" value='{{ _("Download Project File (.tar)") }}' class="popup-action" onclick="wpd.saveResume.downloadProject();" />
     </div>
 </div>
@@ -637,8 +637,8 @@
 <!-- Import JSON -->
 <div id="import-json-window" class="popup" style="width:500px;">
     <div class="popup-heading">
-       <p class="popup-title">{{ _("Import Project") }}</p> 
-       <p class="popup-subtitle">{{ _("Load a previously exported JSON or project file (.tar)") }}</p>
+        <p class="popup-title">{{ _("Import Project") }}</p>
+        <p class="popup-subtitle">{{ _("Load a previously exported JSON or project file (.tar)") }}</p>
     </div>
     <div class="popup-body">
         <p>{{ _("This will clear any unsaved data in the current plot.") }}</p>
@@ -774,7 +774,7 @@
     <div class="popup-body">
         <p>
             {{ _("Name: ") }}
-            <input type="text" id="add-single-dataset-name-input" value="New Dataset" /> 
+            <input type="text" id="add-single-dataset-name-input" value="New Dataset" />
             <input type="button" value='{{ _("Add Single Dataset") }}' class="popup-action" onclick="wpd.dataSeriesManagement.addSingleDataset();" />
         </p>
         <br />
@@ -802,7 +802,7 @@
     </div>
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('rename-dataset-popup');" />
-        <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.dataSeriesManagement.renameDataset();" /> 
+        <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.dataSeriesManagement.renameDataset();" />
     </div>
 </div>
 
@@ -818,7 +818,7 @@
     </div>
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('rename-axes-popup');" />
-        <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.alignAxes.renameAxes();" /> 
+        <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.alignAxes.renameAxes();" />
     </div>
 </div>
 
