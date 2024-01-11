@@ -77,7 +77,9 @@ wpd.gridDetection = (function() {
         // Mask is just a list of pixels with the yellow color in the data layer
         let ctx = wpd.graphicsWidget.getAllContexts();
         let imageSize = wpd.graphicsWidget.getImageSize();
-        let maskDataPx = ctx.oriDataCtx.getImageData(0, 0, imageSize.width, imageSize.height, { willReadFrequently: true });
+        let maskDataPx = ctx.oriDataCtx.getImageData(0, 0, imageSize.width, imageSize.height, {
+            willReadFrequently: true
+        });
         let maskData = new Set();
         let mi = 0;
         let autoDetector = wpd.appData.getPlotData().getGridDetectionData();
@@ -137,10 +139,14 @@ wpd.gridDetection = (function() {
 
         if (autoDetector.backupImageData == null) {
             autoDetector.backupImageData =
-                ctx.oriImageCtx.getImageData(0, 0, imageSize.width, imageSize.height, { willReadFrequently: true });
+                ctx.oriImageCtx.getImageData(0, 0, imageSize.width, imageSize.height, {
+                    willReadFrequently: true
+                });
         }
 
-        let imageData = ctx.oriImageCtx.getImageData(0, 0, imageSize.width, imageSize.height, { willReadFrequently: true });
+        let imageData = ctx.oriImageCtx.getImageData(0, 0, imageSize.width, imageSize.height, {
+            willReadFrequently: true
+        });
 
         autoDetector.generateBinaryData(imageData);
 
@@ -242,7 +248,9 @@ wpd.gridDetection = (function() {
 
         let ctx = wpd.graphicsWidget.getAllContexts();
         let imageSize = wpd.graphicsWidget.getImageSize();
-        let imageData = ctx.oriImageCtx.getImageData(0, 0, imageSize.width, imageSize.height, { willReadFrequently: true });
+        let imageData = ctx.oriImageCtx.getImageData(0, 0, imageSize.width, imageSize.height, {
+            willReadFrequently: true
+        });
         autoDetector.generateBinaryData(imageData);
 
         wpd.colorSelectionWidget.paintFilteredColor(autoDetector.binaryData,

@@ -28,7 +28,9 @@ wpd.ColorPickerTool = (function() {
         this.onMouseClick = function(ev, pos, imagePos) {
             var ir, ig, ib, ia, pixData;
 
-            pixData = ctx.oriImageCtx.getImageData(imagePos.x, imagePos.y, 1, 1, { willReadFrequently: true });
+            pixData = ctx.oriImageCtx.getImageData(imagePos.x, imagePos.y, 1, 1, {
+                willReadFrequently: true
+            });
             ir = pixData.data[0];
             ig = pixData.data[1];
             ib = pixData.data[2];

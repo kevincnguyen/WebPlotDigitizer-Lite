@@ -289,7 +289,9 @@ wpd.MaskPainter = (function() {
                 return;
             }
             let imageSize = wpd.graphicsWidget.getImageSize();
-            let imgData = ctx.oriDataCtx.getImageData(0, 0, imageSize.width, imageSize.height, { willReadFrequently: true });
+            let imgData = ctx.oriDataCtx.getImageData(0, 0, imageSize.width, imageSize.height, {
+                willReadFrequently: true
+            });
 
             for (let img_index of autoDetector.mask) {
                 imgData.data[img_index * 4] = 255;

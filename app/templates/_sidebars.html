@@ -10,7 +10,7 @@
     <p align="center"><input type="button" value='{{ _("Done") }}' class="popup-action" style="width: 120px;" onclick="wpd.alignAxes.getCornerValues();" /></p>
     <div class="sidebar-tip">
         <p>
-            <i class="fa-solid fa-circle-info"></i> 
+            <i class="fa-solid fa-circle-info"></i>
             <b>Tip</b>
         </p>
         <p class="sidebar-tip-body">
@@ -20,41 +20,69 @@
 </div>
 
 <!-- acquire data -->
-<div id="acquireDataSidebar" class="sidebar">
+<div id="acquireDataSidebar" class="sidebar" style="overflow-y: auto;">
     <p class="sidebar-title" style="padding: 4px;">{{ _("Manual Extraction") }}</p>
     <p>
-        <input type="button" value="{{ _("Add Point") }} (A)" onclick="wpd.acquireData.manualSelection();" style="width:115px;" id="manual-select-button">
-        <input type="button" value="{{ _("Adjust Point") }} (S)" onClick="wpd.acquireData.adjustPoints();" style="width: 115px;" id="manual-adjust-button">
+        <input type="button" value='{{ _("Add Point") }} (A)' class="sidebar-button" onclick="wpd.acquireData.manualSelection();" style="width:110px;" id="manual-select-button">
+        <input type="button" value='{{ _("Adjust Point") }} (S)' class="sidebar-button" onClick="wpd.acquireData.adjustPoints();" style="width: 110px;" id="manual-adjust-button">
     </p>
     <p>
-        <input type="button" value="{{ _("Delete Point") }} (D)" onclick="wpd.acquireData.deletePoint();" style="width: 115px;" id="delete-point-button">
-        <input type="button" value="{{ _("Edit Labels") }} (E)" id="edit-data-labels" onclick="wpd.acquireData.editLabels();" style="display: none; width: 115px;">
+        <input type="button" value='{{ _("Delete Point") }} (D)' class="sidebar-button" onclick="wpd.acquireData.deletePoint();" style="width: 110px;" id="delete-point-button">
+        <input type="button" value='{{ _("Edit Labels") }} (E)' class="sidebar-button" id="edit-data-labels" onclick="wpd.acquireData.editLabels();" style="display: none; width: 110px;">
     </p>
     <br />
     <p class="sidebar-title" style="padding: 4px;">{{ _("Automatic Extraction") }}</p>
-    <p>{{ _("Mask") }} <input type="button" value="{{ _("Box") }}" style="width:50px;" onclick="wpd.dataMask.markBox();" id="box-mask"><input type="button" value="{{ _("Pen") }}" style="width:45px;" onClick="wpd.dataMask.markPen();" id="pen-mask"><input type="button" value="{{ _("Erase") }}" style="width:50px;" onClick="wpd.dataMask.eraseMarks();" id="erase-mask"><input type="button" value="{{ _("View") }}" style="width:40px;" onclick="wpd.dataMask.viewMask();" id="view-mask" /></p>
+    <p>
+        <b style="margin-right: 3px;">{{ _("Mask ") }}</b>
+        <input type="button" value='{{ _("Box") }}' style="width:45px; min-width: 0px; padding: 5px;" class="sidebar-button" onclick="wpd.dataMask.markBox();" id="box-mask">
+        <input type="button" value='{{ _("Pen") }}' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.markPen();" id="pen-mask">
+        <input type="button" value='{{ _("Erase") }}' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.eraseMarks();" id="erase-mask">
+        <input type="button" value='{{ _("View") }}' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" />
+    </p>
     <div id="mask-erase-container" class="sidebar-extras">
-        <p align="center">{{ _("Width") }} <input type="range" id="eraseThickness" min="1" max="150" value="20" style="width:80px;"> <input type="button" id="clearMaskBtn" value="{{ _("Erase All") }}" style="width:80px;" onclick="wpd.dataMask.clearMask();" /></p>
+        <p class="centered" style="gap: 3px;">
+            <b>{{ _("Width") }}</b>
+            <input type="range" id="eraseThickness" min="1" max="150" value="20" style="width:80px;">
+            <input type="button" id="clearMaskBtn" value='{{ _("Erase All") }}' style="width:80px; padding: 5px;" class="sidebar-button" onclick="wpd.dataMask.clearMask();" />
+        </p>
     </div>
     <div id="mask-paint-container" class="sidebar-extras">
-        <p align="center">{{ _("Width") }} <input type="range" id="paintThickness" min="1" max="150" value="20" style="width:120px;"></p>
+        <p class="centered" style="gap: 3px;">
+            <b>{{ _("Width") }}</b>
+            <input type="range" id="paintThickness" min="1" max="150" value="20" style="width:120px;">
+        </p>
     </div>
     <hr />
-    <p>{{ _("Color") }} <select id="color-detection-mode-select" onchange="wpd.colorPicker.changeDetectionMode();">
+
+    <p>
+        <b>{{ _("Color") }}</b>
+        <select id="color-detection-mode-select" onchange="wpd.colorPicker.changeDetectionMode();">
             <option value="fg">{{ _("Foreground Color") }}</option>
             <option value="bg">{{ _("Background Color") }}</option>
-        </select><input type="button" id="color-button" value=" " onclick="wpd.colorPicker.startPicker();" style="width: 25px;" title="{{ _("Click to change color") }}" /></p>
-    <p>{{ _("Distance") }} <input type="text" size="3" id="color-distance-value" onchange="wpd.colorPicker.changeColorDistance();" />
-        <input type="button" value="{{ _("Filter Colors") }}" onclick="wpd.colorPicker.testColorDetection();" style="width: 90px;">
+        </select>
+        <input type="button" id="color-button" value=" " onclick="wpd.colorPicker.startPicker();" style="width: 25px;" title='{{ _("Click to change color") }}' />
+    </p>
+    <p>
+        <b>{{ _("Distance") }}</b>
+        <input type="text" size="3" id="color-distance-value" onchange="wpd.colorPicker.changeColorDistance();" />
+        <input type="button" value='{{ _("Filter Colors") }}' onclick="wpd.colorPicker.testColorDetection();" style="width: 90px; padding: 5px;" class="sidebar-button">
     </p>
     <hr />
-    <p>{{ _("Algorithm") }}
+
+    <p>
+        <b>{{ _("Algorithm") }}</b>
         <select id="auto-extract-algo-name" onchange="wpd.algoManager.applyAlgoSelection();"></select>
     </p>
     <div id="algo-parameter-container" style="margin-left: 10px; margin-top: 5px;"></div>
-    <p style="margin-top: 5px;">
-        <input type="button" value="{{ _("Run") }}" style="width:40px;" onclick="wpd.algoManager.run();" />
+    <p align="center" style="margin-top: 5px;">
+        <input type="button" value='{{ _("Run") }}' style="width:40px;" class="popup-action" onclick="wpd.algoManager.run();" />
     </p>
+
+    <button class="sidebar-tip" onclick="wpd.popup.show('automatic-extraction-tips')" style="padding: 10px; height: auto;">
+        <i class="fa-solid fa-circle-info"></i>
+        <b>Automatic Extraction Instructions</b>
+    </button>
+
     <div id="point-groups-controls" hidden>
         <br />
         <p class="sidebar-title" style="padding: 4px;">{{ _("Point Groups") }}</p>
@@ -102,7 +130,7 @@
     <p class="sidebar-title" style="padding: 4px;">{{ _("Measure Angles") }}</p>
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 10px;">
         <p align="center">
-            <input type="button" value='{{ _("Add Angle") }} (A)' style="width: 115px;" id="add-angle-button"  class="sidebar-button" onclick="wpd.measurement.addItem();" />
+            <input type="button" value='{{ _("Add Angle") }} (A)' style="width: 115px;" id="add-angle-button" class="sidebar-button" onclick="wpd.measurement.addItem();" />
         </p>
         <p align="center">
             <input type="button" value='{{ _("Delete Angle") }} (D)' style="width: 115px;" id="delete-angle-button" class="sidebar-button" onclick="wpd.measurement.deleteItem();" />
@@ -124,7 +152,7 @@
     <br />
     <span id="add-polygon-info" class="sidebar-tip">
         <p>
-            <i class="fa-solid fa-circle-info"></i> 
+            <i class="fa-solid fa-circle-info"></i>
             <b>Instructions</b>
         </p>
         <p class="sidebar-tip-body">
@@ -156,16 +184,16 @@
     <p class="sidebar-title" style="padding: 4px;">{{ _("Detect Grid") }}</p>
     <p>
         {{ _("Mask") }}
-        <input type="button" value="{{ _("Box") }}" style="width: 60px;" id="grid-mask-box" onclick="wpd.gridDetection.markBox();" />
-        <input type="button" value="{{ _("Clear") }}" style="width: 60px;" id="grid-mask-clear" onclick="wpd.gridDetection.clearMask();" />
-        <input type="button" value="{{ _("View") }}" style="width: 60px;" id="grid-mask-view" onclick="wpd.gridDetection.viewMask();" />
+        <input type="button" value='{{ _("Box") }}' style="width: 60px;" id="grid-mask-box" onclick="wpd.gridDetection.markBox();" />
+        <input type="button" value='{{ _("Clear") }}' style="width: 60px;" id="grid-mask-clear" onclick="wpd.gridDetection.clearMask();" />
+        <input type="button" value='{{ _("View") }}' style="width: 60px;" id="grid-mask-view" onclick="wpd.gridDetection.viewMask();" />
     </p>
     <hr />
     <p>
         {{ _("Color") }}
-        <input type="button" value="{{ _("Pick") }}" style="width: 60px;" id="grid-color-picker-button" onclick="wpd.gridDetection.startColorPicker();" />
+        <input type="button" value='{{ _("Pick") }}' style="width: 60px;" id="grid-color-picker-button" onclick="wpd.gridDetection.startColorPicker();" />
         <input type="text" value="10" style="width: 60px;" id="grid-color-distance" onchange="wpd.gridDetection.changeColorDistance();" />
-        <input type="button" value="{{ _("Test") }}" style="width: 60px;" id="grid-color-test" onclick="wpd.gridDetection.testColor();" />
+        <input type="button" value='{{ _("Test") }}' style="width: 60px;" id="grid-color-test" onclick="wpd.gridDetection.testColor();" />
     </p>
     <p align="center"><input type="checkbox" id="grid-background-mode" checked onchange="wpd.gridDetection.changeBackgroundMode();" /> {{ _("Background Mode") }}</p>
     <hr />
@@ -189,9 +217,9 @@
     </table>
     <hr />
     <p align="center">
-        <input type="button" value='{{ _("Reset") }}' style="width: 100px;" onclick="wpd.gridDetection.reset();" />
+        <input type="button" value='{{ _("Reset") }}' style="width: 100px;" class="sidebar-button" onclick="wpd.gridDetection.reset();" />
         &nbsp;
-        <input type="button" value='{{ _("Detect") }}' style="width: 100px;" onclick="wpd.gridDetection.run();" />
+        <input type="button" value='{{ _("Detect") }}' style="width: 100px;" class="sidebar-button" onclick="wpd.gridDetection.run();" />
     </p>
 </div>
 
@@ -206,7 +234,7 @@
     </center>
     <div class="sidebar-tip">
         <p>
-            <i class="fa-solid fa-circle-info"></i> 
+            <i class="fa-solid fa-circle-info"></i>
             <b>Tip</b>
         </p>
         <p>
@@ -219,7 +247,7 @@
 <div id="image-editing-sidebar" class="sidebar">
     <p class="sidebar-title" style="padding: 4px;"><i class="fa-solid fa-pen-to-square"></i>{{ _(" Image Editing") }}</p>
     <center>
-        <div style="margin-top: 10px; display: flex; flex-direction: row; align-items: center; justify-content: center;"> 
+        <div style="margin-top: 10px; display: flex; flex-direction: row; align-items: center; justify-content: center;">
             <button type="button" style="width: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center;" onclick="wpd.imageEditing.undo()" class="sidebar-button" id="image-editing-undo">
                 <i class="fa-solid fa-rotate-left"></i>
                 {{ _("Undo") }}
@@ -241,9 +269,9 @@
         </p>
         -->
         <p>
-            <div id="image-editing-crop-info">Click and drag to mark the crop region.</div>
-            <div id="image-editing-crop-info">Press <em>Enter</em> to complete cropping.</div>
-            <div id="image-editing-crop-info">Press <em>Esc</em> to cancel.</div>
+        <div id="image-editing-crop-info">Click and drag to mark the crop region.</div>
+        <div id="image-editing-crop-info">Press <em>Enter</em> to complete cropping.</div>
+        <div id="image-editing-crop-info">Press <em>Esc</em> to cancel.</div>
         </p>
     </center>
 </div>
