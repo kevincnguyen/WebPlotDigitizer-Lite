@@ -5,6 +5,8 @@ A UI enhancement of [WebPlotDigitizer](https://github.com/ankitrohatgi/WebPlotDi
 
 New Features:
 - Improved and simplified UI
+- Added variable filters to export data
+- Included more instruction and details as to how to use WPD Lite
 
 ![WebPlotDigitizer Screenshot](screenshot.png?raw=true "WebPlotDigitizer")
 
