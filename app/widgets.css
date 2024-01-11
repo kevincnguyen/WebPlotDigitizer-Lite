@@ -101,12 +101,12 @@ button:hover {
 
 input[type="button"]:active,
 button:active {
-    background-color: var(--highlight);
+    background-color: var(--highlight) !important;
 }
 
 input[type="button"].pressed-button,
 button.pressed-button {
-    background-color: var(--highlight);
+    background-color: var(--highlight) !important;
 }
 
 input[type="button"].popup-cancel,

@@ -15,8 +15,23 @@
     </div>
 </div>
 
+<!-- Automatic Extraction Instructions -->
+<div id="automatic-extraction-tips" class="popup" style="width: 450px;">
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Automatic Extraction Instructions") }}</p>
+    </div>
+    <div class="popup-body">
+        <p>{{ _("1. Use <em>Mask</em> to mask out the area of the image to extract from") }}</p>
+        <p>{{ _("2. Use <em>Color</em> to select the color to extract") }}</p>
+        <p>{{ _("3. <em>Run</em> the selected algorithm to extract data") }}</p>
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('automatic-extraction-tips');" />
+    </div>
+</div>
+
 <!-- Load Image -->
-<div id="loadNewImage" class="popup" style="width: 400px;">
+<div id="loadNewImage" class="popup" style="width: 450px;">
     <div class="popup-heading">
         <p class="popup-title">{{ _("New Project") }}</p>
         <p class="popup-subtitle">{{ _("Upload graph image file(s)") }}</p>
@@ -654,46 +669,52 @@
 
 <!-- Adjust Data Points Keyboard Shortcuts -->
 <div id="adjust-data-points-keyboard-shortcuts-window" class="popup" style="width:500px;">
-    <div class="popup-heading">{{ _("Keyboard Shortcuts") }}</div>
-    <p>{{ _("Click to select a data point. The following keys can then be used to adjust the position") }}:</p>
-    <center>
-        <table cellspacing="5" border="0">
-            <tr>
-                <td align="right">{{ _("Cursor (Arrows)") }} -</td>
-                <td>{{ _("Move up/down/right/left") }}</td>
-            </tr>
-            <tr>
-                <td align="right">{{ _("Shift + Cursor") }} -</td>
-                <td>{{ _("Faster rate of movement") }}</td>
-            </tr>
-            <tr>
-                <td align="right">Q -</td>
-                <td>{{ _("Select next point") }}</td>
-            </tr>
-            <tr>
-                <td align="right">W -</td>
-                <td>{{ _("Select previous point") }}</td>
-            </tr>
-            <tr>
-                <td align="right">{{ _("Del/Backspace") }} -</td>
-                <td>{{ _("Delete point") }}</td>
-            </tr>
-            <tr>
-                <td align="right">E -</td>
-                <td>{{ _("Edit label (Bar Chart)") }}</td>
-            </tr>
-            <tr>
-                <td align="right" style="vertical-align: top;">R -</td>
-                <td>
-                    {{ _("Override value (When adjusting ") }}
-                    <br />
-                    {{ _("non-Bar Chart points") }}
-                </td>
-            </tr>
-        </table>
-    </center>
-    <p>&nbsp;</p>
-    <p align="center"><input type="button" value="{{ _("Close") }}" onclick="wpd.popup.close('adjust-data-points-keyboard-shortcuts-window');" /></p>
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Keyboard Shortcuts") }}</p>
+    </div>
+    <div class="popup-body">
+        <p>{{ _("Click to select a data point. The following keys can then be used to adjust the position") }}:</p>
+        <center>
+            <table cellspacing="5" border="0">
+                <tr>
+                    <td align="right">{{ _("Cursor (Arrows)") }} -</td>
+                    <td>{{ _("Move up/down/right/left") }}</td>
+                </tr>
+                <tr>
+                    <td align="right">{{ _("Shift + Cursor") }} -</td>
+                    <td>{{ _("Faster rate of movement") }}</td>
+                </tr>
+                <tr>
+                    <td align="right">Q -</td>
+                    <td>{{ _("Select next point") }}</td>
+                </tr>
+                <tr>
+                    <td align="right">W -</td>
+                    <td>{{ _("Select previous point") }}</td>
+                </tr>
+                <tr>
+                    <td align="right">{{ _("Del/Backspace") }} -</td>
+                    <td>{{ _("Delete point") }}</td>
+                </tr>
+                <tr>
+                    <td align="right">E -</td>
+                    <td>{{ _("Edit label (Bar Chart)") }}</td>
+                </tr>
+                <tr>
+                    <td align="right" style="vertical-align: top;">R -</td>
+                    <td>
+                        {{ _("Override value (When adjusting ") }}
+                        <br />
+                        {{ _("non-Bar Chart points") }}
+                    </td>
+                </tr>
+            </table>
+        </center>
+        <p>&nbsp;</p>
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('adjust-data-points-keyboard-shortcuts-window');" />
+    </div>
 </div>
 
 <!-- Data point label editor -->
