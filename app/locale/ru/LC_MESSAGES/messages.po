@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-11 00:45-0800\n"
+"POT-Creation-Date: 2024-01-11 01:53-0800\n"
 "PO-Revision-Date: 2016-12-18 10:38-0600\n"
 "Last-Translator: \n"
 "Language: ru\n"
@@ -219,7 +219,7 @@ msgstr ""
 msgid "WebPlotDigitizer repository"
 msgstr ""
 
-#: templates/_popups.html:106 templates/_sidebars.html:77
+#: templates/_popups.html:106 templates/_sidebars.html:78
 msgid "Run"
 msgstr ""
 
@@ -759,7 +759,7 @@ msgstr ""
 msgid "Override Point Values"
 msgstr ""
 
-#: templates/_popups.html:742 templates/_sidebars.html:187
+#: templates/_popups.html:742 templates/_sidebars.html:188
 msgid "Clear"
 msgstr ""
 
@@ -851,7 +851,7 @@ msgstr ""
 msgid "Relabel"
 msgstr ""
 
-#: templates/_popups.html:876 templates/_sidebars.html:219
+#: templates/_popups.html:876 templates/_sidebars.html:220
 msgid "Reset"
 msgstr ""
 
@@ -859,7 +859,7 @@ msgstr ""
 msgid "Reset All"
 msgstr ""
 
-#: templates/_popups.html:886 templates/_sidebars.html:87
+#: templates/_popups.html:886 templates/_sidebars.html:88
 msgid "Point Groups"
 msgstr ""
 
@@ -944,7 +944,7 @@ msgstr ""
 msgid "Mask "
 msgstr ""
 
-#: templates/_sidebars.html:37 templates/_sidebars.html:186
+#: templates/_sidebars.html:37 templates/_sidebars.html:187
 msgid "Box"
 msgstr ""
 
@@ -956,7 +956,7 @@ msgstr ""
 msgid "Erase"
 msgstr ""
 
-#: templates/_sidebars.html:40 templates/_sidebars.html:188
+#: templates/_sidebars.html:40 templates/_sidebars.html:189
 msgid "View"
 msgstr ""
 
@@ -968,7 +968,7 @@ msgstr ""
 msgid "Erase All"
 msgstr ""
 
-#: templates/_sidebars.html:58 templates/_sidebars.html:192
+#: templates/_sidebars.html:58 templates/_sidebars.html:193
 msgid "Color"
 msgstr ""
 
@@ -984,172 +984,172 @@ msgstr ""
 msgid "Click to change color"
 msgstr ""
 
-#: templates/_sidebars.html:65 templates/_strings.html:55
+#: templates/_sidebars.html:66 templates/_strings.html:55
 #: templates/_tree.html:44 templates/_tree.html:65
 msgid "Distance"
 msgstr ""
 
-#: templates/_sidebars.html:67
+#: templates/_sidebars.html:68
 msgid "Filter Colors"
 msgstr ""
 
-#: templates/_sidebars.html:72
+#: templates/_sidebars.html:73
 msgid "Algorithm"
 msgstr ""
 
-#: templates/_sidebars.html:91
+#: templates/_sidebars.html:92
 msgid "Prev Group"
 msgstr ""
 
-#: templates/_sidebars.html:92
+#: templates/_sidebars.html:93
 msgid "Next Group"
 msgstr ""
 
-#: templates/_sidebars.html:97
+#: templates/_sidebars.html:98
 msgid "Overrides"
 msgstr ""
 
-#: templates/_sidebars.html:99
+#: templates/_sidebars.html:100
 msgid "Override Values"
 msgstr ""
 
-#: templates/_sidebars.html:107
+#: templates/_sidebars.html:108
 msgid "Edit Image"
 msgstr ""
 
-#: templates/_sidebars.html:116
+#: templates/_sidebars.html:117
 msgid "Measure Distances"
 msgstr ""
 
-#: templates/_sidebars.html:119
+#: templates/_sidebars.html:120
 msgid "Add Pair"
 msgstr ""
 
-#: templates/_sidebars.html:122
+#: templates/_sidebars.html:123
 msgid "Delete Pair"
 msgstr ""
 
-#: templates/_sidebars.html:129
+#: templates/_sidebars.html:130
 msgid "Measure Angles"
 msgstr ""
 
-#: templates/_sidebars.html:132
+#: templates/_sidebars.html:133
 msgid "Add Angle"
 msgstr ""
 
-#: templates/_sidebars.html:135
+#: templates/_sidebars.html:136
 msgid "Delete Angle"
 msgstr ""
 
-#: templates/_sidebars.html:142
+#: templates/_sidebars.html:143
 msgid "Measure Area/Perimeter"
 msgstr ""
 
-#: templates/_sidebars.html:145
+#: templates/_sidebars.html:146
 msgid "Add Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:148
+#: templates/_sidebars.html:149
 msgid "Delete Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:158
+#: templates/_sidebars.html:159
 msgid "Press <em>Enter or Esc</em> to complete the polygon"
 msgstr ""
 
-#: templates/_sidebars.html:165
+#: templates/_sidebars.html:166
 msgid "Measure Path"
 msgstr ""
 
-#: templates/_sidebars.html:167 templates/_sidebars.html:176
+#: templates/_sidebars.html:168 templates/_sidebars.html:177
 msgid "Add Path"
 msgstr ""
 
-#: templates/_sidebars.html:168 templates/_sidebars.html:177
+#: templates/_sidebars.html:169 templates/_sidebars.html:178
 msgid "Delete Path"
 msgstr ""
 
-#: templates/_sidebars.html:174
+#: templates/_sidebars.html:175
 msgid "Measure Closed Path"
 msgstr ""
 
-#: templates/_sidebars.html:183
+#: templates/_sidebars.html:184
 msgid "Detect Grid"
 msgstr ""
 
-#: templates/_sidebars.html:185
+#: templates/_sidebars.html:186
 msgid "Mask"
 msgstr ""
 
-#: templates/_sidebars.html:193
+#: templates/_sidebars.html:194
 msgid "Pick"
 msgstr ""
 
-#: templates/_sidebars.html:195
+#: templates/_sidebars.html:196
 msgid "Test"
 msgstr ""
 
-#: templates/_sidebars.html:197
+#: templates/_sidebars.html:198
 msgid "Background Mode"
 msgstr ""
 
-#: templates/_sidebars.html:201
+#: templates/_sidebars.html:202
 msgid "Horizontal"
 msgstr ""
 
-#: templates/_sidebars.html:205
+#: templates/_sidebars.html:206
 msgid "X%"
 msgstr ""
 
-#: templates/_sidebars.html:209
+#: templates/_sidebars.html:210
 msgid "Vertical"
 msgstr ""
 
-#: templates/_sidebars.html:213
+#: templates/_sidebars.html:214
 msgid "Y%"
 msgstr ""
 
-#: templates/_sidebars.html:221
+#: templates/_sidebars.html:222
 msgid "Detect"
 msgstr ""
 
-#: templates/_sidebars.html:230
+#: templates/_sidebars.html:231
 msgid "Load Image"
 msgstr ""
 
-#: templates/_sidebars.html:231
+#: templates/_sidebars.html:232
 msgid "Tutorial Video"
 msgstr ""
 
-#: templates/_sidebars.html:232
+#: templates/_sidebars.html:233
 msgid "Visit GitHub"
 msgstr ""
 
-#: templates/_sidebars.html:247
+#: templates/_sidebars.html:248
 msgid " Image Editing"
 msgstr ""
 
-#: templates/_sidebars.html:252
+#: templates/_sidebars.html:253
 msgid "Undo"
 msgstr ""
 
-#: templates/_sidebars.html:256
+#: templates/_sidebars.html:257
 msgid "Redo"
 msgstr ""
 
-#: templates/_sidebars.html:261
+#: templates/_sidebars.html:262
 msgid "Crop"
 msgstr ""
 
-#: templates/_sidebars.html:262
+#: templates/_sidebars.html:263
 msgid "Fix Perspective"
 msgstr ""
 
-#: templates/_sidebars.html:266
+#: templates/_sidebars.html:267
 msgid "Rotate"
 msgstr ""
 
-#: templates/_sidebars.html:267
+#: templates/_sidebars.html:268
 msgid "?"
 msgstr ""
 
