@@ -51,10 +51,10 @@
         <p class="sidebar-title">{{ _("Dataset") }}</p>
         <center>
             <p>{{ _("Axes") }}: <select id="dataset-item-axes-select" style="min-width:100px; max-width:150px;" onchange="wpd.dataSeriesManagement.changeAxes(this.value);"></select></p>
-            <p><input type="button" value='{{ _("Display Color") }}' style="width: 150px;" id="dataset-display-color-picker-button" onclick="wpd.dataSeriesManagement.startColorPicker();" /></p>
+            <!-- <p><input type="button" value='{{ _("Point Color") }}' style="width: 150px;" id="dataset-display-color-picker-button" onclick="wpd.dataSeriesManagement.startColorPicker();" /></p> -->
             <p><input type="button" value='{{ _("Rename Dataset") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showRenameDataset();" /></p>
             <p><input type="button" value='{{ _("Delete Dataset") }}' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.deleteDataset();" /></p>
-            <p><input type="button" value='{{ _("Edit Point Groups") }}' id="dataset-edit-point-groups-button" style="width: 150px;" class="sidebar-button" onclick="wpd.pointGroups.showSettingsPopup();" /></p>
+            <!-- <p><input type="button" value='{{ _("Edit Point Groups") }}' id="dataset-edit-point-groups-button" style="width: 150px;" class="sidebar-button" onclick="wpd.pointGroups.showSettingsPopup();" /></p> -->
             <p><input type="button" value='{{ _("Clear Data") }}' style="width:150px;" class="sidebar-button" onclick="wpd.acquireData.clearAll();" /></p>
             <p><input type="button" value='{{ _("Export Data") }}' style="width:150px; color: red;" class="sidebar-button" onclick="wpd.dataTable.showTable();" /></p>
             <p><b>{{ _("Data Points") }}:</b> <span class="data-point-counter">0</span></p>

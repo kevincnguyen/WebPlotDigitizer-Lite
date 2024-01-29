@@ -37,17 +37,6 @@ wpd.pointGroups = (function() {
     let currentGroupIndex = 0;
 
     let datasetSelectHandler = null;
-    window.onload = () => {
-        // attach listener on dataset select
-        datasetSelectHandler = wpd.events.addListener("wpd.dataset.select", payload => {
-            // hide edit point groups button if dataset is associated with a map axes
-            const $editPointGroupsButton = document.querySelector(editPointGroupsButtonSelector);
-            let axes = wpd.appData.getPlotData().getAxesForDataset(payload.dataset);
-            if (axes != null) {
-                $editPointGroupsButton.hidden = (axes instanceof wpd.MapAxes);
-            }
-        });
-    };
 
     function showSettingsPopup() {
         // populate UI with existing point groups

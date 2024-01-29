@@ -21,9 +21,9 @@
         <p class="popup-title">{{ _("Automatic Extraction Instructions") }}</p>
     </div>
     <div class="popup-body">
-        <p>{{ _("1. Use <em>Mask</em> to mask out the area of the image to extract from") }}</p>
-        <p>{{ _("2. Use <em>Color</em> to select the color to extract") }}</p>
-        <p>{{ _("3. <em>Run</em> the selected algorithm to extract data") }}</p>
+        <p>{{ _("1. Use <em>Color</em> to select the color to extract") }}</p>
+        <p>{{ _("2. Use <em>Color Tolerance</em> to specify an approximate RGB distance from the selected color that is acceptable") }}</p>
+        <p>{{ _("3. Press <em>Extract</em> to extract data") }}</p>
     </div>
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('automatic-extraction-tips');" />
@@ -237,7 +237,8 @@
         <p>&nbsp;</p>
     </div>
     <div class="popup-footer-center">
-        <input type="button" id="xybtn" class="popup-action" value='{{ _("Finish") }}' onclick="wpd.alignAxes.align();" />
+        <input type="button" value='{{ _("Redo") }}' class="popup-cancel" style="margin-left: 10px;" onclick="wpd.popup.close('xyAlignment'); wpd.alignAxes.start();" />
+        <input type="button" id="xybtn" class="popup-action" value='{{ _("Finish") }}' onclick="wpd.alignAxes.align(); wpd.colorPicker.startPicker();" />
     </div>
 </div>
 
@@ -376,7 +377,7 @@
 <!-- View Data -->
 <div id="csvWindow" class="popup" style="width: 800px; height: 500px;">
     <div class="popup-heading">
-        <div class="popup-title">{{ _("Acquired Data") }}</div>
+        <div class="popup-title">{{ _("Export Data") }}</div>
     </div>
     <div class="popup-body">
         <table style="width:780px;">
@@ -397,9 +398,9 @@
                     </p>
                     <p align="center"><textarea id="digitizedDataTable" style="width: 480px; height: 250px;"></textarea></p>
                     <p align="center">
-                        <input type="button" value='{{ _("Copy to Clipboard") }}' class="popup-action" onclick="wpd.dataTable.copyToClipboard();" />
                         <input type="button" value='{{ _("Download .CSV") }}' class="popup-action" onclick="wpd.dataTable.generateCSV();" />
-                        <input type="button" value='{{ _("Graph in Plotly*") }}' class="popup-action" onclick="wpd.dataTable.exportToPlotly();" />
+                        <input type="button" value='{{ _("Copy to Clipboard") }}' class="popup-action" onclick="wpd.dataTable.copyToClipboard();" />
+                        <input type="button" value='{{ _("Graph in Plotly") }}' class="popup-action" onclick="wpd.dataTable.exportToPlotly();" />
                         <input type="button" value='{{ _("Close") }}' class="popup-cancel" style="margin-left: 10px;" onclick="wpd.popup.close('csvWindow');" />
                     </p>
                     <br />
@@ -599,16 +600,18 @@
     </div>
     <div class="popup-body">
         <p align="center">&nbsp;</p>
+        <p align="center">
+            {{ _("Selected Color") }}:
+        </p>
         <div style="text-align:center;">
             <div id="color-selection-selected-color-box" class="largeColorBox"></div>
         </div>
         <p align="center">&nbsp;</p>
-
         <p align="center">
-            {{ _("R: ")}}<input type="text" value="255" id="color-selection-red" size="3" />&nbsp;
-            {{ _("G: ")}}<input type="text" id="color-selection-green" value="255" size="3" />&nbsp;
-            {{ _("B: ")}}<input type="text" id="color-selection-blue" value="255" size="3" />
-            <input type="button" value='{{ _("Color Picker") }}' class="popup-action" onclick="wpd.colorSelectionWidget.pickColor();" />
+            <button type="button" class="popup-action" onclick="wpd.colorSelectionWidget.pickColor();">
+                <i class="fa-solid fa-eye-dropper" style="padding-right: 5px;"></i>
+                Color Extractor
+            </button>
         </p>
         <p align="center">&nbsp;</p>
 
@@ -619,7 +622,7 @@
         <p>&nbsp;</p>
     </div>
     <div class="popup-footer-center">
-        <input type="button" value='{{ _("Done") }}' class="popup-cancel" onclick="wpd.colorSelectionWidget.setColor();">
+        <input type="button" value='{{ _("Done") }}' class="popup-cancel" onclick="wpd.colorSelectionWidget.setColor(); wpd.algoManager.run();">
     </div>
 </div>
 

@@ -67,7 +67,7 @@ wpd.TreeWidget = class {
                 if (labelKey === "Datasets") {
                     htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-table\"></i></div>";
                 } else if (labelKey === "Advanced" && !this.advancedFolderVisible) {
-                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-caret-right\"></i></i></div>";
+                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-caret-right\"></i></div>";
                 } else if (labelKey === "Advanced" && this.advancedFolderVisible) {
                     htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-caret-down\"></i></div>";
                 }
@@ -392,8 +392,8 @@ wpd.tree = (function() {
         if (activeDataset == null) {
             return;
         }
-        let $btn = document.getElementById("dataset-display-color-picker-button");
-        $btn.style.backgroundColor = activeDataset.colorRGB.toRGBString();
+        // let $btn = document.getElementById("dataset-display-color-picker-button");
+        // $btn.style.backgroundColor = activeDataset.colorRGB.toRGBString();
     }
 
     function renderAreaAxesSelection() {

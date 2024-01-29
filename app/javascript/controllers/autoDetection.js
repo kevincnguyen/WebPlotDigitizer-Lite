@@ -166,6 +166,7 @@ wpd.algoManager = (function() {
             let paramVar = paramId.replace('algo-param-', '');
             algoParams[paramVar] = $paramFields[pi].value;
         }
+        
         algo.setParams(algoParams);
 
         wpd.graphicsWidget.removeTool();

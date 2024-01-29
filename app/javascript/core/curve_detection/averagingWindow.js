@@ -24,8 +24,8 @@ var wpd = wpd || {};
 wpd.AveragingWindowAlgo = class {
 
     constructor() {
-        this._xStep = 10;
-        this._yStep = 10;
+        this._xStep = 2;
+        this._yStep = 2;
         this._wasRun = false;
     }
 

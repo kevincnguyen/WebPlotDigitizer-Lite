@@ -50,9 +50,9 @@ wpd.colorSelectionWidget = (function() {
 
         $selectedColor.style.backgroundColor =
             'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
-        document.getElementById('color-selection-red').value = color[0];
-        document.getElementById('color-selection-green').value = color[1];
-        document.getElementById('color-selection-blue').value = color[2];
+        // document.getElementById('color-selection-red').value = color[0];
+        // document.getElementById('color-selection-green').value = color[1];
+        // document.getElementById('color-selection-blue').value = color[2];
         renderColorOptions();
         wpd.popup.show('color-selection-widget');
     }
@@ -90,9 +90,9 @@ wpd.colorSelectionWidget = (function() {
 
     function setColor() {
         let gui_color = [];
-        gui_color[0] = parseInt(document.getElementById('color-selection-red').value, 10);
-        gui_color[1] = parseInt(document.getElementById('color-selection-green').value, 10);
-        gui_color[2] = parseInt(document.getElementById('color-selection-blue').value, 10);
+        gui_color[0] = parseInt(color[0], 10);
+        gui_color[1] = parseInt(color[1], 10);
+        gui_color[2] = parseInt(color[2], 10);
         color = gui_color;
         setColorDelegate(gui_color);
         wpd.popup.close('color-selection-widget');
@@ -163,7 +163,7 @@ wpd.colorPicker = (function() {
         return {
             color: ad.fgColor,
             triggerElementId: 'color-button',
-            title: wpd.gettext('specify-foreground-color'),
+            title: wpd.gettext('specify-data-color'),
             setColorDelegate: function(col) {
                 ad.fgColor = col;
             }

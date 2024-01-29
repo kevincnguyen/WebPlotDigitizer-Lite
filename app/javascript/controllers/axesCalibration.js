@@ -462,7 +462,7 @@ wpd.alignAxes = (function() {
                 wpd.appData.getPageManager().deleteAxesFromCurrentPage([axes]);
             }
             wpd.tree.refresh();
-            wpd.tree.selectPath("/" + wpd.gettext("axes"));
+            wpd.tree.selectPath("/" + wpd.gettext("advanced") + "/" + wpd.gettext("axes"));
             // dispatch axes delete event
             wpd.events.dispatch("wpd.axes.delete", {
                 axes: axes
@@ -527,7 +527,7 @@ wpd.alignAxes = (function() {
         const axes = wpd.tree.getActiveAxes();
         axes.name = name;
         wpd.tree.refresh();
-        wpd.tree.selectPath("/" + wpd.gettext("axes") + "/" + name, true);
+        wpd.tree.selectPath("/" + wpd.gettext("advanced") + "/" + wpd.gettext("axes") + "/" + name, true);
     }
 
     function renameKeypress(e) {
