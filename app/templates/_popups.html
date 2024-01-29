@@ -191,7 +191,7 @@
     </div>
     <div class="popup-body">
         <p>&nbsp;</p>
-        <p style="text-align: center;">{{ _("Enter the <b>X-values</b> of the two <b>points clicked on X-axis</b>:") }}</p>
+        <p style="text-align: center;">{{ _("Enter the <b>X-values</b> of <b>X1 and X2</b>:") }}</p>
         <center>
             <table padding="10">
                 <tr>
@@ -209,7 +209,7 @@
             </table>
         </center>
         <br />
-        <p style="text-align: center;">{{ _("Enter the <b>Y-values</b> of the two <b>points clicked on the Y-axis</b>:") }}</p>
+        <p style="text-align: center;">{{ _("Enter the <b>Y-values</b> of <b>Y1 and Y2</b>:") }}</p>
         <center>
             <table padding="10">
                 <tr>
@@ -227,15 +227,13 @@
             </table>
         </center>
         <br />
-        <br />
-        <label class="centered">
-            <input type="checkbox" id="xy-axes-no-rotation" />
-            <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                <p style="text-align: start; margin-left: 5px;">Assume axes are perfectly aligned with image coordinates <br /> (skip rotation correction)</p>
-            </div>
-        </label>
-        <br />
-        <p align="center" class="footnote">{{ _("*For <em>dates</em>, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes (e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15). For <em>exponents</em>, enter values as 1e-3 for 10^-3.") }}</p>
+        <p align="center" class="footnote">
+            {{ _("For <em>dates</em>, use yyyy/mm/dd hh:ii:ss format, where ii denotes minutes") }}
+            <br />
+            {{ _("(e.g. 2013/10/23 or 2013/10 or 2013/10/23 10:15 or just 10:15).") }}
+            <br />
+            {{ _("For <em>exponents</em>, enter values as 1e-3 for 10^-3.") }}
+        </p>
         <p>&nbsp;</p>
     </div>
     <div class="popup-footer-center">

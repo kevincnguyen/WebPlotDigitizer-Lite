@@ -57,7 +57,6 @@ wpd.XYAxesCalibrator = class extends wpd.AxesCalibrator {
                 document.getElementById('ymax').value = prevCal.getPoint(3).dy;
                 document.getElementById('xlog').checked = axes.isLogX();
                 document.getElementById('ylog').checked = axes.isLogY();
-                document.getElementById('xy-axes-no-rotation').checked = axes.noRotation();
             }
         }
     }
@@ -69,7 +68,7 @@ wpd.XYAxesCalibrator = class extends wpd.AxesCalibrator {
         let ymax = document.getElementById('ymax').value;
         let xlog = document.getElementById('xlog').checked;
         let ylog = document.getElementById('ylog').checked;
-        let noRotation = document.getElementById('xy-axes-no-rotation').checked;
+        let noRotation = false;
         let axes = this._isEditing ? wpd.tree.getActiveAxes() : new wpd.XYAxes();
 
         // validate log scale values
@@ -384,7 +383,7 @@ wpd.alignAxes = (function() {
     }
 
     function calibrationCompleted() {
-        wpd.sidebar.show('axes-calibration-sidebar');
+        wpd.alignAxes.getCornerValues();
     }
 
     function zoomCalPoint(i) {
