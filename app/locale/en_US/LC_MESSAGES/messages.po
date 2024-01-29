@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-28 20:54-0800\n"
+"POT-Creation-Date: 2024-01-28 21:21-0800\n"
 "PO-Revision-Date: 2016-12-12 23:09-0600\n"
 "Last-Translator: \n"
 "Language: en_US\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Fit"
 msgstr ""
 
-#: templates/_landing.html:4 templates/_popups.html:573
+#: templates/_landing.html:4 templates/_popups.html:577
 msgid "WebPlotDigitizer Lite"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: templates/_navbar.html:10 templates/_popups.html:864
+#: templates/_navbar.html:10 templates/_popups.html:868
 msgid "Page Labels"
 msgstr ""
 
@@ -127,8 +127,8 @@ msgid "Click <em>Axes > Add Calibration</em> to get started extracting data."
 msgstr ""
 
 #: templates/_popups.html:14 templates/_popups.html:29
-#: templates/_popups.html:405 templates/_popups.html:589
-#: templates/_popups.html:630 templates/_popups.html:716
+#: templates/_popups.html:405 templates/_popups.html:593
+#: templates/_popups.html:634 templates/_popups.html:720
 msgid "Close"
 msgstr ""
 
@@ -166,13 +166,13 @@ msgstr ""
 
 #: templates/_popups.html:47 templates/_popups.html:87
 #: templates/_popups.html:105 templates/_popups.html:115
-#: templates/_popups.html:182 templates/_popups.html:646
-#: templates/_popups.html:665 templates/_popups.html:728
-#: templates/_popups.html:741 templates/_popups.html:755
-#: templates/_popups.html:770 templates/_popups.html:784
-#: templates/_popups.html:810 templates/_popups.html:825
-#: templates/_popups.html:841 templates/_popups.html:878
-#: templates/_popups.html:931 templates/_strings.html:78
+#: templates/_popups.html:182 templates/_popups.html:650
+#: templates/_popups.html:669 templates/_popups.html:732
+#: templates/_popups.html:745 templates/_popups.html:759
+#: templates/_popups.html:774 templates/_popups.html:788
+#: templates/_popups.html:814 templates/_popups.html:829
+#: templates/_popups.html:845 templates/_popups.html:882
+#: templates/_popups.html:935 templates/_strings.html:78
 msgid "Cancel"
 msgstr ""
 
@@ -237,8 +237,8 @@ msgstr ""
 #: templates/_popups.html:129 templates/_popups.html:266
 #: templates/_popups.html:279 templates/_popups.html:310
 #: templates/_popups.html:348 templates/_popups.html:375
-#: templates/_popups.html:727 templates/_popups.html:740
-#: templates/_popups.html:754 templates/_popups.html:858
+#: templates/_popups.html:731 templates/_popups.html:744
+#: templates/_popups.html:758 templates/_popups.html:862
 #: templates/_strings.html:77
 msgid "OK"
 msgstr ""
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Units"
 msgstr ""
 
-#: templates/_popups.html:284 templates/_popups.html:536
+#: templates/_popups.html:284 templates/_popups.html:540
 msgid "Align Polar Axes"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgstr ""
 msgid "0 to 100"
 msgstr ""
 
-#: templates/_popups.html:353 templates/_popups.html:556
+#: templates/_popups.html:353 templates/_popups.html:560
 msgid "Align Circular Chart Recorder Axes"
 msgstr ""
 
@@ -434,7 +434,7 @@ msgstr ""
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: templates/_popups.html:403 templates/_popups.html:785
+#: templates/_popups.html:403 templates/_popups.html:789
 msgid "Download .CSV"
 msgstr ""
 
@@ -536,349 +536,349 @@ msgstr ""
 msgid "2. Select two points on the Y axis (Y1, Y2)"
 msgstr ""
 
-#: templates/_popups.html:478 templates/_popups.html:521
-#: templates/_popups.html:531 templates/_popups.html:541
-#: templates/_popups.html:551 templates/_popups.html:567
+#: templates/_popups.html:478 templates/_popups.html:525
+#: templates/_popups.html:535 templates/_popups.html:545
+#: templates/_popups.html:555 templates/_popups.html:571
 msgid "Proceed"
 msgstr ""
 
-#: templates/_popups.html:516
+#: templates/_popups.html:520
 msgid "Align Bar Chart Axes"
 msgstr ""
 
-#: templates/_popups.html:519
+#: templates/_popups.html:523
 msgid "Click on two known points (P1, P2) on the continuous axes along the bars"
 msgstr ""
 
-#: templates/_popups.html:526
+#: templates/_popups.html:530
 msgid "Align Map To Scale Bar"
 msgstr ""
 
-#: templates/_popups.html:529
+#: templates/_popups.html:533
 msgid "Click on the two ends of the scale bar on the map."
 msgstr ""
 
-#: templates/_popups.html:539
+#: templates/_popups.html:543
 msgid "Click on the center, followed by two known points."
 msgstr ""
 
-#: templates/_popups.html:546
+#: templates/_popups.html:550
 msgid "Align Ternary Axes"
 msgstr ""
 
-#: templates/_popups.html:549
+#: templates/_popups.html:553
 msgid "Click on the three corners in the order shown above."
 msgstr ""
 
-#: templates/_popups.html:559
+#: templates/_popups.html:563
 msgid "Click on five (5) points on the chart axes as shown:"
 msgstr ""
 
-#: templates/_popups.html:562
+#: templates/_popups.html:566
 msgid ""
 "First three (3) points at different maginitudes but the same known time "
 "(T0)."
 msgstr ""
 
-#: templates/_popups.html:563
+#: templates/_popups.html:567
 msgid "Next two (2) points on any times (T1, T2) but at the same magnitude as R2."
 msgstr ""
 
-#: templates/_popups.html:574
+#: templates/_popups.html:578
 msgid "A web-based plot digitizer based off the original WebPlotDigitizer"
 msgstr ""
 
-#: templates/_popups.html:578
+#: templates/_popups.html:582
 msgid "WebPlotDigitizer Lite uses the following version of WebPlotDigitizer:"
 msgstr ""
 
-#: templates/_popups.html:580
+#: templates/_popups.html:584
 msgid "Version"
 msgstr ""
 
-#: templates/_popups.html:581
+#: templates/_popups.html:585
 msgid ""
 "This program is distributed under the <a "
 "href='https://www.gnu.org/licenses/agpl-3.0-standalone.html' "
 "target='_blank'>GNU Affero General Public License Version 3</a>."
 msgstr ""
 
-#: templates/_popups.html:582
+#: templates/_popups.html:586
 msgid "Copyright"
 msgstr ""
 
-#: templates/_popups.html:583
+#: templates/_popups.html:587
 msgid "List of Contributors"
 msgstr ""
 
-#: templates/_popups.html:596
+#: templates/_popups.html:600
 msgid "Specify Color"
 msgstr ""
 
-#: templates/_popups.html:606
+#: templates/_popups.html:610
 msgid "R: "
 msgstr ""
 
-#: templates/_popups.html:607
+#: templates/_popups.html:611
 msgid "G: "
 msgstr ""
 
-#: templates/_popups.html:608
+#: templates/_popups.html:612
 msgid "B: "
 msgstr ""
 
-#: templates/_popups.html:609
+#: templates/_popups.html:613
 msgid "Color Picker"
 msgstr ""
 
-#: templates/_popups.html:614
+#: templates/_popups.html:618
 msgid "Dominant Colors"
 msgstr ""
 
-#: templates/_popups.html:620 templates/_sidebars.html:10
+#: templates/_popups.html:624 templates/_sidebars.html:10
 msgid "Done"
 msgstr ""
 
-#: templates/_popups.html:626 templates/_strings.html:16
+#: templates/_popups.html:630 templates/_strings.html:16
 msgid "Transformation Equations"
 msgstr ""
 
-#: templates/_popups.html:627
+#: templates/_popups.html:631
 msgid "The following relationships are being used to convert image pixels to data"
 msgstr ""
 
-#: templates/_popups.html:636
+#: templates/_popups.html:640
 msgid "Export JSON or Project File"
 msgstr ""
 
-#: templates/_popups.html:639
+#: templates/_popups.html:643
 msgid ""
 "Export a JSON file containing the axes calibrations, digitized data and "
 "measurements. This JSON file can be loaded to resume work at a later "
 "time."
 msgstr ""
 
-#: templates/_popups.html:640
+#: templates/_popups.html:644
 msgid ""
 "You can also download a combined 'project file' which includes this JSON "
 "and also the image in a single TAR file."
 msgstr ""
 
-#: templates/_popups.html:647
+#: templates/_popups.html:651
 msgid "Download JSON (.json)"
 msgstr ""
 
-#: templates/_popups.html:648
+#: templates/_popups.html:652
 msgid "Download Project File (.tar)"
 msgstr ""
 
-#: templates/_popups.html:655 templates/_strings.html:4
+#: templates/_popups.html:659 templates/_strings.html:4
 msgid "Import Project"
 msgstr ""
 
-#: templates/_popups.html:656
+#: templates/_popups.html:660
 msgid "Load a previously exported JSON or project file (.tar)"
 msgstr ""
 
-#: templates/_popups.html:659
+#: templates/_popups.html:663
 msgid "This will clear any unsaved data in the current plot."
 msgstr ""
 
-#: templates/_popups.html:661
+#: templates/_popups.html:665
 msgid "JSON/Project File"
 msgstr ""
 
-#: templates/_popups.html:666
+#: templates/_popups.html:670
 msgid "Import"
 msgstr ""
 
-#: templates/_popups.html:673
+#: templates/_popups.html:677
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: templates/_popups.html:676
+#: templates/_popups.html:680
 msgid ""
 "Click to select a data point. The following keys can then be used to "
 "adjust the position"
 msgstr ""
 
-#: templates/_popups.html:680
+#: templates/_popups.html:684
 msgid "Cursor (Arrows)"
 msgstr ""
 
-#: templates/_popups.html:681
+#: templates/_popups.html:685
 msgid "Move up/down/right/left"
 msgstr ""
 
-#: templates/_popups.html:684
+#: templates/_popups.html:688
 msgid "Shift + Cursor"
 msgstr ""
 
-#: templates/_popups.html:685
+#: templates/_popups.html:689
 msgid "Faster rate of movement"
 msgstr ""
 
-#: templates/_popups.html:689
+#: templates/_popups.html:693
 msgid "Select next point"
 msgstr ""
 
-#: templates/_popups.html:693
+#: templates/_popups.html:697
 msgid "Select previous point"
 msgstr ""
 
-#: templates/_popups.html:696
+#: templates/_popups.html:700
 msgid "Del/Backspace"
 msgstr ""
 
-#: templates/_popups.html:697
+#: templates/_popups.html:701
 msgid "Delete point"
 msgstr ""
 
-#: templates/_popups.html:701
+#: templates/_popups.html:705
 msgid "Edit label (Bar Chart)"
 msgstr ""
 
-#: templates/_popups.html:706
+#: templates/_popups.html:710
 msgid "Override value (When adjusting "
 msgstr ""
 
-#: templates/_popups.html:708
+#: templates/_popups.html:712
 msgid "non-Bar Chart points"
 msgstr ""
 
-#: templates/_popups.html:722
+#: templates/_popups.html:726
 msgid "Edit Label"
 msgstr ""
 
-#: templates/_popups.html:724
+#: templates/_popups.html:728
 msgid "Label"
 msgstr ""
 
-#: templates/_popups.html:724
+#: templates/_popups.html:728
 msgid "Data Point"
 msgstr ""
 
-#: templates/_popups.html:734
+#: templates/_popups.html:738
 msgid "Override Point Values"
 msgstr ""
 
-#: templates/_popups.html:742 templates/_sidebars.html:188
+#: templates/_popups.html:746 templates/_sidebars.html:188
 msgid "Clear"
 msgstr ""
 
-#: templates/_popups.html:748
+#: templates/_popups.html:752
 msgid "Perspective Transformation"
 msgstr ""
 
-#: templates/_popups.html:751
+#: templates/_popups.html:755
 msgid "Click on four corners of the region to be transformed as shown."
 msgstr ""
 
-#: templates/_popups.html:761
+#: templates/_popups.html:765
 msgid "Edit Existing Calibration?"
 msgstr ""
 
-#: templates/_popups.html:763
+#: templates/_popups.html:767
 msgid "Do you wish to tweak existing axes calibration or select a new axes type?"
 msgstr ""
 
-#: templates/_popups.html:766
+#: templates/_popups.html:770
 msgid "Edit Calibration"
 msgstr ""
 
-#: templates/_popups.html:768
+#: templates/_popups.html:772
 msgid "Change Axes Type"
 msgstr ""
 
-#: templates/_popups.html:777
+#: templates/_popups.html:781
 msgid "Export All Datasets"
 msgstr ""
 
-#: templates/_popups.html:780
+#: templates/_popups.html:784
 msgid "Export data from all datasets"
 msgstr ""
 
-#: templates/_popups.html:786
+#: templates/_popups.html:790
 msgid "Export to Plotly"
 msgstr ""
 
-#: templates/_popups.html:793 templates/_tree.html:36
+#: templates/_popups.html:797 templates/_tree.html:36
 msgid "Add Dataset"
 msgstr ""
 
-#: templates/_popups.html:797
+#: templates/_popups.html:801
 msgid "Name: "
 msgstr ""
 
-#: templates/_popups.html:799
+#: templates/_popups.html:803
 msgid "Add Single Dataset"
 msgstr ""
 
-#: templates/_popups.html:803
+#: templates/_popups.html:807
 msgid "Count: "
 msgstr ""
 
-#: templates/_popups.html:805
+#: templates/_popups.html:809
 msgid "Add Multiple Datasets"
 msgstr ""
 
-#: templates/_popups.html:817 templates/_tree.html:55
+#: templates/_popups.html:821 templates/_tree.html:55
 msgid "Rename Dataset"
 msgstr ""
 
-#: templates/_popups.html:821 templates/_popups.html:837
+#: templates/_popups.html:825 templates/_popups.html:841
 msgid "Name"
 msgstr ""
 
-#: templates/_popups.html:826 templates/_popups.html:842
+#: templates/_popups.html:830 templates/_popups.html:846
 #: templates/_tree.html:27
 msgid "Rename"
 msgstr ""
 
-#: templates/_popups.html:833
+#: templates/_popups.html:837
 msgid "Rename Axes"
 msgstr ""
 
-#: templates/_popups.html:849 templates/_tree.html:10
+#: templates/_popups.html:853 templates/_tree.html:10
 msgid "Image Info"
 msgstr ""
 
-#: templates/_popups.html:865
+#: templates/_popups.html:869
 msgid ""
 "Relabel the current page number with an alphanumeric string. Optionally, "
 "relabel all page numbers in the image based on the current page (only "
 "supports integer values)."
 msgstr ""
 
-#: templates/_popups.html:875
+#: templates/_popups.html:879
 msgid "Relabel"
 msgstr ""
 
-#: templates/_popups.html:876 templates/_sidebars.html:220
+#: templates/_popups.html:880 templates/_sidebars.html:220
 msgid "Reset"
 msgstr ""
 
-#: templates/_popups.html:877
+#: templates/_popups.html:881
 msgid "Reset All"
 msgstr ""
 
-#: templates/_popups.html:886 templates/_sidebars.html:88
+#: templates/_popups.html:890 templates/_sidebars.html:88
 msgid "Point Groups"
 msgstr ""
 
-#: templates/_popups.html:893
+#: templates/_popups.html:897
 msgid ""
 "Point groups are groups of related data points such as standard error or "
 "confidence intervals."
 msgstr ""
 
-#: templates/_popups.html:897
+#: templates/_popups.html:901
 msgid ""
 "To define a point group, enter a name in the text input below. Create "
 "additional point groups as necessary."
 msgstr ""
 
-#: templates/_popups.html:901
+#: templates/_popups.html:905
 msgid ""
 "E.g. Assume we have 3 point groups defined: Median, Standard error +1, "
 "and Standard error -1. Points would be entered in the order shown in the "
@@ -887,19 +887,19 @@ msgid ""
 "-1. The process would repeat for the next set of points."
 msgstr ""
 
-#: templates/_popups.html:917 templates/_strings.html:85
+#: templates/_popups.html:921 templates/_strings.html:85
 msgid "Group"
 msgstr ""
 
-#: templates/_popups.html:920 templates/_strings.html:87
+#: templates/_popups.html:924 templates/_strings.html:87
 msgid "Primary Group"
 msgstr ""
 
-#: templates/_popups.html:928
+#: templates/_popups.html:932
 msgid "Add New Group"
 msgstr ""
 
-#: templates/_popups.html:932
+#: templates/_popups.html:936
 msgid "Save"
 msgstr ""
 
