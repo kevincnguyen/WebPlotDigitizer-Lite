@@ -113,7 +113,7 @@ wpd.imageManager = (function() {
         if (_firstLoad) {
             wpd.sidebar.show('start-sidebar');
         } else if (!resumedProject) {
-            wpd.popup.show('axesList');
+            wpd.alignAxes.start();
         }
         _firstLoad = false;
         _newLoad = false;

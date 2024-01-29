@@ -1,23 +1,47 @@
 <div id="landing-page">
-    <div class="landing-left">
-        <p class="landing-title">{{ _("WebPlotDigitizer Lite") }}</p>
-        <p class="landing-subtitle">{{ _("Convert images of graphs into data points") }}</p>
-        <div class="landing-buttons">
-            <button type="button" class="arrow-button" onclick="wpd.popup.show('loadNewImage');">
-                {{ _("Load Image(s)") }}
-                <span class="arrow"></span>
-            </button>
-            <button type="button" class="arrow-button" onclick="wpd.saveResume.load();">
-                {{ _("Load Project") }}
-                <span class="arrow"></span>
-            </button>
-            <button type="button" class="arrow-button" onclick="wpd.navigateToApp(); wpd.popup.show('welcome');">
-                {{ _("Explore Demo") }}
-                <span class="arrow"></span>
-            </button>
-        </div>
-    </div>
-    <div class="landing-right">
-        <img src="images/wpd.png" width="800" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)">
+    <p class="landing-title">
+        <i class="fa-solid fa-chart-line"></i>
+        {{ _("WebPlotDigitizer Lite") }}
+    </p>
+    <p class="landing-subtitle">{{ _("Convert images of graphs into data points") }}</p>
+    <div class="landing-drop-area" id="dropArea">
+        <input type="file" id="fileLoadBox" multiple style="display: none;" onchange="wpd.imageManager.load();" />
+        <label id="fileInputLabel">
+            <p style="margin: 0 0 10px 0;"><i class="fa-regular fa-images fa-3x" style="color: var(--dark-gray); "></i></p>
+            <p class="file-input-title">{{ _("Drag and drop or click here") }}</p>
+            <p class="file-input-subtitle">{{ _("to upload your graph image") }}</p>
+        </label>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropArea = document.getElementById('dropArea');
+        const fileInput = document.getElementById('fileLoadBox');
+
+        // Handle both drag and drop events
+        dropArea.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            dropArea.classList.add('dragover');
+        });
+
+        dropArea.addEventListener('dragleave', function () {
+            dropArea.classList.remove('dragover');
+        });
+
+        dropArea.addEventListener('drop', function (e) {
+            e.preventDefault();
+            dropArea.classList.remove('dragover');
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                wpd.imageManager.load();
+            }
+        });
+
+        dropArea.addEventListener('click', function (e) {
+            fileInput.click();
+        });
+    });
+</script>

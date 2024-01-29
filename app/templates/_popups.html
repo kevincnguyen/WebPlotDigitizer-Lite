@@ -40,7 +40,7 @@
         <p>{{ _("Supported file formats:") }}</p>
         <p>{{ _("JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc.") }}</p>
         <p>&nbsp;</p>
-        <p align="center"><input type="file" id="fileLoadBox" multiple /></p>
+        <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load();" /></p>
         <p>&nbsp;</p>
     </div>
     <div class="popup-footer">

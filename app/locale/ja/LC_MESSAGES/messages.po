@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-11 01:53-0800\n"
+"POT-Creation-Date: 2024-01-28 19:18-0800\n"
 "PO-Revision-Date: 2016-12-18 10:38-0600\n"
 "Last-Translator: \n"
 "Language: ja\n"
@@ -38,24 +38,20 @@ msgstr ""
 msgid "Fit"
 msgstr ""
 
-#: templates/_landing.html:3 templates/_popups.html:573
+#: templates/_landing.html:4 templates/_popups.html:573
 msgid "WebPlotDigitizer Lite"
 msgstr ""
 
-#: templates/_landing.html:4
+#: templates/_landing.html:6
 msgid "Convert images of graphs into data points"
 msgstr ""
 
-#: templates/_landing.html:7 templates/_menubar.html:11
-msgid "Load Image(s)"
+#: templates/_landing.html:11
+msgid "Drag and drop or click here"
 msgstr ""
 
-#: templates/_landing.html:11 templates/_menubar.html:12
-msgid "Load Project"
-msgstr ""
-
-#: templates/_landing.html:15
-msgid "Explore Demo"
+#: templates/_landing.html:12
+msgid "to upload your graph image"
 msgstr ""
 
 #: templates/_menubar.html:4
@@ -64,6 +60,14 @@ msgstr ""
 
 #: templates/_menubar.html:8
 msgid "File"
+msgstr ""
+
+#: templates/_menubar.html:11
+msgid "Load Image(s)"
+msgstr ""
+
+#: templates/_menubar.html:12
+msgid "Load Project"
 msgstr ""
 
 #: templates/_menubar.html:13
@@ -798,7 +802,7 @@ msgstr ""
 msgid "Export to Plotly"
 msgstr ""
 
-#: templates/_popups.html:793 templates/_tree.html:36
+#: templates/_popups.html:793 templates/_tree.html:10
 msgid "Add Dataset"
 msgstr ""
 
@@ -827,7 +831,7 @@ msgid "Name"
 msgstr ""
 
 #: templates/_popups.html:826 templates/_popups.html:842
-#: templates/_tree.html:27
+#: templates/_tree.html:35
 msgid "Rename"
 msgstr ""
 
@@ -835,7 +839,7 @@ msgstr ""
 msgid "Rename Axes"
 msgstr ""
 
-#: templates/_popups.html:849 templates/_tree.html:10
+#: templates/_popups.html:849 templates/_tree.html:18
 msgid "Image Info"
 msgstr ""
 
@@ -1472,43 +1476,43 @@ msgid "View Keyboard Shortcuts"
 msgstr ""
 
 #: templates/_tree.html:8
-msgid " Image"
-msgstr ""
-
-#: templates/_tree.html:15 templates/_tree.html:25
-msgid " Axes"
-msgstr ""
-
-#: templates/_tree.html:17
-msgid "Add Calibration"
-msgstr ""
-
-#: templates/_tree.html:18
-msgid "Remove Grid"
-msgstr ""
-
-#: templates/_tree.html:19
-msgid "Import Calibration"
-msgstr ""
-
-#: templates/_tree.html:20
-msgid "Export Calibration"
-msgstr ""
-
-#: templates/_tree.html:28
-msgid "Tweak Calibration"
-msgstr ""
-
-#: templates/_tree.html:29
-msgid "Delete"
-msgstr ""
-
-#: templates/_tree.html:34
 msgid " Datasets"
 msgstr ""
 
-#: templates/_tree.html:37
+#: templates/_tree.html:11
 msgid "Export All Data"
+msgstr ""
+
+#: templates/_tree.html:16
+msgid " Image"
+msgstr ""
+
+#: templates/_tree.html:23 templates/_tree.html:33
+msgid " Axes"
+msgstr ""
+
+#: templates/_tree.html:25
+msgid "Add Calibration"
+msgstr ""
+
+#: templates/_tree.html:26
+msgid "Remove Grid"
+msgstr ""
+
+#: templates/_tree.html:27
+msgid "Import Calibration"
+msgstr ""
+
+#: templates/_tree.html:28
+msgid "Export Calibration"
+msgstr ""
+
+#: templates/_tree.html:36
+msgid "Tweak Calibration"
+msgstr ""
+
+#: templates/_tree.html:37
+msgid "Delete"
 msgstr ""
 
 #: templates/_tree.html:42
@@ -3354,5 +3358,20 @@ msgstr ""
 #~ "2. Use <em>Color</em> to select the "
 #~ "color to extract out the area of"
 #~ " the image to extract from"
+#~ msgstr ""
+
+#~ msgid "Drag & Drop images or click to select"
+#~ msgstr ""
+
+#~ msgid "Drag & Drop images"
+#~ msgstr ""
+
+#~ msgid "Supports: JPEG, PNG, SVG, PDF, GIF, BMP, WebP"
+#~ msgstr ""
+
+#~ msgid "Drag & Drop"
+#~ msgstr ""
+
+#~ msgid "or browse"
 #~ msgstr ""
 
