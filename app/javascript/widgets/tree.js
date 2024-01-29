@@ -31,11 +31,13 @@ wpd.TreeWidget = class {
         this.idmap = [];
         this.itemCount = 0;
         this.selectedPath = null;
+        this.advancedFolderVisible = false;
     }
 
     _renderFolder(data, basePath, isInnerFolder) {
-        if (data == null)
-            return;
+        if (data == null || (basePath === '/Advanced' && !this.advancedFolderVisible)) {
+            return ""; 
+        }
 
         let htmlStr = "";
 
@@ -55,8 +57,6 @@ wpd.TreeWidget = class {
                 htmlStr += "<span class=\"tree-item\" id=\"tree-item-id-" + this.itemCount + "\">";
                 if (typeof(itemColor) !== 'undefined') {
                     htmlStr += "<div class=\"tree-item-icon\" style=\"background-color: " + itemColor.toRGBString() + ";\"></div>";
-                } else if (item === "Image") {
-                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-regular fa-image\"></i></div>";
                 }
                 htmlStr += item + "</span>";
                 this.idmap[this.itemCount] = itemPath;
@@ -64,12 +64,12 @@ wpd.TreeWidget = class {
                 htmlStr += "<li>";
                 let labelKey = Object.keys(item)[0];
                 htmlStr += "<span class=\"tree-folder\" id=\"tree-item-id-" + this.itemCount + "\">";
-                if (labelKey === "Axes") {
-                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-chart-column\"></i></div>";
-                } else if (labelKey === "Datasets") {
+                if (labelKey === "Datasets") {
                     htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-table\"></i></div>";
-                } else if (labelKey === "Measurements") {
-                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-ruler\"></i></div>";
+                } else if (labelKey === "Advanced" && !this.advancedFolderVisible) {
+                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-caret-right\"></i></i></div>";
+                } else if (labelKey === "Advanced" && this.advancedFolderVisible) {
+                    htmlStr += "<div class=\"tree-menu-icon\"><i class=\"fa-solid fa-caret-down\"></i></div>";
                 }
                 htmlStr += labelKey + "</span>";
                 this.idmap[this.itemCount] = basePath + "/" + labelKey;
@@ -192,9 +192,6 @@ wpd.tree = (function() {
         const pageManager = wpd.appData.getPageManager();
         const currentFileIndex = fileManager.currentFileIndex();
 
-        // Image item
-        treeData.push(wpd.gettext('image'));
-
         // Axes folder
         let axesNames = plotData.getAxesNames();
         const axesFileMap = fileManager.getAxesNameMap();
@@ -209,7 +206,6 @@ wpd.tree = (function() {
         } else {
             axesFolder[wpd.gettext("axes")] = axesNames;
         }
-        treeData.push(axesFolder);
 
         // Datasets folder
         let datasetNames = plotData.getDatasetNames();
@@ -262,7 +258,15 @@ wpd.tree = (function() {
         }
         let measurementFolder = {};
         measurementFolder[wpd.gettext("measurements")] = measurementItems;
-        treeData.push(measurementFolder);
+        
+        // Advanced folder
+        let advancedFolder = {};
+        advancedFolder[wpd.gettext("advanced")] = [
+            wpd.gettext('image'),
+            axesFolder,
+            measurementFolder
+        ];
+        treeData.push(advancedFolder);
 
         treeWidget.render(treeData, itemColors);
 
@@ -468,7 +472,7 @@ wpd.tree = (function() {
     function onAxesSelection(elem, path, suppressSecondaryActions) {
         resetGraphics();
         showTreeItemWidget("axes-item-tree-widget");
-        const axName = path.replace("/" + wpd.gettext("axes") + "/", "");
+        const axName = path.replace("/" + wpd.gettext("advanced") + "/" + wpd.gettext("axes") + "/", "");
         const plotData = wpd.appData.getPlotData();
         const axIdx = plotData.getAxesNames().indexOf(axName);
         activeAxes = plotData.getAxesColl()[axIdx];
@@ -489,7 +493,10 @@ wpd.tree = (function() {
     }
 
     function onSelection(elem, path, suppressSecondaryActions) {
-        if (path === '/' + wpd.gettext('image')) {
+        if (path === '/' + wpd.gettext("advanced")) {
+            treeWidget.advancedFolderVisible = !treeWidget.advancedFolderVisible;
+            refresh();
+        } else if (path === '/' + wpd.gettext("advanced") + '/' + wpd.gettext('image')) {
             onImageSelection(elem, path, suppressSecondaryActions);
         } else if (path.startsWith('/' + wpd.gettext('image') + '/')) {
             selectPath('/' + wpd.gettext('image'));
@@ -497,27 +504,27 @@ wpd.tree = (function() {
             onDatasetGroupSelection();
             showTreeItemWidget('dataset-group-tree-widget');
             activeAxes = null;
-        } else if (path === '/' + wpd.gettext('axes')) {
+        } else if (path === '/' + wpd.gettext("advanced") + '/' + wpd.gettext('axes')) {
             resetGraphics();
             showTreeItemWidget('axes-group-tree-widget');
             activeAxes = null;
-        } else if (path === '/' + wpd.gettext('measurements')) {
+        } else if (path === '/' + wpd.gettext("advanced") + '/' + wpd.gettext('measurements')) {
             resetGraphics();
             showTreeItemWidget('measurement-group-tree-widget');
             activeAxes = null;
-        } else if (path === '/' + wpd.gettext('measurements') + '/' + wpd.gettext('distance')) {
+        } else if (path === '/' + wpd.gettext("advanced") + '/' + wpd.gettext('measurements') + '/' + wpd.gettext('distance')) {
             if (!suppressSecondaryActions) {
                 wpd.measurement.start(wpd.measurementModes.distance);
             }
             showTreeItemWidget('distance-item-tree-widget');
             renderDistanceAxesSelection();
-        } else if (path === '/' + wpd.gettext('measurements') + '/' + wpd.gettext('angle')) {
+        } else if (path === '/' + wpd.gettext("advanced") + '/' + wpd.gettext('measurements') + '/' + wpd.gettext('angle')) {
             if (!suppressSecondaryActions) {
                 wpd.measurement.start(wpd.measurementModes.angle);
             }
             showTreeItemWidget('angle-item-tree-widget');
             activeAxes = null;
-        } else if (path === '/' + wpd.gettext('measurements') + '/' + wpd.gettext('area')) {
+        } else if (path === '/' + wpd.gettext("advanced") + '/' + wpd.gettext('measurements') + '/' + wpd.gettext('area')) {
             if (!suppressSecondaryActions) {
                 wpd.measurement.start(wpd.measurementModes.area);
             }
@@ -525,7 +532,7 @@ wpd.tree = (function() {
             renderAreaAxesSelection();
         } else if (path.startsWith('/' + wpd.gettext('datasets') + '/')) {
             onDatasetSelection(elem, path, suppressSecondaryActions);
-        } else if (path.startsWith('/' + wpd.gettext('axes') + '/')) {
+        } else if (path.startsWith('/' + wpd.gettext("advanced") + '/' + wpd.gettext('axes') + '/')) {
             onAxesSelection(elem, path, suppressSecondaryActions);
         } else {
             resetGraphics();
@@ -537,7 +544,7 @@ wpd.tree = (function() {
     function onRename(elem, path, suppressSecondaryActions) {
         if (path.startsWith("/" + wpd.gettext("datasets") + "/")) {
             wpd.dataSeriesManagement.showRenameDataset();
-        } else if (path.startsWith("/" + wpd.gettext("axes") + "/")) {
+        } else if (path.startsWith("/" + wpd.gettext("advanced") + '/' + wpd.gettext("axes") + "/")) {
             wpd.alignAxes.showRenameAxes();
         }
     }
@@ -574,13 +581,13 @@ wpd.tree = (function() {
         let suppressSecondaryActions = true;
         if (wpd.appData.isMultipage()) suppressSecondaryActions = false;
         if (mode === wpd.measurementModes.distance) {
-            wpd.tree.selectPath("/" + wpd.gettext("measurements") + "/" + wpd.gettext("distance"),
+            wpd.tree.selectPath("/" + wpd.gettext("advanced") + '/' + wpd.gettext("measurements") + "/" + wpd.gettext("distance"),
                 suppressSecondaryActions);
         } else if (mode === wpd.measurementModes.angle) {
-            wpd.tree.selectPath("/" + wpd.gettext("measurements") + "/" + wpd.gettext("angle"),
+            wpd.tree.selectPath("/" + wpd.gettext("advanced") + '/' + wpd.gettext("measurements") + "/" + wpd.gettext("angle"),
                 suppressSecondaryActions);
         } else if (mode === wpd.measurementModes.area) {
-            wpd.tree.selectPath("/" + wpd.gettext("measurements") + "/" + wpd.gettext("area"),
+            wpd.tree.selectPath("/" + wpd.gettext("advanced") + '/' + wpd.gettext("measurements") + "/" + wpd.gettext("area"),
                 suppressSecondaryActions);
         }
     }
