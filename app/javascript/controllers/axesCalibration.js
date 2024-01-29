@@ -433,20 +433,11 @@ wpd.alignAxes = (function() {
         wpd.popup.close('edit-or-reset-calibration-popup');
         calibrator = null;
         const axes = wpd.tree.getActiveAxes();
+
+        console.log(axes);
+
         calibration = axes.calibration;
-        if (axes instanceof wpd.XYAxes) {
-            calibrator = new wpd.XYAxesCalibrator(calibration, true);
-        } else if (axes instanceof wpd.BarAxes) {
-            calibrator = new wpd.BarAxesCalibrator(calibration, true);
-        } else if (axes instanceof wpd.PolarAxes) {
-            calibrator = new wpd.PolarAxesCalibrator(calibration, true);
-        } else if (axes instanceof wpd.TernaryAxes) {
-            calibrator = new wpd.TernaryAxesCalibrator(calibration, true);
-        } else if (axes instanceof wpd.MapAxes) {
-            calibrator = new wpd.MapAxesCalibrator(calibration, true);
-        } else if (axes instanceof wpd.CircularChartRecorderAxes) {
-            calibrator = new wpd.CircularChartRecorderCalibrator(calibration, true);
-        }
+        calibrator = new wpd.XYAxesCalibrator(calibration, true);
         if (calibrator == null)
             return;
         calibrator.reload();

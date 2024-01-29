@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-28 19:18-0800\n"
+"POT-Creation-Date: 2024-01-28 20:54-0800\n"
 "PO-Revision-Date: 2016-12-18 10:38-0600\n"
 "Last-Translator: \n"
 "Language: ja\n"
@@ -172,7 +172,7 @@ msgstr ""
 #: templates/_popups.html:770 templates/_popups.html:784
 #: templates/_popups.html:810 templates/_popups.html:825
 #: templates/_popups.html:841 templates/_popups.html:878
-#: templates/_popups.html:931 templates/_strings.html:77
+#: templates/_popups.html:931 templates/_strings.html:78
 msgid "Cancel"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 #: templates/_popups.html:348 templates/_popups.html:375
 #: templates/_popups.html:727 templates/_popups.html:740
 #: templates/_popups.html:754 templates/_popups.html:858
-#: templates/_strings.html:76
+#: templates/_strings.html:77
 msgid "OK"
 msgstr ""
 
@@ -267,8 +267,8 @@ msgstr ""
 msgid "Map With Scale Bar"
 msgstr ""
 
-#: templates/_popups.html:172 templates/_strings.html:59
-#: templates/_strings.html:73
+#: templates/_popups.html:172 templates/_strings.html:60
+#: templates/_strings.html:74
 msgid "Image"
 msgstr ""
 
@@ -802,7 +802,7 @@ msgstr ""
 msgid "Export to Plotly"
 msgstr ""
 
-#: templates/_popups.html:793 templates/_tree.html:10
+#: templates/_popups.html:793 templates/_tree.html:36
 msgid "Add Dataset"
 msgstr ""
 
@@ -831,7 +831,7 @@ msgid "Name"
 msgstr ""
 
 #: templates/_popups.html:826 templates/_popups.html:842
-#: templates/_tree.html:35
+#: templates/_tree.html:27
 msgid "Rename"
 msgstr ""
 
@@ -839,7 +839,7 @@ msgstr ""
 msgid "Rename Axes"
 msgstr ""
 
-#: templates/_popups.html:849 templates/_tree.html:18
+#: templates/_popups.html:849 templates/_tree.html:10
 msgid "Image Info"
 msgstr ""
 
@@ -887,11 +887,11 @@ msgid ""
 "-1. The process would repeat for the next set of points."
 msgstr ""
 
-#: templates/_popups.html:917 templates/_strings.html:84
+#: templates/_popups.html:917 templates/_strings.html:85
 msgid "Group"
 msgstr ""
 
-#: templates/_popups.html:920 templates/_strings.html:86
+#: templates/_popups.html:920 templates/_strings.html:87
 msgid "Primary Group"
 msgstr ""
 
@@ -987,7 +987,7 @@ msgstr ""
 msgid "Click to change color"
 msgstr ""
 
-#: templates/_sidebars.html:66 templates/_strings.html:55
+#: templates/_sidebars.html:66 templates/_strings.html:56
 #: templates/_tree.html:44 templates/_tree.html:65
 msgid "Distance"
 msgstr ""
@@ -1363,111 +1363,115 @@ msgid "Datasets"
 msgstr ""
 
 #: templates/_strings.html:53
+msgid "Advanced"
+msgstr ""
+
+#: templates/_strings.html:54
 msgid "Measurements"
 msgstr ""
 
-#: templates/_strings.html:54 templates/_tree.html:53 templates/_tree.html:68
+#: templates/_strings.html:55 templates/_tree.html:53 templates/_tree.html:68
 #: templates/_tree.html:87
 msgid "Axes"
 msgstr ""
 
-#: templates/_strings.html:56 templates/_tree.html:45 templates/_tree.html:77
+#: templates/_strings.html:57 templates/_tree.html:45 templates/_tree.html:77
 msgid "Angle"
 msgstr ""
 
-#: templates/_strings.html:57 templates/_tree.html:46 templates/_tree.html:85
+#: templates/_strings.html:58 templates/_tree.html:46 templates/_tree.html:85
 msgid "Area/Perimeter"
 msgstr ""
 
-#: templates/_strings.html:58
+#: templates/_strings.html:59
 msgid "XY"
 msgstr ""
 
-#: templates/_strings.html:60
+#: templates/_strings.html:61
 msgid "Bar"
 msgstr ""
 
-#: templates/_strings.html:61
+#: templates/_strings.html:62
 msgid "Polar"
 msgstr ""
 
-#: templates/_strings.html:62
+#: templates/_strings.html:63
 msgid "Ternary"
 msgstr ""
 
-#: templates/_strings.html:63
+#: templates/_strings.html:64
 msgid "Map"
 msgstr ""
 
-#: templates/_strings.html:64
+#: templates/_strings.html:65
 msgid "Circular Chart"
 msgstr ""
 
-#: templates/_strings.html:65
+#: templates/_strings.html:66
 msgid "Project"
 msgstr ""
 
-#: templates/_strings.html:66
+#: templates/_strings.html:67
 msgid "Distance Measurements"
 msgstr ""
 
-#: templates/_strings.html:67
+#: templates/_strings.html:68
 msgid "Angle Measurements"
 msgstr ""
 
-#: templates/_strings.html:68
+#: templates/_strings.html:69
 msgid "Area Measurements"
 msgstr ""
 
-#: templates/_strings.html:69
+#: templates/_strings.html:70
 msgid "Uncalibrated Dataset!"
 msgstr ""
 
-#: templates/_strings.html:70
+#: templates/_strings.html:71
 msgid "Assign an axes calibration to this dataset!"
 msgstr ""
 
-#: templates/_strings.html:71
+#: templates/_strings.html:72
 msgid "Invalid Project!"
 msgstr ""
 
-#: templates/_strings.html:72
+#: templates/_strings.html:73
 msgid "Not a valid project file format!"
 msgstr ""
 
-#: templates/_strings.html:74
+#: templates/_strings.html:75
 msgid "of"
 msgstr ""
 
-#: templates/_strings.html:75
+#: templates/_strings.html:76
 msgid "Page"
 msgstr ""
 
-#: templates/_strings.html:78
+#: templates/_strings.html:79
 msgid "Yes"
 msgstr ""
 
-#: templates/_strings.html:79
+#: templates/_strings.html:80
 msgid "No"
 msgstr ""
 
-#: templates/_strings.html:80
+#: templates/_strings.html:81
 msgid "Delete Point Tuple"
 msgstr ""
 
-#: templates/_strings.html:81
+#: templates/_strings.html:82
 msgid "Delete all points in the tuple?"
 msgstr ""
 
-#: templates/_strings.html:82 templates/_strings.html:85
+#: templates/_strings.html:83 templates/_strings.html:86
 msgid "Delete Group"
 msgstr ""
 
-#: templates/_strings.html:83
+#: templates/_strings.html:84
 msgid "Delete all points in deleted groups?"
 msgstr ""
 
-#: templates/_strings.html:87
+#: templates/_strings.html:88
 msgid "new tuple"
 msgstr ""
 
@@ -1476,43 +1480,43 @@ msgid "View Keyboard Shortcuts"
 msgstr ""
 
 #: templates/_tree.html:8
-msgid " Datasets"
-msgstr ""
-
-#: templates/_tree.html:11
-msgid "Export All Data"
-msgstr ""
-
-#: templates/_tree.html:16
 msgid " Image"
 msgstr ""
 
-#: templates/_tree.html:23 templates/_tree.html:33
+#: templates/_tree.html:15 templates/_tree.html:25
 msgid " Axes"
 msgstr ""
 
-#: templates/_tree.html:25
-msgid "Add Calibration"
+#: templates/_tree.html:17
+msgid "Redo Calibration"
 msgstr ""
 
-#: templates/_tree.html:26
+#: templates/_tree.html:18
 msgid "Remove Grid"
 msgstr ""
 
-#: templates/_tree.html:27
+#: templates/_tree.html:19
 msgid "Import Calibration"
 msgstr ""
 
-#: templates/_tree.html:28
+#: templates/_tree.html:20
 msgid "Export Calibration"
 msgstr ""
 
-#: templates/_tree.html:36
+#: templates/_tree.html:28
 msgid "Tweak Calibration"
 msgstr ""
 
-#: templates/_tree.html:37
+#: templates/_tree.html:29
 msgid "Delete"
+msgstr ""
+
+#: templates/_tree.html:34
+msgid " Datasets"
+msgstr ""
+
+#: templates/_tree.html:37
+msgid "Export All Data"
 msgstr ""
 
 #: templates/_tree.html:42
@@ -3373,5 +3377,14 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "or browse"
+#~ msgstr ""
+
+#~ msgid "Edit image"
+#~ msgstr ""
+
+#~ msgid "Edit axes"
+#~ msgstr ""
+
+#~ msgid "Create measurement"
 #~ msgstr ""
 
