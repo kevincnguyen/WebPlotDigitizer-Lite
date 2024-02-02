@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-01 21:50-0800\n"
+"POT-Creation-Date: 2024-02-01 22:39-0800\n"
 "PO-Revision-Date: 2016-12-18 10:38-0600\n"
 "Last-Translator: \n"
 "Language: ja\n"
@@ -538,16 +538,16 @@ msgstr ""
 
 #: templates/_popups.html:471
 msgid ""
-"Click four known points on the axes in the <font color=\"red\">order "
-"shown in red</font>."
+"Click four <font color=\"red\">known</font> points on the axes in the "
+"<font color=\"red\">order shown in red</font>."
 msgstr ""
 
 #: templates/_popups.html:472
-msgid "1. Select two points on the X axis (X1, X2)"
+msgid "1. Select two <b>known</b> points on the X axis (X1, X2)"
 msgstr ""
 
 #: templates/_popups.html:473
-msgid "2. Select two points on the Y axis (Y1, Y2)"
+msgid "2. Select two <b>known</b> points on the Y axis (Y1, Y2)"
 msgstr ""
 
 #: templates/_popups.html:477 templates/_popups.html:524
