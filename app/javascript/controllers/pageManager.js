@@ -334,6 +334,7 @@ wpd.PDFManager = class extends wpd.PageManager {
                     wpd.imageManager.loadFromURL(url, true).then(() => {
                         wpd.graphicsWidget.setRotation(self.getRotation());
                         wpd.graphicsWidget.rotateAndResize();
+                        wpd.sidebar.show('start-alignment-sidebar');
                         resolve();
                     });
                 },
