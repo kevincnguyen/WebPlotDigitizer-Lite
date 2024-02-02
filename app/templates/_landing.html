@@ -5,7 +5,7 @@
     </p>
     <p class="landing-subtitle">{{ _("Convert images of graphs into data points") }}</p>
     <div class="landing-drop-area" id="dropArea">
-        <input type="file" id="fileLoadBox" multiple style="display: none;" onchange="wpd.imageManager.load();" />
+        <input type="file" id="landingPageFileLoadBox" multiple style="display: none;" onchange="wpd.imageManager.load(true);" />
         <label id="fileInputLabel">
             <p style="margin: 0 0 10px 0;"><i class="fa-regular fa-images fa-3x" style="color: var(--dark-gray); "></i></p>
             <p class="file-input-title">{{ _("Drag and drop or click here") }}</p>
@@ -17,7 +17,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const dropArea = document.getElementById('dropArea');
-        const fileInput = document.getElementById('fileLoadBox');
+        const fileInput = document.getElementById('landingPageFileLoadBox');
 
         // Handle both drag and drop events
         dropArea.addEventListener('dragover', function (e) {

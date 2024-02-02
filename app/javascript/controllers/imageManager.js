@@ -33,8 +33,13 @@ wpd.imageManager = (function() {
         wpd.graphicsWidget.saveImage();
     }
 
-    function load() {
-        let $input = document.getElementById('fileLoadBox');
+    function load(isLanding) {
+        let $input;
+        if (isLanding) {
+            $input = document.getElementById('landingPageFileLoadBox'); 
+        } else {
+            $input = document.getElementById('fileLoadBox');
+        }
         if ($input.files.length > 0) {
             _newLoad = true;
             initializeFileManager($input.files);

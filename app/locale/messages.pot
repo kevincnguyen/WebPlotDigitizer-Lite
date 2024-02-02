@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-01-29 13:34-0800\n"
+"POT-Creation-Date: 2024-02-01 22:39-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -336,7 +336,7 @@ msgstr ""
 msgid "For <em>exponents</em>, enter values as 1e-3 for 10^-3."
 msgstr ""
 
-#: templates/_popups.html:240 templates/_sidebars.html:280
+#: templates/_popups.html:240 templates/_sidebars.html:288
 msgid "Redo"
 msgstr ""
 
@@ -537,16 +537,16 @@ msgstr ""
 
 #: templates/_popups.html:471
 msgid ""
-"Click four known points on the axes in the <font color=\"red\">order "
-"shown in red</font>."
+"Click four <font color=\"red\">known</font> points on the axes in the "
+"<font color=\"red\">order shown in red</font>."
 msgstr ""
 
 #: templates/_popups.html:472
-msgid "1. Select two points on the X axis (X1, X2)"
+msgid "1. Select two <b>known</b> points on the X axis (X1, X2)"
 msgstr ""
 
 #: templates/_popups.html:473
-msgid "2. Select two points on the Y axis (Y1, Y2)"
+msgid "2. Select two <b>known</b> points on the Y axis (Y1, Y2)"
 msgstr ""
 
 #: templates/_popups.html:477 templates/_popups.html:524
@@ -763,7 +763,7 @@ msgstr ""
 msgid "Override Point Values"
 msgstr ""
 
-#: templates/_popups.html:747 templates/_sidebars.html:211
+#: templates/_popups.html:747 templates/_sidebars.html:219
 msgid "Clear"
 msgstr ""
 
@@ -855,7 +855,7 @@ msgstr ""
 msgid "Relabel"
 msgstr ""
 
-#: templates/_popups.html:881 templates/_sidebars.html:243
+#: templates/_popups.html:881 templates/_sidebars.html:251
 msgid "Reset"
 msgstr ""
 
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Reset All"
 msgstr ""
 
-#: templates/_popups.html:891 templates/_sidebars.html:111
+#: templates/_popups.html:891 templates/_sidebars.html:119
 msgid "Point Groups"
 msgstr ""
 
@@ -920,243 +920,247 @@ msgstr ""
 msgid "Use <em>Shift+Arrow</em> to move faster"
 msgstr ""
 
-#: templates/_sidebars.html:27
+#: templates/_sidebars.html:25
+msgid "Begin Aligning Axes"
+msgstr ""
+
+#: templates/_sidebars.html:34
 msgid "Manual Edit"
 msgstr ""
 
-#: templates/_sidebars.html:31
+#: templates/_sidebars.html:38
 msgid "Add Point"
 msgstr ""
 
-#: templates/_sidebars.html:32
+#: templates/_sidebars.html:39
 msgid "Adjust Point"
 msgstr ""
 
-#: templates/_sidebars.html:35
+#: templates/_sidebars.html:42
 msgid "Delete Point"
 msgstr ""
 
-#: templates/_sidebars.html:36
+#: templates/_sidebars.html:43
 msgid "Edit Labels"
 msgstr ""
 
-#: templates/_sidebars.html:41
+#: templates/_sidebars.html:49
 msgid "Automatic Extraction"
 msgstr ""
 
-#: templates/_sidebars.html:43 templates/_sidebars.html:216
+#: templates/_sidebars.html:51 templates/_sidebars.html:224
 msgid "Color"
 msgstr ""
 
-#: templates/_sidebars.html:45
+#: templates/_sidebars.html:53
 msgid "Data Color"
 msgstr ""
 
-#: templates/_sidebars.html:46
+#: templates/_sidebars.html:54
 msgid "Background Color"
 msgstr ""
 
-#: templates/_sidebars.html:48
+#: templates/_sidebars.html:56
 msgid "Click to change color"
 msgstr ""
 
-#: templates/_sidebars.html:51
+#: templates/_sidebars.html:59
 msgid "Color Tolerance"
 msgstr ""
 
-#: templates/_sidebars.html:53
+#: templates/_sidebars.html:61
 msgid "Filter Colors"
 msgstr ""
 
-#: templates/_sidebars.html:60 templates/_strings.html:54
+#: templates/_sidebars.html:68 templates/_strings.html:54
 msgid "Advanced"
 msgstr ""
 
-#: templates/_sidebars.html:64
+#: templates/_sidebars.html:72
 msgid "Mask "
 msgstr ""
 
-#: templates/_sidebars.html:65 templates/_sidebars.html:210
+#: templates/_sidebars.html:73 templates/_sidebars.html:218
 msgid "Box"
 msgstr ""
 
-#: templates/_sidebars.html:66
+#: templates/_sidebars.html:74
 msgid "Pen"
 msgstr ""
 
-#: templates/_sidebars.html:67
+#: templates/_sidebars.html:75
 msgid "Erase"
 msgstr ""
 
-#: templates/_sidebars.html:68 templates/_sidebars.html:212
+#: templates/_sidebars.html:76 templates/_sidebars.html:220
 msgid "View"
 msgstr ""
 
-#: templates/_sidebars.html:72 templates/_sidebars.html:79
+#: templates/_sidebars.html:80 templates/_sidebars.html:87
 msgid "Width"
 msgstr ""
 
-#: templates/_sidebars.html:74
+#: templates/_sidebars.html:82
 msgid "Erase All"
 msgstr ""
 
-#: templates/_sidebars.html:87
+#: templates/_sidebars.html:95
 msgid "Algorithm"
 msgstr ""
 
-#: templates/_sidebars.html:96
+#: templates/_sidebars.html:104
 msgid "Extract"
 msgstr ""
 
-#: templates/_sidebars.html:115
+#: templates/_sidebars.html:123
 msgid "Prev Group"
 msgstr ""
 
-#: templates/_sidebars.html:116
+#: templates/_sidebars.html:124
 msgid "Next Group"
 msgstr ""
 
-#: templates/_sidebars.html:121
+#: templates/_sidebars.html:129
 msgid "Overrides"
 msgstr ""
 
-#: templates/_sidebars.html:123
+#: templates/_sidebars.html:131
 msgid "Override Values"
 msgstr ""
 
-#: templates/_sidebars.html:131
+#: templates/_sidebars.html:139
 msgid "Edit Image"
 msgstr ""
 
-#: templates/_sidebars.html:140
+#: templates/_sidebars.html:148
 msgid "Measure Distances"
 msgstr ""
 
-#: templates/_sidebars.html:143
+#: templates/_sidebars.html:151
 msgid "Add Pair"
 msgstr ""
 
-#: templates/_sidebars.html:146
+#: templates/_sidebars.html:154
 msgid "Delete Pair"
 msgstr ""
 
-#: templates/_sidebars.html:153
+#: templates/_sidebars.html:161
 msgid "Measure Angles"
 msgstr ""
 
-#: templates/_sidebars.html:156
+#: templates/_sidebars.html:164
 msgid "Add Angle"
 msgstr ""
 
-#: templates/_sidebars.html:159
+#: templates/_sidebars.html:167
 msgid "Delete Angle"
 msgstr ""
 
-#: templates/_sidebars.html:166
+#: templates/_sidebars.html:174
 msgid "Measure Area/Perimeter"
 msgstr ""
 
-#: templates/_sidebars.html:169
+#: templates/_sidebars.html:177
 msgid "Add Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:172
+#: templates/_sidebars.html:180
 msgid "Delete Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:182
+#: templates/_sidebars.html:190
 msgid "Press <em>Enter or Esc</em> to complete the polygon"
 msgstr ""
 
-#: templates/_sidebars.html:189
+#: templates/_sidebars.html:197
 msgid "Measure Path"
 msgstr ""
 
-#: templates/_sidebars.html:191 templates/_sidebars.html:200
+#: templates/_sidebars.html:199 templates/_sidebars.html:208
 msgid "Add Path"
 msgstr ""
 
-#: templates/_sidebars.html:192 templates/_sidebars.html:201
+#: templates/_sidebars.html:200 templates/_sidebars.html:209
 msgid "Delete Path"
 msgstr ""
 
-#: templates/_sidebars.html:198
+#: templates/_sidebars.html:206
 msgid "Measure Closed Path"
 msgstr ""
 
-#: templates/_sidebars.html:207
+#: templates/_sidebars.html:215
 msgid "Detect Grid"
 msgstr ""
 
-#: templates/_sidebars.html:209
+#: templates/_sidebars.html:217
 msgid "Mask"
 msgstr ""
 
-#: templates/_sidebars.html:217
+#: templates/_sidebars.html:225
 msgid "Pick"
 msgstr ""
 
-#: templates/_sidebars.html:219
+#: templates/_sidebars.html:227
 msgid "Test"
 msgstr ""
 
-#: templates/_sidebars.html:221
+#: templates/_sidebars.html:229
 msgid "Background Mode"
 msgstr ""
 
-#: templates/_sidebars.html:225
+#: templates/_sidebars.html:233
 msgid "Horizontal"
 msgstr ""
 
-#: templates/_sidebars.html:229
+#: templates/_sidebars.html:237
 msgid "X%"
 msgstr ""
 
-#: templates/_sidebars.html:233
+#: templates/_sidebars.html:241
 msgid "Vertical"
 msgstr ""
 
-#: templates/_sidebars.html:237
+#: templates/_sidebars.html:245
 msgid "Y%"
 msgstr ""
 
-#: templates/_sidebars.html:245
+#: templates/_sidebars.html:253
 msgid "Detect"
 msgstr ""
 
-#: templates/_sidebars.html:254
+#: templates/_sidebars.html:262
 msgid "Load Image"
 msgstr ""
 
-#: templates/_sidebars.html:255
+#: templates/_sidebars.html:263
 msgid "Tutorial Video"
 msgstr ""
 
-#: templates/_sidebars.html:256
+#: templates/_sidebars.html:264
 msgid "Visit GitHub"
 msgstr ""
 
-#: templates/_sidebars.html:271
+#: templates/_sidebars.html:279
 msgid " Image Editing"
 msgstr ""
 
-#: templates/_sidebars.html:276
+#: templates/_sidebars.html:284
 msgid "Undo"
 msgstr ""
 
-#: templates/_sidebars.html:285
+#: templates/_sidebars.html:293
 msgid "Crop"
 msgstr ""
 
-#: templates/_sidebars.html:286
+#: templates/_sidebars.html:294
 msgid "Fix Perspective"
 msgstr ""
 
-#: templates/_sidebars.html:290
+#: templates/_sidebars.html:298
 msgid "Rotate"
 msgstr ""
 
-#: templates/_sidebars.html:291
+#: templates/_sidebars.html:299
 msgid "?"
 msgstr ""
 
