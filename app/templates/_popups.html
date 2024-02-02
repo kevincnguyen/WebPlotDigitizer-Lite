@@ -40,12 +40,12 @@
         <p>{{ _("Supported file formats:") }}</p>
         <p>{{ _("JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc.") }}</p>
         <p>&nbsp;</p>
-        <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load();" /></p>
+        <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load(false);" /></p>
         <p>&nbsp;</p>
     </div>
     <div class="popup-footer">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('loadNewImage');" />
-        <input type="button" value='{{ _("Load") }}' class="popup-action" onclick="wpd.imageManager.load();" />
+        <input type="button" value='{{ _("Load") }}' class="popup-action" onclick="wpd.imageManager.load(false);" />
     </div>
 </div>
 
