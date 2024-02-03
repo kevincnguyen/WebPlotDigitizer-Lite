@@ -2,7 +2,7 @@
 /app/locale/*
 /app/combined*
 /app/*.out
-/app/*.html
+# /app/*.html
 /app/thirdparty/*/
 /app/*.js
 /app/*.wasm
