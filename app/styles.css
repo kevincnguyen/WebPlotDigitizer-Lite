@@ -367,6 +367,10 @@ select {
     padding: 5px;
 }
 
+.mask-tip:hover {
+    cursor: pointer;
+}
+
 .footnote {
     font-size: 10px;
 }

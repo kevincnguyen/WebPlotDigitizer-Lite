@@ -43,6 +43,7 @@
 
     <!-- thirdparty -->
     <script src="https://kit.fontawesome.com/6b7d6b5ea1.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="node_modules/pdfjs-dist/build/pdf.js"></script>
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = "node_modules/pdfjs-dist/build/pdf.worker.js";
@@ -375,13 +376,25 @@
         <span style="padding-left: 5px;">Advanced</span>
     </p>
     <div id="advanced-extraction-section" style="display: none;">
-        <p>
-            <b style="margin-right: 3px;">Mask </b>
-            <input type="button" value='Box' style="width:45px; min-width: 0px; padding: 5px;" class="sidebar-button" onclick="wpd.dataMask.markBox();" id="box-mask">
-            <input type="button" value='Stift' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.markPen();" id="pen-mask">
-            <input type="button" value='Löschen' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.eraseMarks();" id="erase-mask">
-            <input type="button" value='Ansicht' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" />
-        </p>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 3px;"> 
+                <b style="margin-right: 3px;">Masking Tools</b>
+                <i class="fa-solid fa-circle-info mask-tip" onclick="wpd.popup.show('masking-tips');"></i>
+            </div>
+            <button class="sidebar-button" onclick="wpd.dataMask.markBox();" id="box-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-selection"></i>
+                Rectangle Selection
+            </button>
+            <button class="sidebar-button" onClick="wpd.dataMask.markPen();" id="pen-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-pencil-line"></i>
+                Draw Mask
+            </button>
+            <button class="sidebar-button" onClick="wpd.dataMask.eraseMarks();" id="erase-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-eraser"></i>
+                Erase Mask
+            </button>
+            <input type="button" value='Stop Editing' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/>
+        </div>
         <div id="mask-erase-container" class="sidebar-extras">
             <p class="centered" style="gap: 3px;">
                 <b>Width</b>
@@ -395,7 +408,7 @@
                 <input type="range" id="paintThickness" min="1" max="150" value="20" style="width:120px;">
             </p>
         </div>
-        <hr style="border: none; height: 1px;"/>
+        <hr style="border: none; height: 1px; margin-top: 5px;"/>
 
         <div>
             <p>
@@ -670,20 +683,20 @@
     </div>
 </div>
 
-<!-- Automatic Extraction Instructions -->
-<div id="automatic-extraction-tips" class="popup" style="width: 450px;">
+<!-- Masking Instructions -->
+<div id="masking-tips" class="popup" style="width: 450px;">
     <div class="popup-heading">
-        <p class="popup-title">Automatic Extraction Instructions</p>
+        <p class="popup-title">What is Masking?</p>
     </div>
     <div class="popup-body">
-        <p>1. Use <em>Color</em> to select the color to extract</p>
-        <p>2. Use <em>Color Tolerance</em> to specify an approximate RGB distance from the selected color that is acceptable</p>
-        <p>3. Press <em>Extract</em> to extract data</p>
+        <p>Masking allows users to define a specific region within the graph where automatic data point extraction will be focused.</p>
     </div>
     <div class="popup-footer-center">
-        <input type="button" value='Schließen' class="popup-cancel" onclick="wpd.popup.close('automatic-extraction-tips');" />
+        <input type="button" value='Schließen' class="popup-cancel" onclick="wpd.popup.close('masking-tips');" />
     </div>
 </div>
+
+
 
 <!-- Load Image -->
 <div id="loadNewImage" class="popup" style="width: 450px;">

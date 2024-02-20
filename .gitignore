@@ -2,11 +2,11 @@
 /app/locale/*
 /app/combined*
 /app/*.out
-# /app/*.html
+/app/*.html
 /app/thirdparty/*/
-# /app/*.js
+/app/*.js
 /app/*.wasm
-# /app/wpd*
+/app/wpd*
 # /app/node_modules/*
 /app/package-lock.json
 

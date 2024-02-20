@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-03 11:41-0800\n"
+"POT-Creation-Date: 2024-02-20 01:35-0800\n"
 "PO-Revision-Date: 2016-12-12 23:09-0600\n"
 "Last-Translator: \n"
 "Language: en_US\n"
@@ -24,17 +24,17 @@ msgid ""
 " more user-friendly UI enhancements."
 msgstr ""
 
-#: templates/_base.html:53
+#: templates/_base.html:54
 msgid "Loading application, please wait..."
 msgstr ""
 
-#: templates/_base.html:56
+#: templates/_base.html:57
 msgid ""
 "Problems loading? Make sure you have a recent version of Google Chrome, "
 "Firefox, Safari or Microsoft Edge installed."
 msgstr ""
 
-#: templates/_base.html:82
+#: templates/_base.html:83
 msgid "Fit"
 msgstr ""
 
@@ -126,28 +126,20 @@ msgstr ""
 msgid "Click <em>Axes > Add Calibration</em> to get started extracting data."
 msgstr ""
 
-#: templates/_popups.html:14 templates/_popups.html:29
+#: templates/_popups.html:14 templates/_popups.html:27
 #: templates/_popups.html:404 templates/_popups.html:592
 #: templates/_popups.html:635 templates/_popups.html:721
 msgid "Close"
 msgstr ""
 
 #: templates/_popups.html:21
-msgid "Automatic Extraction Instructions"
+msgid "What is Masking?"
 msgstr ""
 
 #: templates/_popups.html:24
-msgid "1. Use <em>Color</em> to select the color to extract"
-msgstr ""
-
-#: templates/_popups.html:25
 msgid ""
-"2. Use <em>Color Tolerance</em> to specify an approximate RGB distance "
-"from the selected color that is acceptable"
-msgstr ""
-
-#: templates/_popups.html:26
-msgid "3. Press <em>Extract</em> to extract data"
+"Masking allows users to define a specific region within the graph where "
+"automatic data point extraction will be focused."
 msgstr ""
 
 #: templates/_popups.html:36
@@ -337,7 +329,7 @@ msgstr ""
 msgid "For <em>exponents</em>, enter values as 1e-3 for 10^-3."
 msgstr ""
 
-#: templates/_popups.html:240 templates/_sidebars.html:288
+#: templates/_popups.html:240 templates/_sidebars.html:300
 msgid "Redo"
 msgstr ""
 
@@ -764,7 +756,7 @@ msgstr ""
 msgid "Override Point Values"
 msgstr ""
 
-#: templates/_popups.html:747 templates/_sidebars.html:219
+#: templates/_popups.html:747 templates/_sidebars.html:231
 msgid "Clear"
 msgstr ""
 
@@ -856,7 +848,7 @@ msgstr ""
 msgid "Relabel"
 msgstr ""
 
-#: templates/_popups.html:881 templates/_sidebars.html:251
+#: templates/_popups.html:881 templates/_sidebars.html:263
 msgid "Reset"
 msgstr ""
 
@@ -864,7 +856,7 @@ msgstr ""
 msgid "Reset All"
 msgstr ""
 
-#: templates/_popups.html:891 templates/_sidebars.html:119
+#: templates/_popups.html:891 templates/_sidebars.html:131
 msgid "Point Groups"
 msgstr ""
 
@@ -949,7 +941,7 @@ msgstr ""
 msgid "Automatic Extraction"
 msgstr ""
 
-#: templates/_sidebars.html:51 templates/_sidebars.html:224
+#: templates/_sidebars.html:51 templates/_sidebars.html:236
 msgid "Color"
 msgstr ""
 
@@ -977,191 +969,187 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
-#: templates/_sidebars.html:72
-msgid "Mask "
+#: templates/_sidebars.html:73
+msgid "Masking Tools"
 msgstr ""
 
-#: templates/_sidebars.html:73 templates/_sidebars.html:218
-msgid "Box"
+#: templates/_sidebars.html:88
+msgid "Stop Editing"
 msgstr ""
 
-#: templates/_sidebars.html:74
-msgid "Pen"
-msgstr ""
-
-#: templates/_sidebars.html:75
-msgid "Erase"
-msgstr ""
-
-#: templates/_sidebars.html:76 templates/_sidebars.html:220
-msgid "View"
-msgstr ""
-
-#: templates/_sidebars.html:80 templates/_sidebars.html:87
+#: templates/_sidebars.html:92 templates/_sidebars.html:99
 msgid "Width"
 msgstr ""
 
-#: templates/_sidebars.html:82
+#: templates/_sidebars.html:94
 msgid "Erase All"
 msgstr ""
 
-#: templates/_sidebars.html:95
+#: templates/_sidebars.html:107
 msgid "Algorithm"
 msgstr ""
 
-#: templates/_sidebars.html:104
+#: templates/_sidebars.html:116
 msgid "Extract"
 msgstr ""
 
-#: templates/_sidebars.html:123
+#: templates/_sidebars.html:135
 msgid "Prev Group"
 msgstr ""
 
-#: templates/_sidebars.html:124
+#: templates/_sidebars.html:136
 msgid "Next Group"
 msgstr ""
 
-#: templates/_sidebars.html:129
+#: templates/_sidebars.html:141
 msgid "Overrides"
 msgstr ""
 
-#: templates/_sidebars.html:131
+#: templates/_sidebars.html:143
 msgid "Override Values"
 msgstr ""
 
-#: templates/_sidebars.html:139
+#: templates/_sidebars.html:151
 msgid "Edit Image"
 msgstr ""
 
-#: templates/_sidebars.html:148
+#: templates/_sidebars.html:160
 msgid "Measure Distances"
 msgstr ""
 
-#: templates/_sidebars.html:151
+#: templates/_sidebars.html:163
 msgid "Add Pair"
 msgstr ""
 
-#: templates/_sidebars.html:154
+#: templates/_sidebars.html:166
 msgid "Delete Pair"
 msgstr ""
 
-#: templates/_sidebars.html:161
+#: templates/_sidebars.html:173
 msgid "Measure Angles"
 msgstr ""
 
-#: templates/_sidebars.html:164
+#: templates/_sidebars.html:176
 msgid "Add Angle"
 msgstr ""
 
-#: templates/_sidebars.html:167
+#: templates/_sidebars.html:179
 msgid "Delete Angle"
 msgstr ""
 
-#: templates/_sidebars.html:174
+#: templates/_sidebars.html:186
 msgid "Measure Area/Perimeter"
 msgstr ""
 
-#: templates/_sidebars.html:177
+#: templates/_sidebars.html:189
 msgid "Add Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:180
+#: templates/_sidebars.html:192
 msgid "Delete Polygon"
 msgstr ""
 
-#: templates/_sidebars.html:190
+#: templates/_sidebars.html:202
 msgid "Press <em>Enter or Esc</em> to complete the polygon"
 msgstr ""
 
-#: templates/_sidebars.html:197
+#: templates/_sidebars.html:209
 msgid "Measure Path"
 msgstr ""
 
-#: templates/_sidebars.html:199 templates/_sidebars.html:208
+#: templates/_sidebars.html:211 templates/_sidebars.html:220
 msgid "Add Path"
 msgstr ""
 
-#: templates/_sidebars.html:200 templates/_sidebars.html:209
+#: templates/_sidebars.html:212 templates/_sidebars.html:221
 msgid "Delete Path"
 msgstr ""
 
-#: templates/_sidebars.html:206
+#: templates/_sidebars.html:218
 msgid "Measure Closed Path"
 msgstr ""
 
-#: templates/_sidebars.html:215
+#: templates/_sidebars.html:227
 msgid "Detect Grid"
 msgstr ""
 
-#: templates/_sidebars.html:217
+#: templates/_sidebars.html:229
 msgid "Mask"
 msgstr ""
 
-#: templates/_sidebars.html:225
-msgid "Pick"
+#: templates/_sidebars.html:230
+msgid "Box"
 msgstr ""
 
-#: templates/_sidebars.html:227
-msgid "Test"
-msgstr ""
-
-#: templates/_sidebars.html:229
-msgid "Background Mode"
-msgstr ""
-
-#: templates/_sidebars.html:233
-msgid "Horizontal"
+#: templates/_sidebars.html:232
+msgid "View"
 msgstr ""
 
 #: templates/_sidebars.html:237
-msgid "X%"
+msgid "Pick"
+msgstr ""
+
+#: templates/_sidebars.html:239
+msgid "Test"
 msgstr ""
 
 #: templates/_sidebars.html:241
-msgid "Vertical"
+msgid "Background Mode"
 msgstr ""
 
 #: templates/_sidebars.html:245
-msgid "Y%"
+msgid "Horizontal"
+msgstr ""
+
+#: templates/_sidebars.html:249
+msgid "X%"
 msgstr ""
 
 #: templates/_sidebars.html:253
+msgid "Vertical"
+msgstr ""
+
+#: templates/_sidebars.html:257
+msgid "Y%"
+msgstr ""
+
+#: templates/_sidebars.html:265
 msgid "Detect"
 msgstr ""
 
-#: templates/_sidebars.html:262
+#: templates/_sidebars.html:274
 msgid "Load Image"
 msgstr ""
 
-#: templates/_sidebars.html:263
+#: templates/_sidebars.html:275
 msgid "Tutorial Video"
 msgstr ""
 
-#: templates/_sidebars.html:264
+#: templates/_sidebars.html:276
 msgid "Visit GitHub"
 msgstr ""
 
-#: templates/_sidebars.html:279
+#: templates/_sidebars.html:291
 msgid " Image Editing"
 msgstr ""
 
-#: templates/_sidebars.html:284
+#: templates/_sidebars.html:296
 msgid "Undo"
 msgstr ""
 
-#: templates/_sidebars.html:293
+#: templates/_sidebars.html:305
 msgid "Crop"
 msgstr ""
 
-#: templates/_sidebars.html:294
+#: templates/_sidebars.html:306
 msgid "Fix Perspective"
 msgstr ""
 
-#: templates/_sidebars.html:298
+#: templates/_sidebars.html:310
 msgid "Rotate"
 msgstr ""
 
-#: templates/_sidebars.html:299
+#: templates/_sidebars.html:311
 msgid "?"
 msgstr ""
 
@@ -3436,5 +3424,52 @@ msgstr ""
 #~ "specify an approximate RGB distance from"
 #~ " the selected color that is "
 #~ "acceptable."
+#~ msgstr ""
+
+#~ msgid "View a Mask"
+#~ msgstr ""
+
+#~ msgid "Mask "
+#~ msgstr ""
+
+#~ msgid "Square Select a Mask"
+#~ msgstr ""
+
+#~ msgid "Draw in a Mask"
+#~ msgstr ""
+
+#~ msgid "Draw"
+#~ msgstr ""
+
+#~ msgid "Erase a Mask"
+#~ msgstr ""
+
+#~ msgid "Show Mask"
+#~ msgstr ""
+
+#~ msgid "Mask Visible"
+#~ msgstr ""
+
+#~ msgid "Automatic Extraction Instructions"
+#~ msgstr ""
+
+#~ msgid "1. Use <em>Color</em> to select the color to extract"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "2. Use <em>Color Tolerance</em> to "
+#~ "specify an approximate RGB distance from"
+#~ " the selected color that is "
+#~ "acceptable"
+#~ msgstr ""
+
+#~ msgid "3. Press <em>Extract</em> to extract data"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Masking allows users to define a "
+#~ "specific region or area within a "
+#~ "graph where automatic data point "
+#~ "extraction will be focused."
 #~ msgstr ""
 
