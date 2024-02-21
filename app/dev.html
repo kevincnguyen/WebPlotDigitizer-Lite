@@ -286,7 +286,7 @@
         <p class="sidebar-title"><i class="fa-solid fa-table"></i> Datasets</p>
         <center>
             <p><input type="button" value='Add Dataset' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showAddDataset();" /></p>
-            <p><input type="button" value='Export All Data' style="width:150px;" class="sidebar-button" onclick="wpd.popup.show('export-all-data-popup');" /></p>
+            <p><input type="button" value='Export All Data' style="width:150px; color: red" class="sidebar-button" onclick="wpd.popup.show('export-all-data-popup');" /></p>
         </center>
     </div>
 
@@ -305,6 +305,7 @@
             <p>Axes: <select id="dataset-item-axes-select" style="min-width:100px; max-width:150px;" onchange="wpd.dataSeriesManagement.changeAxes(this.value);"></select></p>
             <!-- <p><input type="button" value='Point Color' style="width: 150px;" id="dataset-display-color-picker-button" onclick="wpd.dataSeriesManagement.startColorPicker();" /></p> -->
             <p><input type="button" value='Rename Dataset' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showRenameDataset();" /></p>
+            <p><input type="button" value='Rename Labels' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showRenameAxesLabels();" /></p>
             <p><input type="button" value='Delete Dataset' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.deleteDataset();" /></p>
             <!-- <p><input type="button" value='Edit Point Groups' id="dataset-edit-point-groups-button" style="width: 150px;" class="sidebar-button" onclick="wpd.pointGroups.showSettingsPopup();" /></p> -->
             <p><input type="button" value='Clear Data' style="width:150px;" class="sidebar-button" onclick="wpd.acquireData.clearAll();" /></p>
@@ -474,7 +475,7 @@
                 <i class="ph ph-eraser"></i>
                 Erase Mask
             </button>
-            <input type="button" value='Stop Editing' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/>
+            <input type="button" value='Stop Masking' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/>
         </div>
         <div id="mask-erase-container" class="sidebar-extras">
             <p class="centered" style="gap: 3px;">
@@ -489,7 +490,7 @@
                 <input type="range" id="paintThickness" min="1" max="150" value="20" style="width:120px;">
             </p>
         </div>
-        <hr style="border: none; height: 1px; margin-top: 5px;"/>
+        <hr style="border: none; height: 1px; margin-top: 15px;"/>
 
         <div>
             <p>
@@ -1202,6 +1203,16 @@
                     <div class="centered" style="margin-top: 20px;">
                         <input type="button" value="Format" class="popup-action" onclick="wpd.dataTable.reSortAndFilter();" />
                     </div>
+                    <br />
+                    <div class="sidebar-tip" style="padding: 5px; margin: 5px;">
+                        <p>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <b>Tip</b>
+                        </p>
+                        <p>
+                            Click <em>Datasets</em> in the sidebar to add additional datasets for export
+                        </p>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -1542,7 +1553,7 @@
 </div>
 
 <!-- Add dataset -->
-<div id="add-dataset-popup" class="popup" style="width:450px;">
+<div id="add-dataset-popup" class="popup" style="width:525px;">
     <div class="popup-heading">
         <div class="popup-title">Add Dataset</div>
     </div>
@@ -1554,7 +1565,7 @@
         </p>
         <br />
         <p>
-            Count: 
+            Number of Datasets: 
             <input type="text" id="add-multiple-datasets-count-input" value="1" />
             <input type="button" value='Add Multiple Datasets' class="popup-action" onclick="wpd.dataSeriesManagement.addMultipleDatasets();" />
         </p>
@@ -1578,6 +1589,23 @@
     <div class="popup-footer-center">
         <input type="button" value='Cancel' class="popup-cancel" onclick="wpd.popup.close('rename-dataset-popup');" />
         <input type="button" value='Rename' class="popup-action" onclick="wpd.dataSeriesManagement.renameDataset();" />
+    </div>
+</div>
+
+<!-- Rename axes labels -->
+<div id="rename-axes-labels-popup" class="popup" style="width:400px;">
+    <div class="popup-heading">
+        <p class="popup-title">Rename Axes Labels</p>
+    </div>
+    <div class="popup-body">
+        <br />
+        <p>X Axis: <input type="text" id="rename-x-axis-input" value="X" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <p>Y Axis: <input type="text" id="rename-y-axis-input" value="Y" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <br />
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='Cancel' class="popup-cancel" onclick="wpd.popup.close('rename-axes-labels-popup');" />
+        <input type="button" value='Rename' class="popup-action" onclick="wpd.dataSeriesManagement.renameAxesLabels();" />
     </div>
 </div>
 

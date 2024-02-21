@@ -453,6 +453,16 @@
                     <div class="centered" style="margin-top: 20px;">
                         <input type="button" value="Format" class="popup-action" onclick="wpd.dataTable.reSortAndFilter();" />
                     </div>
+                    <br />
+                    <div class="sidebar-tip" style="padding: 5px; margin: 5px;">
+                        <p>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <b>Tip</b>
+                        </p>
+                        <p>
+                            Click <em>Datasets</em> in the sidebar to add additional datasets for export
+                        </p>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -793,7 +803,7 @@
 </div>
 
 <!-- Add dataset -->
-<div id="add-dataset-popup" class="popup" style="width:450px;">
+<div id="add-dataset-popup" class="popup" style="width:525px;">
     <div class="popup-heading">
         <div class="popup-title">{{ _("Add Dataset") }}</div>
     </div>
@@ -805,7 +815,7 @@
         </p>
         <br />
         <p>
-            {{ _("Count: ") }}
+            {{ _("Number of Datasets: ") }}
             <input type="text" id="add-multiple-datasets-count-input" value="1" />
             <input type="button" value='{{ _("Add Multiple Datasets") }}' class="popup-action" onclick="wpd.dataSeriesManagement.addMultipleDatasets();" />
         </p>
@@ -829,6 +839,23 @@
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('rename-dataset-popup');" />
         <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.dataSeriesManagement.renameDataset();" />
+    </div>
+</div>
+
+<!-- Rename axes labels -->
+<div id="rename-axes-labels-popup" class="popup" style="width:400px;">
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Rename Axes Labels") }}</p>
+    </div>
+    <div class="popup-body">
+        <br />
+        <p>{{ _("X Axis") }}: <input type="text" id="rename-x-axis-input" value="X" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <p>{{ _("Y Axis") }}: <input type="text" id="rename-y-axis-input" value="Y" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <br />
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('rename-axes-labels-popup');" />
+        <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.dataSeriesManagement.renameAxesLabels();" />
     </div>
 </div>
 
