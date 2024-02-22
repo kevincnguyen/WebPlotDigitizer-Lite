@@ -2945,8 +2945,8 @@ var wpd = wpd || {};
 wpd.AveragingWindowAlgo = class {
 
     constructor() {
-        this._xStep = 5;
-        this._yStep = 5;
+        this._xStep = 10;
+        this._yStep = 10;
         this._wasRun = false;
     }
 
@@ -4684,7 +4684,6 @@ wpd.AxesLabels = (function() {
                 labels.delete(oldDatasetName);
             }
             labels.set(newDatasetName, newLabels);
-            console.log(labels);
         }
     };
 })();/*

@@ -22,13 +22,21 @@
     </div>
     <div class="popup-body">
         <p>{{ _("Masking allows users to define a specific region within the graph where automatic data point extraction will be focused.") }}</p>
+        <p>{{ _("Click a masking tool to select and deselect it.") }}</p>
     </div>
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('masking-tips');" />
     </div>
 </div>
 
-
+<!-- Hide Legend Instructions -->
+<div id="hide-legend" class="popup" style="border: 2px solid black; display: flex; flex-direction: row; box-shadow: 5px 5px 0 0 black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Click and drag to highlight the legends. This action will conceal the legends from data extraction.
+    </p>
+    <i class="fa-solid fa-xmark" style="padding: 3px 3px 3px 6px; cursor: pointer;" onclick="wpd.popup.close('hide-legend');"></i>
+</div>
 
 <!-- Load Image -->
 <div id="loadNewImage" class="popup" style="width: 450px;">

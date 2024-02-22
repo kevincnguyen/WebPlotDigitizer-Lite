@@ -60,6 +60,9 @@
         <input type="text" size="3" id="color-distance-value" onchange="wpd.colorPicker.changeColorDistance();" />
         <!-- <input type="button" value='{{ _("Filter Colors") }}' onclick="wpd.colorPicker.testColorDetection();" style="width: 90px; padding: 5px;" class="sidebar-button"> -->
     </p>
+    <p align="center" style="margin-top: 5px;">
+        <input type="button" value='{{ _("Hide Legends") }}' id="hideLegend" class="popup-action" onclick="wpd.dataMask.hideLegends()" />
+    </p>
     <hr style="border: none; height: 1px;"/>
 
     <p style="padding: 4px; cursor: pointer;" onclick="toggleAdvancedExtraction();">
@@ -85,7 +88,7 @@
                 <i class="ph ph-eraser"></i>
                 Erase Mask
             </button>
-            <input type="button" value='{{ _("Stop Masking") }}' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/>
+            <!-- <input type="button" value='{{ _("Stop Masking") }}' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/> -->
         </div>
         <div id="mask-erase-container" class="sidebar-extras">
             <p class="centered" style="gap: 3px;">

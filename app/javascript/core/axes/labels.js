@@ -36,7 +36,6 @@ wpd.AxesLabels = (function() {
                 labels.delete(oldDatasetName);
             }
             labels.set(newDatasetName, newLabels);
-            console.log(labels);
         }
     };
 })();

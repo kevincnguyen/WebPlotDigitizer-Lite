@@ -450,6 +450,9 @@
         <input type="text" size="3" id="color-distance-value" onchange="wpd.colorPicker.changeColorDistance();" />
         <!-- <input type="button" value='颜色过滤' onclick="wpd.colorPicker.testColorDetection();" style="width: 90px; padding: 5px;" class="sidebar-button"> -->
     </p>
+    <p align="center" style="margin-top: 5px;">
+        <input type="button" value='Hide Legends' id="hideLegend" class="popup-action" onclick="wpd.dataMask.hideLegends()" />
+    </p>
     <hr style="border: none; height: 1px;"/>
 
     <p style="padding: 4px; cursor: pointer;" onclick="toggleAdvancedExtraction();">
@@ -475,7 +478,7 @@
                 <i class="ph ph-eraser"></i>
                 Erase Mask
             </button>
-            <input type="button" value='Stop Masking' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/>
+            <!-- <input type="button" value='Stop Masking' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/> -->
         </div>
         <div id="mask-erase-container" class="sidebar-extras">
             <p class="centered" style="gap: 3px;">
@@ -772,13 +775,21 @@
     </div>
     <div class="popup-body">
         <p>Masking allows users to define a specific region within the graph where automatic data point extraction will be focused.</p>
+        <p>Click a masking tool to select and deselect it.</p>
     </div>
     <div class="popup-footer-center">
         <input type="button" value='关闭' class="popup-cancel" onclick="wpd.popup.close('masking-tips');" />
     </div>
 </div>
 
-
+<!-- Hide Legend Instructions -->
+<div id="hide-legend" class="popup" style="border: 2px solid black; display: flex; flex-direction: row; box-shadow: 5px 5px 0 0 black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Click and drag to highlight the legends. This action will conceal the legends from data extraction.
+    </p>
+    <i class="fa-solid fa-xmark" style="padding: 3px 3px 3px 6px; cursor: pointer;" onclick="wpd.popup.close('hide-legend');"></i>
+</div>
 
 <!-- Load Image -->
 <div id="loadNewImage" class="popup" style="width: 450px;">

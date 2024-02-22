@@ -202,31 +202,89 @@ wpd.dataMask = (function() {
         let imageSize = wpd.graphicsWidget.getImageSize();
         let maskDataPx = ctx.oriDataCtx.getImageData(0, 0, imageSize.width, imageSize.height);
         let maskData = new Set();
+        let hasHiddenLegend = false;
+        let outsideHiddenLegendData = new Set();
+        let intersection = new Set();
         let autoDetector = getAutoDetectionData();
 
-        for (let i = 0; i < maskDataPx.data.length; i += 4) {
-            if (maskDataPx.data[i] === 255 && maskDataPx.data[i + 1] === 255 &&
-                maskDataPx.data[i + 2] === 0) {
-                maskData.add(i / 4);
+        const data = maskDataPx.data;
+        const length = data.length;
+
+        for (let i = 0; i < length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+            const index = i / 4;
+
+            // all data mask
+            let inMask = false;
+            if (r === 255 &&
+                g === 255 &&
+                b === 0) {
+                maskData.add(index);
+                inMask = true;
+            }
+            
+            // all hide legend and pixels outside of that
+            if (r === 255 &&
+                g === 0 &&
+                b === 0) {
+                hasHiddenLegend = true;
+            } else {
+                outsideHiddenLegendData.add(index);
+                if (inMask) {
+                    intersection.add(index);
+                }
             }
         }
 
-        autoDetector.setMask(maskData);
+        if (maskData.size == 0 && hasHiddenLegend) {
+            autoDetector.setMask(outsideHiddenLegendData);
+        } else if (maskData.size != 0 && !hasHiddenLegend) {
+            autoDetector.setMask(maskData);
+        } else {
+            autoDetector.setMask(intersection);
+        }
     }
 
     function markBox() {
-        let tool = new wpd.BoxMaskTool();
-        wpd.graphicsWidget.setTool(tool);
+        $rectangleSelectionButton = document.getElementById('box-mask')
+        if ($rectangleSelectionButton.classList.contains('pressed-button')) {
+            wpd.graphicsWidget.setTool(null);
+        } else {
+            let tool = new wpd.BoxMaskTool();
+            wpd.graphicsWidget.setTool(tool);
+        }
+    }
+
+    function hideLegends() {
+        $hideLegendButton = document.getElementById('hideLegend')
+        if ($hideLegendButton.value === "Hide Legends") {
+           let tool = new wpd.BoxHideLegendTool();
+           wpd.graphicsWidget.setTool(tool);
+        } else {
+           wpd.graphicsWidget.setTool(null);
+        }
     }
 
     function markPen() {
-        let tool = new wpd.PenMaskTool();
-        wpd.graphicsWidget.setTool(tool);
+        $drawMaskButton = document.getElementById('pen-mask')
+        if ($drawMaskButton.classList.contains('pressed-button')) {
+            wpd.graphicsWidget.setTool(null);
+        } else {
+            let tool = new wpd.PenMaskTool();
+            wpd.graphicsWidget.setTool(tool);
+        }
     }
 
     function eraseMarks() {
-        let tool = new wpd.EraseMaskTool();
-        wpd.graphicsWidget.setTool(tool);
+        $eraseMaskButton = document.getElementById('erase-mask')
+        if ($eraseMaskButton.classList.contains('pressed-button')) {
+            wpd.graphicsWidget.setTool(null);
+        } else {
+            let tool = new wpd.EraseMaskTool();
+            wpd.graphicsWidget.setTool(tool);
+        }
     }
 
     function viewMask() {
@@ -245,6 +303,7 @@ wpd.dataMask = (function() {
         markPen: markPen,
         eraseMarks: eraseMarks,
         viewMask: viewMask,
-        clearMask: clearMask
+        clearMask: clearMask,
+        hideLegends: hideLegends
     };
 })();
