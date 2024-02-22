@@ -61,23 +61,23 @@ wpd.imageManager = (function() {
                     loadFromURL(url, resumedProject).then(resolve);
                 };
                 reader.readAsDataURL(imageFile);
-            } else if (imageFile.type == "application/pdf") {
-                wpd.busyNote.show();
-                let reader = new FileReader();
-                reader.onload = function() {
-                    let pdfurl = reader.result;
-                    pdfjsLib.getDocument(pdfurl).promise.then(function(pdf) {
-                        const existingPageManager = wpd.appData.getPageManager();
-                        if (existingPageManager) {
-                            existingPageManager.renderPage(existingPageManager.currentPage()).then(resolve);
-                        } else {
-                            const pdfManager = initializePDFManager(pdf);
-                            pdfManager.renderPage(1).then(resolve);
-                            wpd.appData.setPageManager(pdfManager);
-                        }
-                    });
-                };
-                reader.readAsDataURL(imageFile);
+            // } else if (imageFile.type == "application/pdf") {
+            //     wpd.busyNote.show();
+            //     let reader = new FileReader();
+            //     reader.onload = function() {
+            //         let pdfurl = reader.result;
+            //         pdfjsLib.getDocument(pdfurl).promise.then(function(pdf) {
+            //             const existingPageManager = wpd.appData.getPageManager();
+            //             if (existingPageManager) {
+            //                 existingPageManager.renderPage(existingPageManager.currentPage()).then(resolve);
+            //             } else {
+            //                 const pdfManager = initializePDFManager(pdf);
+            //                 pdfManager.renderPage(1).then(resolve);
+            //                 wpd.appData.setPageManager(pdfManager);
+            //             }
+            //         });
+            //     };
+            // reader.readAsDataURL(imageFile);
             } else {
                 console.log(imageFile.type);
                 wpd.messagePopup.show(wpd.gettext('invalid-file'),
