@@ -123,15 +123,6 @@
     <!-- thirdparty -->
     <script src="https://kit.fontawesome.com/6b7d6b5ea1.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="node_modules/pdfjs-dist/build/pdf.js"></script>
-    <script src="node_modules/pdfjs-dist/build/pdf.worker.js"></script>
-    <script>
-        // ensure PDF.js is loaded before setting workerSrc
-        document.addEventListener("DOMContentLoaded", function() {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = "node_modules/pdfjs-dist/build/pdf.worker.js";
-        });
-    </script>
-    <script src="node_modules/tarballjs/tarball.js"></script>
 </head>
 
 <body>
@@ -803,7 +794,7 @@
     </div>
     <div class="popup-body">
         <p>Supported file formats:</p>
-        <p>JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc.</p>
+        <p>JPEG, PNG, SVG, GIF, BMP, WebP, etc.</p>
         <p>&nbsp;</p>
         <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load(false);" /></p>
         <p>&nbsp;</p>
@@ -1413,19 +1404,19 @@
 <!-- Export JSON -->
 <div id="export-json-window" class="popup" style="width:550px;">
     <div class="popup-heading">
-        <p class="popup-title">JSON oder Projektdatei exportieren</p>
+        <p class="popup-title">Export JSON</p>
     </div>
     <div class="popup-body">
         <p>Export a JSON file containing the axes calibrations, digitized data and measurements. This JSON file can be loaded to resume work at a later time.</p>
-        <p>You can also download a combined 'project file' which includes this JSON and also the image in a single TAR file.</p>
+        <!-- <p>You can also download a combined 'project file' which includes this JSON and also the image in a single TAR file.</p> -->
         <br />
-        <p align="center">Project Name: <input type="text" value="wpd_project" id="project-name-input" />.json/.tar</p>
+        <p align="center">Project Name: <input type="text" value="wpd_project" id="project-name-input" />.json</p>
         <br />
     </div>
     <div class="popup-footer-center">
         <input type="button" value='Abbrechen' class="popup-cancel" onclick="wpd.popup.close('export-json-window');" />
         <input type="button" value='Download JSON (.json)' class="popup-action" onclick="wpd.saveResume.downloadJSON();" style="margin-right: 10px;" />
-        <input type="button" value='Projektdatei herunterladen (.tar)' class="popup-action" onclick="wpd.saveResume.downloadProject();" />
+        <!-- <input type="button" value='Projektdatei herunterladen (.tar)' class="popup-action" onclick="wpd.saveResume.downloadProject();" /> -->
     </div>
 </div>
 
@@ -1433,12 +1424,12 @@
 <div id="import-json-window" class="popup" style="width:500px;">
     <div class="popup-heading">
         <p class="popup-title">Import Project</p>
-        <p class="popup-subtitle">Exportierte JSON/Projektdatei (.tar) laden</p>
+        <p class="popup-subtitle">Load a previously exported JSON project file</p>
     </div>
     <div class="popup-body">
         <p>This will clear any unsaved data in the current plot.</p>
         <p>&nbsp;</p>
-        <p align="center">JSON/Projektdatei: <input type="file" id="import-json-file" /></p>
+        <p align="center">JSON Project File: <input type="file" id="import-json-file" /></p>
         <p>&nbsp;</p>
     </div>
     <div class="popup-footer">
@@ -1748,7 +1739,7 @@
 <div class="i18n-string" id="i18n-string-unstable-version-warning">Achtung, instabile Version!</div>
 <div class="i18n-string" id="i18n-string-unstable-version-warning-text">Sie verwenden eine Betaversion von WebPlotDigitizer. Möglicherweise gibt es einige Probleme mit der Software, die erwartet werden müssen.</div>
 <div class="i18n-string" id="i18n-string-import-json">Import Project</div>
-<div class="i18n-string" id="i18n-string-json-data-loaded">JSON/Projektdatei wurde geladen!</div>
+<div class="i18n-string" id="i18n-string-json-data-loaded">JSON project data has been loaded!</div>
 <div class="i18n-string" id="i18n-string-calibration-invalid-inputs">Ungültige Eingaben</div>
 <div class="i18n-string" id="i18n-string-calibration-enter-valid">Bitte geben Sie gültige Werte für die Kalibrierung an.</div>
 <div class="i18n-string" id="i18n-string-calibration-invalid-log-inputs">Ungültiger Log-Skalenwert</div>

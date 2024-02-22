@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-21 23:06-0800\n"
+"POT-Creation-Date: 2024-02-21 23:24-0800\n"
 "PO-Revision-Date: 2019-02-24 00:40-0800\n"
 "Last-Translator: \n"
 "Language: de_DE\n"
@@ -24,17 +24,17 @@ msgid ""
 " more user-friendly UI enhancements."
 msgstr ""
 
-#: templates/_base.html:58
+#: templates/_base.html:49
 msgid "Loading application, please wait..."
 msgstr ""
 
-#: templates/_base.html:61
+#: templates/_base.html:52
 msgid ""
 "Problems loading? Make sure you have a recent version of Google Chrome, "
 "Firefox, Safari or Microsoft Edge installed."
 msgstr ""
 
-#: templates/_base.html:87
+#: templates/_base.html:78
 msgid "Fit"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgid "Supported file formats:"
 msgstr ""
 
 #: templates/_popups.html:49
-msgid "JPEG, PNG, SVG, PDF, GIF, BMP, WebP, etc."
+msgid "JPEG, PNG, SVG, GIF, BMP, WebP, etc."
 msgstr ""
 
 #: templates/_popups.html:55 templates/_popups.html:95
@@ -647,7 +647,7 @@ msgid "The following relationships are being used to convert image pixels to dat
 msgstr ""
 
 #: templates/_popups.html:659
-msgid "Export JSON or Project File"
+msgid "Export JSON"
 msgstr ""
 
 #: templates/_popups.html:662
@@ -676,7 +676,7 @@ msgid "Import Project"
 msgstr ""
 
 #: templates/_popups.html:679
-msgid "Load a previously exported JSON or project file (.tar)"
+msgid "Load a previously exported JSON project file"
 msgstr ""
 
 #: templates/_popups.html:682
@@ -684,7 +684,7 @@ msgid "This will clear any unsaved data in the current plot."
 msgstr ""
 
 #: templates/_popups.html:684
-msgid "JSON/Project File"
+msgid "JSON Project File"
 msgstr ""
 
 #: templates/_popups.html:689
@@ -1185,7 +1185,7 @@ msgid ""
 msgstr ""
 
 #: templates/_strings.html:5
-msgid "JSON/Project data has been loaded!"
+msgid "JSON project data has been loaded!"
 msgstr ""
 
 #: templates/_strings.html:6
@@ -2416,7 +2416,7 @@ msgstr ""
 #~ " erwartet werden müssen."
 
 #~ msgid "JSON/Project data has been loaded!"
-#~ msgstr "JSON/Projektdatei wurde geladen!"
+#~ msgstr ""
 
 #~ msgid "Invalid Inputs"
 #~ msgstr "Ungültige Eingaben"
