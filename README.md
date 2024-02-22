@@ -12,7 +12,14 @@ New Features:
 - Hid advanced features
 - Included more instruction and details as to how to use WPD Lite
 
+WebPlotDigitizer:
+
 ![WebPlotDigitizer Screenshot](screenshot.png?raw=true "WebPlotDigitizer")
+
+WebPlotDigitizer Lite:
+
+<img width="800" alt="image" src="https://github.com/kevincnguyen/WebPlotDigitizer-Lite/assets/68757183/3f7b4d24-1731-40fe-9691-3dcadbb51f24">
+
 
 Contact
 -------
