@@ -310,7 +310,10 @@ wpd.XYAxes = (function() {
         return 2;
     };
 
-    AxesObj.prototype.getAxesLabels = function() {
+    AxesObj.prototype.getAxesLabels = function(datasetName) {
+        if (datasetName && wpd.AxesLabels.containsDataset(datasetName)) {
+            return wpd.AxesLabels.getLabel(datasetName);
+        }
         return ['X', 'Y'];
     };
 

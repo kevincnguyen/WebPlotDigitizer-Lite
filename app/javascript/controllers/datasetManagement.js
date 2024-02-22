@@ -67,6 +67,16 @@ wpd.dataSeriesManagement = (function() {
         wpd.popup.show('rename-dataset-popup');
     }
 
+    function showRenameAxesLabels() {
+        const ds = wpd.tree.getActiveDataset();
+        const $xName = document.getElementById('rename-x-axis-input');
+        const $yName = document.getElementById('rename-y-axis-input');
+        const labels = wpd.AxesLabels.getLabel(ds.name);
+        $xName.value = labels[0];
+        $yName.value = labels[1];
+        wpd.popup.show('rename-axes-labels-popup');
+    }
+
     function renameDataset() {
         const $dsName = document.getElementById('rename-dataset-name-input');
         wpd.popup.close('rename-dataset-popup');
@@ -77,14 +87,39 @@ wpd.dataSeriesManagement = (function() {
             return;
         }
         const ds = wpd.tree.getActiveDataset();
+        const newDatasetName = $dsName.value.trim();
+
+        // Update label map
+        const oldLabels = wpd.AxesLabels.getLabel(ds.name);
+        wpd.AxesLabels.updateLabel(newDatasetName, oldLabels, ds.name);
+
         ds.name = $dsName.value.trim();
         wpd.tree.refresh();
         wpd.tree.selectPath("/" + wpd.gettext("datasets") + "/" + ds.name, true);
     }
 
+    function renameAxesLabels() {
+        const $xName = document.getElementById('rename-x-axis-input');
+        const $yName = document.getElementById('rename-y-axis-input');
+        wpd.popup.close('rename-axes-labels-popup');
+
+        const ds = wpd.tree.getActiveDataset();
+        const newXName = $xName.value.trim();
+        const newYName = $yName.value.trim();
+
+        // Update label map
+        wpd.AxesLabels.updateLabel(ds.name, [newXName, newYName]);
+    }
+
     function renameKeypress(e) {
         if (e.key === "Enter") {
             renameDataset();
+        }
+    }
+
+    function renameAxesLabelsKeypress(e) {
+        if (e.key === "Enter") {
+            renameAxesLabels();
         }
     }
 
@@ -206,8 +241,11 @@ wpd.dataSeriesManagement = (function() {
     return {
         showAddDataset: showAddDataset,
         showRenameDataset: showRenameDataset,
+        showRenameAxesLabels: showRenameAxesLabels,
         renameDataset: renameDataset,
+        renameAxesLabels: renameAxesLabels,
         renameKeypress: renameKeypress,
+        renameAxesLabelsKeypress: renameAxesLabelsKeypress,
         addSingleDataset: addSingleDataset,
         addMultipleDatasets: addMultipleDatasets,
         deleteDataset: deleteDataset,

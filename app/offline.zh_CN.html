@@ -43,6 +43,7 @@
 
     <!-- thirdparty -->
     <script src="https://kit.fontawesome.com/6b7d6b5ea1.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="node_modules/pdfjs-dist/build/pdf.js"></script>
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = "node_modules/pdfjs-dist/build/pdf.worker.js";
@@ -204,7 +205,7 @@
         <p class="sidebar-title"><i class="fa-solid fa-table"></i> Datasets</p>
         <center>
             <p><input type="button" value='添加数据集' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showAddDataset();" /></p>
-            <p><input type="button" value='导出所有数据' style="width:150px;" class="sidebar-button" onclick="wpd.popup.show('export-all-data-popup');" /></p>
+            <p><input type="button" value='导出所有数据' style="width:150px; color: red" class="sidebar-button" onclick="wpd.popup.show('export-all-data-popup');" /></p>
         </center>
     </div>
 
@@ -223,6 +224,7 @@
             <p>坐标轴: <select id="dataset-item-axes-select" style="min-width:100px; max-width:150px;" onchange="wpd.dataSeriesManagement.changeAxes(this.value);"></select></p>
             <!-- <p><input type="button" value='Point Color' style="width: 150px;" id="dataset-display-color-picker-button" onclick="wpd.dataSeriesManagement.startColorPicker();" /></p> -->
             <p><input type="button" value='重命名数据集' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showRenameDataset();" /></p>
+            <p><input type="button" value='Rename Labels' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.showRenameAxesLabels();" /></p>
             <p><input type="button" value='删除数据集' style="width:150px;" class="sidebar-button" onclick="wpd.dataSeriesManagement.deleteDataset();" /></p>
             <!-- <p><input type="button" value='Edit Point Groups' id="dataset-edit-point-groups-button" style="width: 150px;" class="sidebar-button" onclick="wpd.pointGroups.showSettingsPopup();" /></p> -->
             <p><input type="button" value='清除数据' style="width:150px;" class="sidebar-button" onclick="wpd.acquireData.clearAll();" /></p>
@@ -367,6 +369,9 @@
         <input type="text" size="3" id="color-distance-value" onchange="wpd.colorPicker.changeColorDistance();" />
         <!-- <input type="button" value='颜色过滤' onclick="wpd.colorPicker.testColorDetection();" style="width: 90px; padding: 5px;" class="sidebar-button"> -->
     </p>
+    <p align="center" style="margin-top: 5px;">
+        <input type="button" value='Hide Legends' id="hideLegend" class="popup-action" onclick="wpd.dataMask.hideLegends()" />
+    </p>
     <hr style="border: none; height: 1px;"/>
 
     <p style="padding: 4px; cursor: pointer;" onclick="toggleAdvancedExtraction();">
@@ -375,13 +380,25 @@
         <span style="padding-left: 5px;">Advanced</span>
     </p>
     <div id="advanced-extraction-section" style="display: none;">
-        <p>
-            <b style="margin-right: 3px;">Mask </b>
-            <input type="button" value='方块' style="width:45px; min-width: 0px; padding: 5px;" class="sidebar-button" onclick="wpd.dataMask.markBox();" id="box-mask">
-            <input type="button" value='画笔' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.markPen();" id="pen-mask">
-            <input type="button" value='擦除' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.eraseMarks();" id="erase-mask">
-            <input type="button" value='显示' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" />
-        </p>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 3px;"> 
+                <b style="margin-right: 3px;">Masking Tools</b>
+                <i class="fa-solid fa-circle-info mask-tip" onclick="wpd.popup.show('masking-tips');"></i>
+            </div>
+            <button class="sidebar-button" onclick="wpd.dataMask.markBox();" id="box-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-selection"></i>
+                Rectangle Selection
+            </button>
+            <button class="sidebar-button" onClick="wpd.dataMask.markPen();" id="pen-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-pencil-line"></i>
+                Draw Mask
+            </button>
+            <button class="sidebar-button" onClick="wpd.dataMask.eraseMarks();" id="erase-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-eraser"></i>
+                Erase Mask
+            </button>
+            <!-- <input type="button" value='Stop Masking' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/> -->
+        </div>
         <div id="mask-erase-container" class="sidebar-extras">
             <p class="centered" style="gap: 3px;">
                 <b>Width</b>
@@ -395,7 +412,7 @@
                 <input type="range" id="paintThickness" min="1" max="150" value="20" style="width:120px;">
             </p>
         </div>
-        <hr style="border: none; height: 1px;"/>
+        <hr style="border: none; height: 1px; margin-top: 15px;"/>
 
         <div>
             <p>
@@ -670,19 +687,27 @@
     </div>
 </div>
 
-<!-- Automatic Extraction Instructions -->
-<div id="automatic-extraction-tips" class="popup" style="width: 450px;">
+<!-- Masking Instructions -->
+<div id="masking-tips" class="popup" style="width: 450px;">
     <div class="popup-heading">
-        <p class="popup-title">Automatic Extraction Instructions</p>
+        <p class="popup-title">What is Masking?</p>
     </div>
     <div class="popup-body">
-        <p>1. Use <em>Color</em> to select the color to extract</p>
-        <p>2. Use <em>Color Tolerance</em> to specify an approximate RGB distance from the selected color that is acceptable</p>
-        <p>3. Press <em>Extract</em> to extract data</p>
+        <p>Masking allows users to define a specific region within the graph where automatic data point extraction will be focused.</p>
+        <p>Click a masking tool to select and deselect it.</p>
     </div>
     <div class="popup-footer-center">
-        <input type="button" value='关闭' class="popup-cancel" onclick="wpd.popup.close('automatic-extraction-tips');" />
+        <input type="button" value='关闭' class="popup-cancel" onclick="wpd.popup.close('masking-tips');" />
     </div>
+</div>
+
+<!-- Hide Legend Instructions -->
+<div id="hide-legend" class="popup" style="border: 2px solid black; display: flex; flex-direction: row; box-shadow: 5px 5px 0 0 black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Click and drag to highlight the legends. This action will conceal the legends from data extraction.
+    </p>
+    <i class="fa-solid fa-xmark" style="padding: 3px 3px 3px 6px; cursor: pointer;" onclick="wpd.popup.close('hide-legend');"></i>
 </div>
 
 <!-- Load Image -->
@@ -1108,6 +1133,16 @@
                     <div class="centered" style="margin-top: 20px;">
                         <input type="button" value="Format" class="popup-action" onclick="wpd.dataTable.reSortAndFilter();" />
                     </div>
+                    <br />
+                    <div class="sidebar-tip" style="padding: 5px; margin: 5px;">
+                        <p>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <b>Tip</b>
+                        </p>
+                        <p>
+                            Click <em>Datasets</em> in the sidebar to add additional datasets for export
+                        </p>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -1448,7 +1483,7 @@
 </div>
 
 <!-- Add dataset -->
-<div id="add-dataset-popup" class="popup" style="width:450px;">
+<div id="add-dataset-popup" class="popup" style="width:525px;">
     <div class="popup-heading">
         <div class="popup-title">添加数据集</div>
     </div>
@@ -1460,7 +1495,7 @@
         </p>
         <br />
         <p>
-            Count: 
+            Number of Datasets: 
             <input type="text" id="add-multiple-datasets-count-input" value="1" />
             <input type="button" value='添加多个数据集' class="popup-action" onclick="wpd.dataSeriesManagement.addMultipleDatasets();" />
         </p>
@@ -1484,6 +1519,23 @@
     <div class="popup-footer-center">
         <input type="button" value='取消' class="popup-cancel" onclick="wpd.popup.close('rename-dataset-popup');" />
         <input type="button" value='重命名' class="popup-action" onclick="wpd.dataSeriesManagement.renameDataset();" />
+    </div>
+</div>
+
+<!-- Rename axes labels -->
+<div id="rename-axes-labels-popup" class="popup" style="width:400px;">
+    <div class="popup-heading">
+        <p class="popup-title">Rename Axes Labels</p>
+    </div>
+    <div class="popup-body">
+        <br />
+        <p>X Axis: <input type="text" id="rename-x-axis-input" value="X" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <p>Y Axis: <input type="text" id="rename-y-axis-input" value="Y" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <br />
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='取消' class="popup-cancel" onclick="wpd.popup.close('rename-axes-labels-popup');" />
+        <input type="button" value='重命名' class="popup-action" onclick="wpd.dataSeriesManagement.renameAxesLabels();" />
     </div>
 </div>
 

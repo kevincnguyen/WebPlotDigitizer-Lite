@@ -73,7 +73,7 @@ wpd.dataExport = (function() {
             let axes = plotData.getAxesForDataset(dsColl[i]);
             if (axes == null)
                 continue;
-            let axLab = axes.getAxesLabels();
+            let axLab = axes.getAxesLabels(dsColl[i].name);
             let axdims = axLab.length;
             numCols += axdims;
             let pts = dsColl[i].getCount();
@@ -101,7 +101,7 @@ wpd.dataExport = (function() {
             let axes = plotData.getAxesForDataset(dsColl[i]);
             if (axes == null)
                 continue;
-            let axLab = axes.getAxesLabels();
+            let axLab = axes.getAxesLabels(dsColl[i].name);
             let axdims = axLab.length;
             let pts = dsColl[i].getCount();
             for (let j = 0; j < pts; j++) {

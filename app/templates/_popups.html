@@ -15,19 +15,27 @@
     </div>
 </div>
 
-<!-- Automatic Extraction Instructions -->
-<div id="automatic-extraction-tips" class="popup" style="width: 450px;">
+<!-- Masking Instructions -->
+<div id="masking-tips" class="popup" style="width: 450px;">
     <div class="popup-heading">
-        <p class="popup-title">{{ _("Automatic Extraction Instructions") }}</p>
+        <p class="popup-title">{{ _("What is Masking?") }}</p>
     </div>
     <div class="popup-body">
-        <p>{{ _("1. Use <em>Color</em> to select the color to extract") }}</p>
-        <p>{{ _("2. Use <em>Color Tolerance</em> to specify an approximate RGB distance from the selected color that is acceptable") }}</p>
-        <p>{{ _("3. Press <em>Extract</em> to extract data") }}</p>
+        <p>{{ _("Masking allows users to define a specific region within the graph where automatic data point extraction will be focused.") }}</p>
+        <p>{{ _("Click a masking tool to select and deselect it.") }}</p>
     </div>
     <div class="popup-footer-center">
-        <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('automatic-extraction-tips');" />
+        <input type="button" value='{{ _("Close") }}' class="popup-cancel" onclick="wpd.popup.close('masking-tips');" />
     </div>
+</div>
+
+<!-- Hide Legend Instructions -->
+<div id="hide-legend" class="popup" style="border: 2px solid black; display: flex; flex-direction: row; box-shadow: 5px 5px 0 0 black;">
+    <p class="popup-heading" style="color: black; background-color: white;">
+        <i class="fa-solid fa-circle-info"></i>
+        Click and drag to highlight the legends. This action will conceal the legends from data extraction.
+    </p>
+    <i class="fa-solid fa-xmark" style="padding: 3px 3px 3px 6px; cursor: pointer;" onclick="wpd.popup.close('hide-legend');"></i>
 </div>
 
 <!-- Load Image -->
@@ -453,6 +461,16 @@
                     <div class="centered" style="margin-top: 20px;">
                         <input type="button" value="Format" class="popup-action" onclick="wpd.dataTable.reSortAndFilter();" />
                     </div>
+                    <br />
+                    <div class="sidebar-tip" style="padding: 5px; margin: 5px;">
+                        <p>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <b>Tip</b>
+                        </p>
+                        <p>
+                            Click <em>Datasets</em> in the sidebar to add additional datasets for export
+                        </p>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -793,7 +811,7 @@
 </div>
 
 <!-- Add dataset -->
-<div id="add-dataset-popup" class="popup" style="width:450px;">
+<div id="add-dataset-popup" class="popup" style="width:525px;">
     <div class="popup-heading">
         <div class="popup-title">{{ _("Add Dataset") }}</div>
     </div>
@@ -805,7 +823,7 @@
         </p>
         <br />
         <p>
-            {{ _("Count: ") }}
+            {{ _("Number of Datasets: ") }}
             <input type="text" id="add-multiple-datasets-count-input" value="1" />
             <input type="button" value='{{ _("Add Multiple Datasets") }}' class="popup-action" onclick="wpd.dataSeriesManagement.addMultipleDatasets();" />
         </p>
@@ -829,6 +847,23 @@
     <div class="popup-footer-center">
         <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('rename-dataset-popup');" />
         <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.dataSeriesManagement.renameDataset();" />
+    </div>
+</div>
+
+<!-- Rename axes labels -->
+<div id="rename-axes-labels-popup" class="popup" style="width:400px;">
+    <div class="popup-heading">
+        <p class="popup-title">{{ _("Rename Axes Labels") }}</p>
+    </div>
+    <div class="popup-body">
+        <br />
+        <p>{{ _("X Axis") }}: <input type="text" id="rename-x-axis-input" value="X" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <p>{{ _("Y Axis") }}: <input type="text" id="rename-y-axis-input" value="Y" onkeypress="wpd.dataSeriesManagement.renameAxesLabelsKeypress(event);" /></p>
+        <br />
+    </div>
+    <div class="popup-footer-center">
+        <input type="button" value='{{ _("Cancel") }}' class="popup-cancel" onclick="wpd.popup.close('rename-axes-labels-popup');" />
+        <input type="button" value='{{ _("Rename") }}' class="popup-action" onclick="wpd.dataSeriesManagement.renameAxesLabels();" />
     </div>
 </div>
 

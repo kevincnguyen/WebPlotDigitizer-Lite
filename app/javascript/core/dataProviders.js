@@ -171,8 +171,8 @@ wpd.plotDataProvider = (function() {
         const rawData = [],
             isFieldSortable = [],
             hasMetadata = dataSeries.hasMetadata();
-
-        let fields = axes.getAxesLabels(),
+        
+        let fields = axes.getAxesLabels(dataSeries.name),
             fieldDateFormat = [],
             connectivityFieldIndices = [],
             metaKeys = dataSeries.getMetadataKeys(),

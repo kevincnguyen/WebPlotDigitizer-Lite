@@ -60,6 +60,9 @@
         <input type="text" size="3" id="color-distance-value" onchange="wpd.colorPicker.changeColorDistance();" />
         <!-- <input type="button" value='{{ _("Filter Colors") }}' onclick="wpd.colorPicker.testColorDetection();" style="width: 90px; padding: 5px;" class="sidebar-button"> -->
     </p>
+    <p align="center" style="margin-top: 5px;">
+        <input type="button" value='{{ _("Hide Legends") }}' id="hideLegend" class="popup-action" onclick="wpd.dataMask.hideLegends()" />
+    </p>
     <hr style="border: none; height: 1px;"/>
 
     <p style="padding: 4px; cursor: pointer;" onclick="toggleAdvancedExtraction();">
@@ -68,13 +71,25 @@
         <span style="padding-left: 5px;">{{ _("Advanced") }}</span>
     </p>
     <div id="advanced-extraction-section" style="display: none;">
-        <p>
-            <b style="margin-right: 3px;">{{ _("Mask ") }}</b>
-            <input type="button" value='{{ _("Box") }}' style="width:45px; min-width: 0px; padding: 5px;" class="sidebar-button" onclick="wpd.dataMask.markBox();" id="box-mask">
-            <input type="button" value='{{ _("Pen") }}' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.markPen();" id="pen-mask">
-            <input type="button" value='{{ _("Erase") }}' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onClick="wpd.dataMask.eraseMarks();" id="erase-mask">
-            <input type="button" value='{{ _("View") }}' style="width:45px; min-width: 0px; padding: 5px" class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" />
-        </p>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 3px;"> 
+                <b style="margin-right: 3px;">{{ _("Masking Tools") }}</b>
+                <i class="fa-solid fa-circle-info mask-tip" onclick="wpd.popup.show('masking-tips');"></i>
+            </div>
+            <button class="sidebar-button" onclick="wpd.dataMask.markBox();" id="box-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-selection"></i>
+                Rectangle Selection
+            </button>
+            <button class="sidebar-button" onClick="wpd.dataMask.markPen();" id="pen-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-pencil-line"></i>
+                Draw Mask
+            </button>
+            <button class="sidebar-button" onClick="wpd.dataMask.eraseMarks();" id="erase-mask" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; width:185px;">
+                <i class="ph ph-eraser"></i>
+                Erase Mask
+            </button>
+            <!-- <input type="button" value='{{ _("Stop Masking") }}' class="sidebar-button" onclick="wpd.dataMask.viewMask();" id="view-mask" style="width: 185px;"/> -->
+        </div>
         <div id="mask-erase-container" class="sidebar-extras">
             <p class="centered" style="gap: 3px;">
                 <b>{{ _("Width") }}</b>
@@ -88,7 +103,7 @@
                 <input type="range" id="paintThickness" min="1" max="150" value="20" style="width:120px;">
             </p>
         </div>
-        <hr style="border: none; height: 1px;"/>
+        <hr style="border: none; height: 1px; margin-top: 15px;"/>
 
         <div>
             <p>

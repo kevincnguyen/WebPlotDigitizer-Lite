@@ -1,7 +1,7 @@
 /*
     WebPlotDigitizer - https://automeris.io/WebPlotDigitizer
 
-    Copyright 2010-2022 Ankit Rohatgi <ankitrohatgi@hotmail.com>
+    Copyright 2010-2024 Ankit Rohatgi <ankitrohatgi@hotmail.com>
 
     This file is part of WebPlotDigitizer.
 
@@ -74,6 +74,25 @@ wpd.graphicsWidget = (function() {
         } else {
             // rotate given x and y after dividing by zoom ratio
             return getRotatedCoordinates(rotation, 0, imageX, imageY);
+        }
+    }
+
+    // get canvas coords from screen coords
+    function canvasPx(screenX, screenY) {
+        if (rotation === 0) {
+            return {
+                x: screenX,
+                y: screenY
+            };
+        } else {
+            // divide by zoomRatio to end up into image scale. Then rotate to get into canvas orientation
+            let coords = getRotatedCoordinates(rotation, 0, screenX / zoomRatio, screenY / zoomRatio);
+
+            // scale with zoom ratio to get to canvas scale
+            return {
+                x: coords.x * zoomRatio,
+                y: coords.y * zoomRatio,
+            };
         }
     }
 
@@ -180,6 +199,7 @@ wpd.graphicsWidget = (function() {
         if (repaintHandler != null && repaintHandler.onRemove != undefined) {
             repaintHandler.onRemove();
         }
+        resetDrawingLayers();
         repaintHandler = fhandle;
         if (repaintHandler != null && repaintHandler.onAttach != undefined) {
             repaintHandler.onAttach();
@@ -346,7 +366,9 @@ wpd.graphicsWidget = (function() {
     }
 
     function resetHover() {
-        $hoverCanvas.width = $hoverCanvas.width;
+        // canvas could be rotated, so get max screenX and screenY
+        let canvasDims = screenPx(originalWidth, originalHeight);
+        hoverCtx.clearRect(0, 0, canvasDims.x, canvasDims.y);
     }
 
     function toggleExtendedCrosshair(ev) { // called when backslash is hit
@@ -478,15 +500,11 @@ wpd.graphicsWidget = (function() {
             iymax = originalHeight;
             zymax = zymax - zratio * (originalHeight - (iy0 + ih));
         }
-        idata = oriImageCtx.getImageData(parseInt(ixmin, 10), parseInt(iymin, 10, ),
-            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10), {
-                willReadFrequently: true
-            });
+        idata = oriImageCtx.getImageData(parseInt(ixmin, 10), parseInt(iymin, 10),
+            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10));
 
         ddata = oriDataCtx.getImageData(parseInt(ixmin, 10), parseInt(iymin, 10),
-            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10), {
-                willReadFrequently: true
-            });
+            parseInt(ixmax - ixmin, 10), parseInt(iymax - iymin, 10));
 
         for (var index = 0; index < ddata.data.length; index += 4) {
             if (ddata.data[index] != 0 || ddata.data[index + 1] != 0 ||
@@ -636,9 +654,7 @@ wpd.graphicsWidget = (function() {
         $oriDataCanvas.width = originalWidth;
         $oriDataCanvas.height = originalHeight;
         oriImageCtx.drawImage(originalImage, 0, 0, originalWidth, originalHeight);
-        originalImageData = oriImageCtx.getImageData(0, 0, originalWidth, originalHeight, {
-            willReadFrequently: true
-        });
+        originalImageData = oriImageCtx.getImageData(0, 0, originalWidth, originalHeight);
         setRotation(savedRotation);
         resetAllLayers();
         zoomFit();
@@ -673,12 +689,8 @@ wpd.graphicsWidget = (function() {
         exportCanvas.width = originalWidth;
         exportCanvas.height = originalHeight;
         exportCtx.drawImage($oriImageCanvas, 0, 0, originalWidth, originalHeight);
-        exportData = exportCtx.getImageData(0, 0, originalWidth, originalHeight, {
-            willReadFrequently: true
-        });
-        dLayer = oriDataCtx.getImageData(0, 0, originalWidth, originalHeight, {
-            willReadFrequently: true
-        });
+        exportData = exportCtx.getImageData(0, 0, originalWidth, originalHeight);
+        dLayer = oriDataCtx.getImageData(0, 0, originalWidth, originalHeight);
         for (di = 0; di < exportData.data.length; di += 4) {
             if (dLayer.data[di] != 0 || dLayer.data[di + 1] != 0 || dLayer.data[di + 2] != 0) {
                 alpha = dLayer.data[di + 3] / 255;
@@ -867,6 +879,7 @@ wpd.graphicsWidget = (function() {
         resetHover: resetHover,
         imagePx: imagePx,
         screenPx: screenPx,
+        canvasPx: canvasPx,
         screenLength: screenLength,
 
         updateZoomOnEvent: updateZoomOnEvent,

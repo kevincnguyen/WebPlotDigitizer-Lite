@@ -2,12 +2,12 @@
 /app/locale/*
 /app/combined*
 /app/*.out
-# /app/*.html
+/app/*.html
 /app/thirdparty/*/
 /app/*.js
 /app/*.wasm
 /app/wpd*
-/app/node_modules/*
+# /app/node_modules/*
 /app/package-lock.json
 
 # app directory exclusion exceptions
