@@ -51,7 +51,7 @@ const canvasIDs = [
 
 // define image for use with testing
 const image = new Image();
-image.src = "../start.png";
+image.src = "../image/start.png";
 
 QUnit.test("Load image", (assert) => {
     // load image

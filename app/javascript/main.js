@@ -33,7 +33,7 @@ wpd.loadDefaultImage = function() {
     // Need to initialize file manager alongside loading image.
     // TODO: clean up file manager initialization!
     let loadImage = async function() {
-        let response = await fetch("start.png");
+        let response = await fetch("/images/start.png");
         let data = await response.blob();
         let metadata = {
             type: "image/png"
