@@ -72,20 +72,36 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        const landingPage = document.getElementById('landing-page');
         const dropArea = document.getElementById('dropArea');
         const fileInput = document.getElementById('landingPageFileLoadBox');
 
         // Handle both drag and drop events
         dropArea.addEventListener('dragover', function (e) {
+            if (getComputedStyle(landingPage).display == 'none') {
+                e.preventDefault();
+                return;
+            }
+            
             e.preventDefault();
             dropArea.classList.add('dragover');
         });
 
         dropArea.addEventListener('dragleave', function () {
+            if (getComputedStyle(landingPage).display == 'none') {
+                e.preventDefault();
+                return;
+            }
+
             dropArea.classList.remove('dragover');
         });
 
         dropArea.addEventListener('drop', function (e) {
+            if (getComputedStyle(landingPage).display == 'none') {
+                e.preventDefault();
+                return;
+            }
+
             e.preventDefault();
             dropArea.classList.remove('dragover');
 
@@ -97,7 +113,44 @@
         });
 
         dropArea.addEventListener('click', function (e) {
+            if (getComputedStyle(landingPage).display == 'none') {
+                e.preventDefault();
+                return;
+            }
+
             fileInput.click();
+        });
+
+        landingPage.addEventListener('paste', function (e) {
+            if (getComputedStyle(landingPage).display == 'none') {
+                e.preventDefault();
+                return;
+            }
+
+            const items = e.clipboardData.items;
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type.indexOf('image') !== -1) {
+                    const blob = items[i].getAsFile();
+                    const file = new File([blob], 'pasted_image.png', { type: blob.type });
+                    const fileList = new DataTransfer();
+                    fileList.items.add(file);
+                    fileInput.files = fileList.files;
+                    fileInput.dispatchEvent(new Event('change'));
+                    break;
+                } else if (items[i].type === 'application/pdf') {
+                    const blob = items[i].getAsFile();
+                    const file = new File([blob], 'pasted_pdf.pdf', { type: blob.type });
+                    const fileList = new DataTransfer();
+                    fileList.items.add(file);
+                    fileInput.files = fileList.files;
+                    fileInput.dispatchEvent(new Event('change'));
+                    break;
+                } else {
+                    console.log(items[i].type);
+                    wpd.messagePopup.show(wpd.gettext('invalid-file'), wpd.gettext('invalid-file-text'));
+                    break;
+                }
+            }
         });
     });
 </script>
@@ -1663,7 +1716,7 @@
 <div class="i18n-string" id="i18n-string-unsupported">Unsupported Feature!</div>
 <div class="i18n-string" id="i18n-string-unsupported-text">This feature has not been implemented in the current version. This may be available in a future release.</div>
 <div class="i18n-string" id="i18n-string-processing">Processing</div>
-<div class="i18n-string" id="i18n-string-invalid-file">ERROR: Invalid File!</div>
+<div class="i18n-string" id="i18n-string-invalid-file">ERROR: Invalid File</div>
 <div class="i18n-string" id="i18n-string-invalid-file-text">Please load a valid image file. Common image formats such as JPG, PNG, BMP, GIF etc. should work. Word documents are not accepted.</div>
 <div class="i18n-string" id="i18n-string-raw">Raw</div>
 <div class="i18n-string" id="i18n-string-nearest-neighbor">Nearest Neighbor</div>
