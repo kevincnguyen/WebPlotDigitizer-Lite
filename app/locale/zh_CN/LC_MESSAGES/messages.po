@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  WebPlotDigitizer\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-08 04:51-0800\n"
+"POT-Creation-Date: 2024-03-08 12:02-0800\n"
 "PO-Revision-Date: 2018-02-21 00:47-0600\n"
 "Last-Translator: RGXGR <rgxgr@outlook.com>\n"
 "Language: zh_Hans_CN\n"
@@ -47,11 +47,11 @@ msgid "Convert images of graphs into data points"
 msgstr ""
 
 #: templates/_landing.html:11
-msgid "Drag and drop or click here"
+msgid "Drag and drop or paste from clipboard"
 msgstr ""
 
 #: templates/_landing.html:12
-msgid "to upload your graph image"
+msgid "or click here to upload your graph image"
 msgstr ""
 
 #: templates/_menubar.html:4
@@ -3389,5 +3389,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "JPEG, PNG, SVG, GIF, BMP, WebP, etc."
+#~ msgstr ""
+
+#~ msgid "Drag and drop or click here"
+#~ msgstr ""
+
+#~ msgid "to upload your graph image"
 #~ msgstr ""
 

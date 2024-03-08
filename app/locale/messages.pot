@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-08 04:51-0800\n"
+"POT-Creation-Date: 2024-03-08 12:02-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,11 @@ msgid "Convert images of graphs into data points"
 msgstr ""
 
 #: templates/_landing.html:11
-msgid "Drag and drop or click here"
+msgid "Drag and drop or paste from clipboard"
 msgstr ""
 
 #: templates/_landing.html:12
-msgid "to upload your graph image"
+msgid "or click here to upload your graph image"
 msgstr ""
 
 #: templates/_menubar.html:4
