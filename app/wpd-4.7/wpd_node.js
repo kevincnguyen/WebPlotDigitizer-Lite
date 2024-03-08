@@ -2189,6 +2189,7 @@ wpd.PlotData = class {
 
     addAxes(ax) {
         this._axesColl.push(ax);
+        wpd.AxesLabels.updateLabel(ax.name, ['X', 'Y']); // assuming only X, Y axes
     }
 
     getAxesColl() {
@@ -2223,7 +2224,6 @@ wpd.PlotData = class {
 
     addDataset(ds) {
         this._datasetColl.push(ds);
-        wpd.AxesLabels.updateLabel(ds.name, ['X', 'Y']); // assuming only X, Y
 
         // by default bind ds to last axes
         const axCount = this._axesColl.length;
@@ -4656,34 +4656,34 @@ wpd.AxesLabels = (function() {
 
     return {
         /**
-         * Checks if there exists an entry for the given dataset name
-         * @param {string} datasetName - Name of the dataset
-         * @returns {boolean} whether for the dataset exists internally
+         * Checks if there exists an entry for the given axes name
+         * @param {string} axesName - Name of the axes
+         * @returns {boolean} whether for the axes exists internally
          */
-        containsDataset: function(datasetName) {    
-            return labels.has(datasetName);
+        containsAxes: function(axesName) {    
+            return labels.has(axesName);
         },
 
         /**
-         * Get label for a dataset
-         * @param {string} datasetName - Name of the dataset
-         * @returns {string} Label for the dataset
+         * Get label for a axes
+         * @param {string} axesName - Name of the axes
+         * @returns {string} Label for the axes
          */
-        getLabel: function(datasetName) {
-            return labels.get(datasetName);
+        getLabel: function(axesName) {
+            return labels.get(axesName);
         },
 
         /**
-         * Update label for a dataset
-         * @param {string} datasetName - Name of the dataset to update
+         * Update label for a axes
+         * @param {string} newAxesName - Name of the axes to update
          * @param {string} labels - Labels to update
-         * @param {string} oldDatasetName - (Optional) Name of the dataset being replaced
+         * @param {string} oldAxesName - (Optional) Name of the axes being replaced
          */
-        updateLabel: function(newDatasetName, newLabels, oldDatasetName) {
-            if (oldDatasetName) {
-                labels.delete(oldDatasetName);
+        updateLabel: function(newAxesName, newLabels, oldAxesName) {
+            if (oldAxesName) {
+                labels.delete(oldAxesName);
             }
-            labels.set(newDatasetName, newLabels);
+            labels.set(newAxesName, newLabels);
         }
     };
 })();/*
@@ -5462,9 +5462,9 @@ wpd.XYAxes = (function() {
         return 2;
     };
 
-    AxesObj.prototype.getAxesLabels = function(datasetName) {
-        if (datasetName && wpd.AxesLabels.containsDataset(datasetName)) {
-            return wpd.AxesLabels.getLabel(datasetName);
+    AxesObj.prototype.getAxesLabels = function(axesName) {
+        if (axesName && wpd.AxesLabels.containsAxes(axesName)) {
+            return wpd.AxesLabels.getLabel(axesName);
         }
         return ['X', 'Y'];
     };
