@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-08 04:24-0800\n"
+"POT-Creation-Date: 2024-03-08 04:51-0800\n"
 "PO-Revision-Date: 2016-12-18 10:38-0600\n"
 "Last-Translator: \n"
 "Language: ja\n"
@@ -24,17 +24,17 @@ msgid ""
 " more user-friendly UI enhancements."
 msgstr ""
 
-#: templates/_base.html:48
+#: templates/_base.html:49
 msgid "Loading application, please wait..."
 msgstr ""
 
-#: templates/_base.html:51
+#: templates/_base.html:52
 msgid ""
 "Problems loading? Make sure you have a recent version of Google Chrome, "
 "Firefox, Safari or Microsoft Edge installed."
 msgstr ""
 
-#: templates/_base.html:77
+#: templates/_base.html:78
 msgid "Fit"
 msgstr ""
 
@@ -95,14 +95,18 @@ msgid "User Manual"
 msgstr ""
 
 #: templates/_menubar.html:28
-msgid "GitHub Page"
+msgid "Video Tutorial"
 msgstr ""
 
 #: templates/_menubar.html:29
-msgid "Report Issues"
+msgid "GitHub Page"
 msgstr ""
 
 #: templates/_menubar.html:30
+msgid "Report Issues"
+msgstr ""
+
+#: templates/_menubar.html:31
 msgid "Donate (PayPal)"
 msgstr ""
 
@@ -159,7 +163,7 @@ msgid "Supported file formats:"
 msgstr ""
 
 #: templates/_popups.html:49
-msgid "JPEG, PNG, SVG, GIF, BMP, WebP, etc."
+msgid "JPEG, PNG, PDF, SVG, GIF, BMP, WebP, etc."
 msgstr ""
 
 #: templates/_popups.html:55 templates/_popups.html:95
@@ -1256,8 +1260,8 @@ msgstr ""
 
 #: templates/_strings.html:22
 msgid ""
-"Please load a valid image file. Common image formats such as JPG, PNG, "
-"BMP, GIF etc. should work. Word documents are not accepted."
+"Please load a valid file such as JPG, PNG, PDF, SVG, GIF, BMP, WebP, etc."
+" Word documents are not supported."
 msgstr ""
 
 #: templates/_strings.html:23
@@ -3502,5 +3506,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Number: "
+#~ msgstr ""
+
+#~ msgid "JPEG, PNG, SVG, GIF, BMP, WebP, etc."
 #~ msgstr ""
 

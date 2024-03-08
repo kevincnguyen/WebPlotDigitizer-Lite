@@ -330,6 +330,7 @@ wpd.FileManager = class {
                 } else {
                     filePromise = new Promise((resolve, reject) => {
                         let reader = new FileReader();
+                        pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js";
                         reader.onload = function() {
                             pdfjsLib.getDocument(reader.result).promise.then(pdf => resolve(pdf));
                         };

@@ -43,6 +43,7 @@
     <!-- thirdparty -->
     <script src="https://kit.fontawesome.com/6b7d6b5ea1.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
 </head>
 
 <body>
@@ -184,6 +185,7 @@
             <li id="wpd-helpmenu-about" onclick="wpd.popup.show('helpWindow');">About WebPlotDigitizer Lite</li>
             <!-- <li id="wpd-helpmenu-tutorial"><a href="https://automeris.io/WebPlotDigitizer/tutorial.html" target="_blank">Tutoriels</a></li>
             <li id="wpd-helpmenu-manual"><a href="https://automeris.io/WebPlotDigitizer/userManual.pdf" target="_blank">Manuel d'utilisateur</a></li> -->
+            <li id="wpd-helpmenu-github"><a href="https://github.com/kevincnguyen/WebPlotDigitizer-Lite" target="_blank" style="color: red;">Video Tutorial</a></li>
             <li id="wpd-helpmenu-github"><a href="https://github.com/kevincnguyen/WebPlotDigitizer-Lite" target="_blank">Page de GitHub</a></li>
             <li id="wpd-helpmenu-issues"><a href="https://github.com/kevincnguyen/WebPlotDigitizer-Lite/issues" target="_blank">Rapport des Problèmes</a></li>
             <!-- <li id="wpd-helpmenu-donate"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=CVFJGV5SNEV9J&lc=US&item_name=WebPlotDigitizer&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" target="_blank">Faire un don (PayPal)</a></li> -->
@@ -765,7 +767,7 @@
     </div>
     <div class="popup-body">
         <p>Supported file formats:</p>
-        <p>JPEG, PNG, SVG, GIF, BMP, WebP, etc.</p>
+        <p>JPEG, PNG, PDF, SVG, GIF, BMP, WebP, etc.</p>
         <p>&nbsp;</p>
         <p align="center"><input type="file" id="fileLoadBox" multiple onchange="wpd.imageManager.load(false);" /></p>
         <p>&nbsp;</p>
@@ -1717,7 +1719,7 @@
 <div class="i18n-string" id="i18n-string-unsupported-text">Cette fonctionnalité n’a pas été implémentée dans la version actuelle. Cela peut être disponible dans une version ultérieure.</div>
 <div class="i18n-string" id="i18n-string-processing">Traitement en cours</div>
 <div class="i18n-string" id="i18n-string-invalid-file">ERROR: Invalid File</div>
-<div class="i18n-string" id="i18n-string-invalid-file-text">Please load a valid image file. Common image formats such as JPG, PNG, BMP, GIF etc. should work. Word documents are not accepted.</div>
+<div class="i18n-string" id="i18n-string-invalid-file-text">Please load a valid file such as JPG, PNG, PDF, SVG, GIF, BMP, WebP, etc. Word documents are not supported.</div>
 <div class="i18n-string" id="i18n-string-raw">Brut</div>
 <div class="i18n-string" id="i18n-string-nearest-neighbor">Voisin le plus proche</div>
 <div class="i18n-string" id="i18n-string-all">All</div>
