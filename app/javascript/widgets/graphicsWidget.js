@@ -563,7 +563,9 @@ wpd.graphicsWidget = (function() {
                         wpd.busyNote.show();
                         var imageFile = items[i].getAsFile();
                         wpd.imageManager.initializeFileManager([imageFile]);
-                        wpd.imageManager.loadFromFile(imageFile);
+                        wpd.imageManager.loadFromFile(imageFile).then(() => {
+                            wpd.navigateToApp();
+                        })
                     }
                 }
             }

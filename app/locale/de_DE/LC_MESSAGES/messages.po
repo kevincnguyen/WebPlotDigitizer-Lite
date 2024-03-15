@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-14 20:34-0700\n"
+"POT-Creation-Date: 2024-03-14 20:40-0700\n"
 "PO-Revision-Date: 2019-02-24 00:40-0800\n"
 "Last-Translator: \n"
 "Language: de_DE\n"
@@ -47,11 +47,11 @@ msgid "Convert images of graphs into data points"
 msgstr ""
 
 #: templates/_landing.html:11
-msgid "Drag and drop or click here"
+msgid "Drag and drop or paste from clipboard"
 msgstr ""
 
 #: templates/_landing.html:12
-msgid "to upload your graph image"
+msgid "or click here to upload your graph image"
 msgstr ""
 
 #: templates/_menubar.html:4
@@ -3419,5 +3419,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "JPEG, PNG, SVG, GIF, BMP, WebP, etc."
+#~ msgstr ""
+
+#~ msgid "Drag and drop or click here"
+#~ msgstr ""
+
+#~ msgid "to upload your graph image"
 #~ msgstr ""
 
