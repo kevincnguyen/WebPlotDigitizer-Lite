@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  WebPlotDigitizer\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-14 20:24-0700\n"
+"POT-Creation-Date: 2024-03-14 20:34-0700\n"
 "PO-Revision-Date: 2018-02-21 00:47-0600\n"
 "Last-Translator: RGXGR <rgxgr@outlook.com>\n"
 "Language: zh_Hans_CN\n"
@@ -24,17 +24,17 @@ msgid ""
 " more user-friendly UI enhancements."
 msgstr ""
 
-#: templates/_base.html:49
+#: templates/_base.html:50
 msgid "Loading application, please wait..."
 msgstr ""
 
-#: templates/_base.html:52
+#: templates/_base.html:53
 msgid ""
 "Problems loading? Make sure you have a recent version of Google Chrome, "
 "Firefox, Safari or Microsoft Edge installed."
 msgstr ""
 
-#: templates/_base.html:78
+#: templates/_base.html:79
 msgid "Fit"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgid "Supported file formats:"
 msgstr ""
 
 #: templates/_popups.html:49
-msgid "JPEG, PNG, SVG, GIF, BMP, WebP, etc."
+msgid "JPEG, PNG, PDF, SVG, GIF, BMP, WebP, etc."
 msgstr ""
 
 #: templates/_popups.html:55 templates/_popups.html:95
@@ -1247,13 +1247,13 @@ msgid "Processing"
 msgstr ""
 
 #: templates/_strings.html:21
-msgid "ERROR: Invalid File!"
+msgid "ERROR: Invalid File"
 msgstr ""
 
 #: templates/_strings.html:22
 msgid ""
-"Please load a valid image file. Common image formats such as JPG, PNG, "
-"BMP, GIF etc. should work. Word documents are not accepted."
+"Please load a valid file such as JPG, PNG, PDF, SVG, GIF, BMP, WebP, etc."
+" Word documents are not supported."
 msgstr ""
 
 #: templates/_strings.html:23
@@ -2448,7 +2448,7 @@ msgstr ""
 #~ msgstr "处理中"
 
 #~ msgid "ERROR: Invalid File!"
-#~ msgstr "错误：无效文件！"
+#~ msgstr ""
 
 #~ msgid ""
 #~ "Please load a valid image file. "
@@ -3378,5 +3378,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Number: "
+#~ msgstr ""
+
+#~ msgid "JPEG, PNG, SVG, GIF, BMP, WebP, etc."
 #~ msgstr ""
 
