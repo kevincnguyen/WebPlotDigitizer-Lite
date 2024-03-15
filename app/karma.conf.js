@@ -24,7 +24,7 @@ module.exports = function(config) {
             "tests/**/*_tests.js",  // qunit tests
             "tests/testhelpers.js", // test helper
             {
-                pattern: "start.png",
+                pattern: "/images/start.png",
                 watched: false,
                 included: false,
             },
