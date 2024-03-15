@@ -93,6 +93,11 @@ wpd.colorSelectionWidget = (function() {
         gui_color[0] = parseInt(color[0], 10);
         gui_color[1] = parseInt(color[1], 10);
         gui_color[2] = parseInt(color[2], 10);
+        
+        wpd.tree.getActiveDataset().treeRGB = new wpd.Color(gui_color[0], gui_color[1], gui_color[2]);
+        wpd.graphicsWidget.forceHandlerRepaint();
+        wpd.tree.refreshPreservingSelection();
+
         color = gui_color;
         setColorDelegate(gui_color);
         wpd.popup.close('color-selection-widget');

@@ -225,8 +225,8 @@ wpd.tree = (function() {
 
         // Dataset colors
         for (let ds of plotData.getDatasets()) {
-            if (ds.colorRGB != null) {
-                itemColors["/" + wpd.gettext("datasets") + "/" + ds.name] = ds.colorRGB;
+            if (ds.treeRGB != null) {
+                itemColors["/" + wpd.gettext("datasets") + "/" + ds.name] = ds.treeRGB;
             }
         }
 
