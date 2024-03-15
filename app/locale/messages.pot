@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-21 23:24-0800\n"
+"POT-Creation-Date: 2024-03-14 20:24-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,10 +83,6 @@ msgstr ""
 
 #: templates/_menubar.html:25
 msgid "About WebPlotDigitizer Lite"
-msgstr ""
-
-#: templates/_menubar.html:26
-msgid "Tutorials"
 msgstr ""
 
 #: templates/_menubar.html:27
