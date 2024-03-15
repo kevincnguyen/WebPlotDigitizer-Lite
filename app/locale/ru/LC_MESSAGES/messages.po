@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-14 20:49-0700\n"
+"POT-Creation-Date: 2024-03-14 20:55-0700\n"
 "PO-Revision-Date: 2016-12-18 10:38-0600\n"
 "Last-Translator: \n"
 "Language: ru\n"
@@ -25,17 +25,17 @@ msgid ""
 " more user-friendly UI enhancements."
 msgstr ""
 
-#: templates/_base.html:50
+#: templates/_base.html:49
 msgid "Loading application, please wait..."
 msgstr ""
 
-#: templates/_base.html:53
+#: templates/_base.html:52
 msgid ""
 "Problems loading? Make sure you have a recent version of Google Chrome, "
 "Firefox, Safari or Microsoft Edge installed."
 msgstr ""
 
-#: templates/_base.html:79
+#: templates/_base.html:78
 msgid "Fit"
 msgstr ""
 
