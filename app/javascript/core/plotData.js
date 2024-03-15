@@ -53,6 +53,7 @@ wpd.PlotData = class {
 
     addAxes(ax) {
         this._axesColl.push(ax);
+        wpd.AxesLabels.updateLabel(ax.name, ['X', 'Y']); // assuming only X, Y axes
     }
 
     getAxesColl() {
@@ -87,7 +88,6 @@ wpd.PlotData = class {
 
     addDataset(ds) {
         this._datasetColl.push(ds);
-        wpd.AxesLabels.updateLabel(ds.name, ['X', 'Y']); // assuming only X, Y
 
         // by default bind ds to last axes
         const axCount = this._axesColl.length;

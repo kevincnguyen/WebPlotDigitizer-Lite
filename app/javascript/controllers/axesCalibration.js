@@ -525,6 +525,11 @@ wpd.alignAxes = (function() {
             return;
         }
         const axes = wpd.tree.getActiveAxes();
+
+        // Update label map
+        const oldLabels = wpd.AxesLabels.getLabel(axes.name);
+        wpd.AxesLabels.updateLabel(name, oldLabels, axes.name);
+
         axes.name = name;
         wpd.tree.refresh();
         wpd.tree.selectPath("/" + wpd.gettext("advanced") + "/" + wpd.gettext("axes") + "/" + name, true);

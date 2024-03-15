@@ -68,10 +68,10 @@ wpd.dataSeriesManagement = (function() {
     }
 
     function showRenameAxesLabels() {
-        const ds = wpd.tree.getActiveDataset();
         const $xName = document.getElementById('rename-x-axis-input');
         const $yName = document.getElementById('rename-y-axis-input');
-        const labels = wpd.AxesLabels.getLabel(ds.name);
+        const axes = wpd.tree.getActiveAxes();
+        const labels = wpd.AxesLabels.getLabel(axes.name);
         $xName.value = labels[0];
         $yName.value = labels[1];
         wpd.popup.show('rename-axes-labels-popup');
@@ -87,12 +87,6 @@ wpd.dataSeriesManagement = (function() {
             return;
         }
         const ds = wpd.tree.getActiveDataset();
-        const newDatasetName = $dsName.value.trim();
-
-        // Update label map
-        const oldLabels = wpd.AxesLabels.getLabel(ds.name);
-        wpd.AxesLabels.updateLabel(newDatasetName, oldLabels, ds.name);
-
         ds.name = $dsName.value.trim();
         wpd.tree.refresh();
         wpd.tree.selectPath("/" + wpd.gettext("datasets") + "/" + ds.name, true);
@@ -103,12 +97,12 @@ wpd.dataSeriesManagement = (function() {
         const $yName = document.getElementById('rename-y-axis-input');
         wpd.popup.close('rename-axes-labels-popup');
 
-        const ds = wpd.tree.getActiveDataset();
+        const axes = wpd.tree.getActiveAxes();
         const newXName = $xName.value.trim();
         const newYName = $yName.value.trim();
 
         // Update label map
-        wpd.AxesLabels.updateLabel(ds.name, [newXName, newYName]);
+        wpd.AxesLabels.updateLabel(axes.name, [newXName, newYName]);
     }
 
     function renameKeypress(e) {
